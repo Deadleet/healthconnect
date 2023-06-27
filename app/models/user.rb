@@ -8,5 +8,6 @@ class User < ApplicationRecord
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
-  has_many :practicians, through: :appointments, class_name: :user
+  has_many :appointments
+  has_many :practicians, through: :appointments, class_name: 'User'
 end
