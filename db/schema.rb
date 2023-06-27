@@ -10,9 +10,22 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+
 ActiveRecord::Schema[7.0].define(version: 2023_06_27_134104) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "appointments", force: :cascade do |t|
+    t.date "date"
+    t.string "title"
+    t.string "type"
+    t.bigint "user_id", null: false
+    t.bigint "practician_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["practician_id"], name: "index_appointments_on_practician_id"
+    t.index ["user_id"], name: "index_appointments_on_user_id"
+  end
 
   create_table "follow_ups", force: :cascade do |t|
     t.string "title"
@@ -26,6 +39,21 @@ ActiveRecord::Schema[7.0].define(version: 2023_06_27_134104) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["prescription_id"], name: "index_follow_ups_on_prescription_id"
+  end
+
+  create_table "measures", force: :cascade do |t|
+    t.string "title"
+    t.text "description"
+    t.decimal "valeur"
+    t.string "unit"
+    t.date "start_date"
+    t.date "end_date"
+    t.integer "day_frequency"
+    t.integer "hourly_frequency"
+    t.bigint "prescription_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["prescription_id"], name: "index_measures_on_prescription_id"
   end
 
   create_table "patho_prescriptions", force: :cascade do |t|
@@ -73,8 +101,11 @@ ActiveRecord::Schema[7.0].define(version: 2023_06_27_134104) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "appointments", "users"
+  add_foreign_key "appointments", "users", column: "practician_id"
   add_foreign_key "follow_ups", "prescriptions"
   add_foreign_key "patho_prescriptions", "pathologies", column: "pathologie_id"
+  add_foreign_key "measures", "prescriptions"
   add_foreign_key "patho_prescriptions", "prescriptions"
   add_foreign_key "pathologies", "users"
   add_foreign_key "prescriptions", "users"
