@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  # get 'pathologies/index'
+  # get 'pathologies/show'
+  # get 'pathologies/new'
+  # get 'pathologies/edit'
 
   # get 'follow_ups/index'
   # get 'follow_ups/show'
@@ -19,6 +23,7 @@ resources :prescriptions do
   resources :follow_ups, only: %i[edit update destroy]
   resources :measures, only: %i[edit update destroy]
 
+  resources :pathologies, only: %i[index show edit update new create]
   # get "dashboard", to: "pages#dashboard"
 
 end
