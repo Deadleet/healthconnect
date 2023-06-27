@@ -1,3 +1,17 @@
 <h1>Pages#home</h1>
 <p>Find me in app/views/pages/home.html.erb</p>
-<p>ON MET LE DASHBOARD ?</p>
+
+
+<div class="container">
+
+  <div class="footer">
+    <div class="btn-footer">
+      <i class="fa-solid fa-qrcode" style="color: #49516f;" ></i>
+    </div>
+      <i class="fa-solid fa-magnifying-glass" style="color: #49516f;"></i>
+      <i class="fa-solid fa-house" style="color: #49516f;"></i>
+      <i class="fa-regular fa-comments" style="color: #49516f;"></i>
+    </div>
+  </div>
+</div>
+<%= link_to "Log out", destroy_user_session_path, data: {turbo_method: :delete, turbo_confirm: "Do you want to sign out?"} %>
