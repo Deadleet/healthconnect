@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  get 'measures/show'
+  get 'measures/new'
+  get 'measures/edit'
 
   # get 'follow_ups/index'
   # get 'follow_ups/show'
