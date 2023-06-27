@@ -40,6 +40,21 @@ ActiveRecord::Schema[7.0].define(version: 2023_06_27_123351) do
     t.index ["prescription_id"], name: "index_follow_ups_on_prescription_id"
   end
 
+  create_table "measures", force: :cascade do |t|
+    t.string "title"
+    t.text "description"
+    t.decimal "valeur"
+    t.string "unit"
+    t.date "start_date"
+    t.date "end_date"
+    t.integer "day_frequency"
+    t.integer "hourly_frequency"
+    t.bigint "prescription_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["prescription_id"], name: "index_measures_on_prescription_id"
+  end
+
   create_table "patho_prescriptions", force: :cascade do |t|
     t.bigint "pathology_id", null: false
     t.bigint "prescription_id", null: false
@@ -88,6 +103,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_06_27_123351) do
   add_foreign_key "appointments", "users"
   add_foreign_key "appointments", "users", column: "practician_id"
   add_foreign_key "follow_ups", "prescriptions"
+  add_foreign_key "measures", "prescriptions"
   add_foreign_key "patho_prescriptions", "pathologies"
   add_foreign_key "patho_prescriptions", "prescriptions"
   add_foreign_key "pathologies", "users"
