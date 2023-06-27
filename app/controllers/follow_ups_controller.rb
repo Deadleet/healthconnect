@@ -1,11 +1,13 @@
 class FollowUpsController < ApplicationController
+
+  # def index
+  #   @followups = FollowUp.all
+  # end
+
   def show
     @followup = FollowUp.find(params[:id])
     @prescription = @followup.prescription
   end
-
-  # def index
-  # end
 
   def new
     @prescription = Prescription.find(params[:prescription_id])
@@ -17,12 +19,10 @@ class FollowUpsController < ApplicationController
     @followup = FollowUp.new(followup_params)
     @followup.user = current_user
     @followup.prescription = @prescription
-    @followup.save!
-      if @followup.save
+      if @followup.save!
         redirect_to followup_path(@followup)
       else
-        @followups = @prescription.prescriptions
-      render "bouchtroues/show", status: :unprocessable_entity
+      render "followups/new", status: :unprocessable_entity
       end
   end
 
