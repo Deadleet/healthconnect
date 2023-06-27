@@ -15,6 +15,9 @@
     <%= f.input :password_confirmation,
                 required: true,
                 input_html: { autocomplete: "new-password" } %>
+    <%= f.input :first_name, placeholder: 'Prenom' %>
+    <%= f.input :last_name, placeholder: 'Nom'%>
+    <%= f.input :patient, placeholder: 'patient'%>
   </div>
 
   <div class="form-actions">
