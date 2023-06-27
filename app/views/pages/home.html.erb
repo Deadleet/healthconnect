@@ -2,6 +2,25 @@
 <p>Find me in app/views/pages/home.html.erb</p>
 
 
+
+
+<%= month_calendar(events: @prescriptions+@follow_ups) do |date, prescriptions, follow_ups| %>
+  <%= date %>
+
+  <% prescriptions.each do |prescription| %>
+    <div class= 'prescription-calendar'>
+      <%= prescription.title %>
+    </div>
+  <% end %>
+
+  <% follow_ups.each do |follow_up| %>
+    <div class= 'follow-calendar'>
+      <%= follow_up.title %>
+    </div>
+  <% end %>
+
+<% end %>
+
 <div class="container">
 
   <div class="footer">
@@ -14,4 +33,3 @@
     </div>
   </div>
 </div>
-<%= link_to "Log out", destroy_user_session_path, data: {turbo_method: :delete, turbo_confirm: "Do you want to sign out?"} %>

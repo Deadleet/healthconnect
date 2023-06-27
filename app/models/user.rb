@@ -1,6 +1,7 @@
 class User < ApplicationRecord
   has_many :pathologies
-
+  has_many :prescriptions
+  has_many :follow_ups, through: :prescriptions
   validates :first_name, presence: true, length: { minimum: 2 }
   validates :last_name, presence: true, length: { minimum: 2 }
   validates :patient, presence: true
