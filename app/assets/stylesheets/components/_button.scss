@@ -1,0 +1,13 @@
+.btn footer {
+  border-radius: 50%;
+  background: #e0e0e0;
+  box-shadow:  8px 8px 9px #c7c7c7,
+               -8px -8px 9px #f9f9f9;
+}
+
+.btn footer:hover {
+border-radius: 50%;
+background: #fafafa;
+box-shadow: inset 8px 8px 9px #dfdfdf,
+            inset -8px -8px 9px #ffffff;
+}
