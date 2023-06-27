@@ -10,7 +10,8 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_06_27_123351) do
+
+ActiveRecord::Schema[7.0].define(version: 2023_06_27_134104) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -56,11 +57,11 @@ ActiveRecord::Schema[7.0].define(version: 2023_06_27_123351) do
   end
 
   create_table "patho_prescriptions", force: :cascade do |t|
-    t.bigint "pathology_id", null: false
     t.bigint "prescription_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["pathology_id"], name: "index_patho_prescriptions_on_pathology_id"
+    t.bigint "pathologie_id"
+    t.index ["pathologie_id"], name: "index_patho_prescriptions_on_pathologie_id"
     t.index ["prescription_id"], name: "index_patho_prescriptions_on_prescription_id"
   end
 
@@ -103,8 +104,8 @@ ActiveRecord::Schema[7.0].define(version: 2023_06_27_123351) do
   add_foreign_key "appointments", "users"
   add_foreign_key "appointments", "users", column: "practician_id"
   add_foreign_key "follow_ups", "prescriptions"
+  add_foreign_key "patho_prescriptions", "pathologies", column: "pathologie_id"
   add_foreign_key "measures", "prescriptions"
-  add_foreign_key "patho_prescriptions", "pathologies"
   add_foreign_key "patho_prescriptions", "prescriptions"
   add_foreign_key "pathologies", "users"
   add_foreign_key "prescriptions", "users"
