@@ -28,10 +28,10 @@ before_action :set_prescription, only: [:show, :edit, :update, :destroy]
       redirect_to prescription_path
   end
 
-  def destroy
-    @prescription.destroy
-     redirect_to prescription_path, status: :see_others
-  end
+  # def destroy
+  #   @prescription.destroy
+  #    redirect_to prescription_path, status: :see_others
+  # end
 
   private
 
