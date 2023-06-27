@@ -7,7 +7,7 @@ Rails.application.routes.draw do
   root to: "pages#home"
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 resources :prescriptions do
-  resources :follow_ups, only: %i[show new create]
+  resources :follow_ups, only: %i[index show new create]
   resources :measures, only: %i[show new create]
   end
   resources :follow_ups, only: %i[edit update destroy]
