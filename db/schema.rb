@@ -10,9 +10,53 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_06_26_151200) do
+ActiveRecord::Schema[7.0].define(version: 2023_06_26_163339) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "follow_ups", force: :cascade do |t|
+    t.string "title"
+    t.text "description"
+    t.date "start_date"
+    t.date "end_date"
+    t.string "posology"
+    t.integer "hourly_frequency"
+    t.integer "day_frequency"
+    t.bigint "prescription_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["prescription_id"], name: "index_follow_ups_on_prescription_id"
+  end
+
+  create_table "patho_prescriptions", force: :cascade do |t|
+    t.bigint "pathology_id", null: false
+    t.bigint "prescription_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["pathology_id"], name: "index_patho_prescriptions_on_pathology_id"
+    t.index ["prescription_id"], name: "index_patho_prescriptions_on_prescription_id"
+  end
+
+  create_table "pathologies", force: :cascade do |t|
+    t.string "name"
+    t.text "description"
+    t.bigint "user_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_pathologies_on_user_id"
+  end
+
+  create_table "prescriptions", force: :cascade do |t|
+    t.string "title"
+    t.text "description"
+    t.date "start_date"
+    t.date "end_date"
+    t.string "practician"
+    t.bigint "user_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_prescriptions_on_user_id"
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -29,4 +73,9 @@ ActiveRecord::Schema[7.0].define(version: 2023_06_26_151200) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "follow_ups", "prescriptions"
+  add_foreign_key "patho_prescriptions", "pathologies"
+  add_foreign_key "patho_prescriptions", "prescriptions"
+  add_foreign_key "pathologies", "users"
+  add_foreign_key "prescriptions", "users"
 end
