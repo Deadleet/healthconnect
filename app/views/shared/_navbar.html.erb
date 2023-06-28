@@ -19,13 +19,13 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto">
         <% if user_signed_in? %>
-        <li class="nav-item dropdown">
-          <div class="dropdown-toggle" aria-labelledby="navbarDropdown" , id="navbarDropdown", data-bs-toggle="dropdown", aria-haspopup="true", aria-expanded="false" >
-            <%= link_to "Action", "#", class: "dropdown-item" %>
-            <%= link_to "Another action", "#", class: "dropdown-item" %>
-            <%= link_to "Log out", "#", class: "dropdown-item", data: {turbo_method: :delete} %>
-          </div>
-        </li>
+          <li class="nav-item dropdown">
+            <div class="dropdown-toggle" aria-labelledby="navbarDropdown" , id="navbarDropdown", data-bs-toggle="dropdown", aria-haspopup="true", aria-expanded="false" >
+              <%= link_to "Action", "#", class: "dropdown-item" %>
+              <%= link_to "Another action", "#", class: "dropdown-item" %>
+              <%= link_to "Log out", "#", class: "dropdown-item", data: {turbo_method: :delete} %>
+            </div>
+          </li>
         <% else %>
           <li class="nav-item">
             <%= link_to "Login", new_user_session_path, class: "nav-link" %>
