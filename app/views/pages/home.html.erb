@@ -3,23 +3,24 @@
 
 
 
-
-<%= month_calendar(events: @prescriptions+@follow_ups) do |date, prescriptions, follow_ups| %>
+<%= month_calendar(events: @prescriptions + @follow_ups) do |date, events| %>
   <%= date %>
 
-  <% prescriptions.each do |prescription| %>
-    <div class= 'prescription-calendar'>
-      <%= prescription.title %>
-    </div>
+  <% events.each do |event| %>
+    <% if event.is_a?(Prescription) %>
+      <div class="prescription-calendar">
+        <%= event.title %>
+      </div>
+    <% elsif event.is_a?(FollowUp) %>
+      <div class="follow-up-calendar">
+        <%= event.title %>
+      </div>
+    <% end %>
   <% end %>
-
-  <% follow_ups.each do |follow_up| %>
-    <div class= 'follow-calendar'>
-      <%= follow_up.title %>
-    </div>
-  <% end %>
-
 <% end %>
+
+<h1> Legende : </h1>
+
 
 <div class="container">
 
