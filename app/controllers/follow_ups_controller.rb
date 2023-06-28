@@ -17,17 +17,16 @@ class FollowUpsController < ApplicationController
   def create
     @prescription = Prescription.find(params[:prescription_id])
     @followup = FollowUp.new(followup_params)
-    @followup.user = current_user
     @followup.prescription = @prescription
       if @followup.save!
-        redirect_to followup_path(@followup)
+        redirect_to prescription_follow_up_path(@prescription, @followup)
       else
-      render "followups/new", status: :unprocessable_entity
+      render :new, status: :unprocessable_entity
       end
   end
 
   def edit
-    @FollowUp = FollowUp.find(params[:id])
+    @followup = FollowUp.find(params[:id])
   end
 
   def update
@@ -40,6 +39,6 @@ class FollowUpsController < ApplicationController
 
 
   def followup_params
-    params.require(:followup).permit(:title, :description, :date_start, :end_date, :posology, :hourly_frequency, :day_frequency)
+    params.require(:follow_up).permit(:title, :description, :start_date, :end_date, :posology, :hourly_frequency, :day_frequency)
   end
 end
