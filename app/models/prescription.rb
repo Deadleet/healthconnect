@@ -2,6 +2,7 @@ class Prescription < ApplicationRecord
   belongs_to :user
   has_many :patho_prescriptions, dependent: :destroy
   has_many :follow_ups
+  has_many :measures
 
   validates :title, presence: true, length: { minimum: 6 }
   validates :description, presence: true, length: { maximum: 500 }

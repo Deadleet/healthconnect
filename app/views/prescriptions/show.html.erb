@@ -8,9 +8,15 @@
 
 <%= link_to 'Modifier', edit_prescription_path(@prescription) %>
 
-
+<% @prescription.follow_ups.each do |f| %>
+<%= f.title %>
+<% end %>
 <p>mettre un index de followups / s'il y a </p>
 <%= link_to 'Créer un traitement', new_prescription_follow_up_path(@prescription) %>
 
+
+<% @prescription.measures.each do |m| %>
+<%= m.title %>
+<% end %>
 <p>mettre un index de measures / s'il y a </p>
 <%= link_to 'Créer une mesure', new_prescription_measure_path(@prescription) %>
