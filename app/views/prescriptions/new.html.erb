@@ -1,16 +1,17 @@
 <h1>New de prescription</h1>
 
-<div class="background">
-  <div class="bg-white rounded p-3 shadow">
-    <h3>Create a prescription</h3>
-    <%= simple_form_for @prescription do |f| %>
-      <%= f.input :title, placeholder: 'The title of your prescription' %>
-      <%= f.input :description, placeholder: 'Give us more information'%>
-      <%= f.input :start_date, placeholder: 'The date your prescirption starts'%>
-      <%= f.input :end_date, placeholder: 'The date your prescirption ends'%>
-       <%= f.input :practician, placeholder: 'The name of the practician'%>
-      <%# <%= f.input :photo_url, as: :file %>
-      <%= f.submit class: 'btn btn-ghost'%>
-    <% end %>
+   <div>
+    <div class="background">
+    <div class="bg-white rounded p-3 shadow">
+     <h3>Create a prescription</h3>
+      <%= simple_form_for @prescription, data: { controller: 'flatpickr' } do |f| %>
+        <%= f.input :title, placeholder: 'The title of your prescription' %>
+        <%= f.input :description, placeholder: 'Give us more information'%>
+        <%= f.input :start_date, as: :string, input_html: { data: { flatpickr_target: "startTime" } } %>
+        <%= f.input :end_date, as: :string, input_html: { data: { flatpickr_target: "endTime" } } %>
+         <%= f.input :practician, placeholder: 'The name of the practician'%>
+        <%= f.submit 'create',class: 'btn btn-ghost' %>
+      <% end %>
+    </div>
   </div>
 </div>

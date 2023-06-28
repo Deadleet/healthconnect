@@ -14,8 +14,9 @@ class PathologiesController < ApplicationController
 
   def create
     @pathologie = Pathologie.new(pathologie_params)
+    @pathologie.user = current_user
     if @pathologie.save!
-      redirect_to pathologie_path(@pathologie)
+      redirect_to pathology_path(@pathologie)
     else
       render :new, status: :unprocessable_entity
     end

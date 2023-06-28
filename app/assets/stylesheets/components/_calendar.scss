@@ -1,0 +1,34 @@
+.simple-calendar {
+  table {
+    min-height: 80vh;
+  }
+  .today {
+    background-color: #FAF3DD;
+  }
+}
+
+.prescription-calendar {
+  color: white;
+  padding: 8px 24px;
+  border-radius: 4px;
+  background: #129e5f;
+  transition: background 0.3s ease;
+}
+
+.prescription-calendar:hover {
+  background: #55bc8f;
+  color: white;
+}
+
+.follow-up-calendar {
+  color: white;
+  padding: 8px 24px;
+  border-radius: 4px;
+  background: rgb(104, 62, 96);
+  transition: background 0.3s ease;
+}
+
+.follow-up-calendar:hover {
+  background: pink;
+  color: white;
+}
