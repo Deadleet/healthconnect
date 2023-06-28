@@ -11,3 +11,50 @@
 //   box-shadow: inset 25px 25px 49px #bcaecd,
 //               inset -25px -25px 49px #ead8ff;
 // }
+
+
+.btn-test {
+  width: 220px;
+  font-size: 16px;
+  line-height: 20px;
+  font-weight: 150;
+  text-align:center;
+  border-radius: 8px;
+  padding: 1px 23px;
+  border: 1px solid #49516f;
+  background: #fff;
+  color: #49516f;
+}
+.btn-test:hover {
+  background: #EDEBF3;
+}
+
+.btn-calendar {
+  outline: 0;
+  display: inline-block;
+  font-weight: 400;
+  line-height: 1.5;
+  text-align: center;
+  background-color: transparent;
+  border: 1px solid transparent;
+  padding: 6px 12px;
+  font-size: 1rem;
+  border-radius: .25rem;
+  color: #AAA1C8;
+  border-color: #AAA1C8;
+}
+
+.btn-month {
+  outline: 0;
+  color: #fff;
+  background-color: #AAA1C8;
+  border-color: #AAA1C8;
+  display: inline-block;
+  font-weight: 400;
+  line-height: 1.5;
+  text-align: center;
+  border: 1px solid transparent;
+  padding: 6px 12px;
+  font-size: 16px;
+  border-radius: .25rem;
+}

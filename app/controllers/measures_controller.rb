@@ -16,7 +16,7 @@ class MeasuresController < ApplicationController
       if @measure.save!
         redirect_to prescription_measure_path(@prescription, @measure)
       else
-      render "measures/new", status: :unprocessable_entity
+        render :new, status: :unprocessable_entity
       end
   end
 

@@ -1,23 +1,26 @@
 <div class="container">
-<h1> <%= @prescription.title %> </h1>
-<h4><%= @prescription.practician %></h4>
-<p><%= @prescription.description %></p>
-<p> Debut : <%= @prescription.start_date %> - Fin : <%= @prescription.end_date %></p>
-<p>Rappel de renouvellement d'ordonnance prévu le : <%= @prescription.end_date-5 %></p>
- <%# link_to 'Delete', prescription_path(@prescription), method: :delete, data: { confirm: 'Are you sure?' }
- link_to 'Edit', edit_prescription_path(@prescription)
- link_to 'Back', prescriptions_path %>
+  <h1> <%= @prescription.title %> </h1>
+  <h4><%= @prescription.practician %></h4>
+  <p><%= @prescription.description %></p>
+  <p> Debut : <%= @prescription.start_date %> - Fin : <%= @prescription.end_date %></p>
+  <p>Rappel de renouvellement d'ordonnance prévu le : <%= @prescription.end_date-5 %></p>
+
+
+  <%= link_to 'Modifier', edit_prescription_path(@prescription) %>
+
+  <div>
+    <% @prescription.follow_ups.each do |f| %>
+    <%= f.title %>
+    <% end %>
+    <p>mettre un index de followups / s'il y a </p>
+    <%= link_to 'Créer un traitement', new_prescription_follow_up_path(@prescription) %>
+  </div>
+
+  <div>
+    <% @prescription.measures.each do |m| %>
+    <%= m.title %>
+    <% end %>
+    <p>mettre un index de measures / s'il y a </p>
+    <%= link_to 'Créer une mesure', new_prescription_measure_path(@prescription) %>
+  </div>
 </div>
-
-
-
-
-    <%# t.string "title"
-    t.text "description"
-    t.date "start_date"
-    t.date "end_date"
-    t.string "practician"
-    t.bigint "user_id", null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["user_id"], name: "index_prescriptions_on_user_id" %>
