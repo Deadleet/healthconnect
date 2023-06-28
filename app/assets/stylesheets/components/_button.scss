@@ -11,3 +11,22 @@
 //   box-shadow: inset 25px 25px 49px #bcaecd,
 //               inset -25px -25px 49px #ead8ff;
 // }
+
+
+.btn-test {
+
+
+  width: 220px;
+  font-size: 16px;
+  line-height: 20px;
+  font-weight: 150;
+  text-align:center;
+  border-radius: 8px;
+  padding: 1px 23px;
+  border: 1px solid #49516f;
+  background: #fff;
+  color: #49516f;
+}
+.btn-test:hover {
+  background: #EDEBF3;
+}
