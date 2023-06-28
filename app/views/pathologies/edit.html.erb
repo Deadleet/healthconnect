@@ -1,2 +1,12 @@
-<h1>Pathologies#edit</h1>
-<p>Find me in app/views/pathologies/edit.html.erb</p>
+<div class="background">
+  <div class="bg-white rounded p-3 shadow">
+<h1 class="edit-form">Modifier vos pathologies</h1>
+<div class="form">
+    <%= simple_form_for @pathologie do |f| %>
+      <%= f.input :name, placeholder: 'The title of your pathologie' %>
+      <%= f.input :description, placeholder: 'Give us more information'%>
+        <%= f.submit 'edit',class: 'btn btn-ghost' %>
+  <% end %>
+</div>
+  </div>
+</div>

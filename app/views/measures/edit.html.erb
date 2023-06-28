@@ -1,2 +1,21 @@
-<h1>Measures#edit</h1>
-<p>Find me in app/views/measures/edit.html.erb</p>
+
+  <div>
+    <div class="background">
+    <div class="bg-white rounded p-3 shadow">
+     <h3>Modifier un follow-up</h3>
+      <%= simple_form_for [@prescription,@measure], data: { controller: 'flatpickr' } do |f| %>
+        <%= f.input :title, placeholder: 'The title of your measure' %>
+        <%= f.input :description, placeholder: 'Give us more information'%>
+        <%= f.input :valeur, placeholder: 'Give us more information'%>
+        <%= f.input :unit, placeholder: 'Unit'%>
+        <%= f.input :start_date, as: :string, input_html: { data: { flatpickr_target: "startTime" } } %>
+        <%= f.input :end_date, as: :string, input_html: { data: { flatpickr_target: "endTime" } } %>
+        <%= f.input :hourly_frequency, placeholder: 'How many times per hour?'%>
+        <%= f.input :day_frequency, placeholder: 'How many times per day?'%>
+        <%= f.submit 'edit',class: 'btn btn-ghost' %>
+      <% end %>
+    </div>
+  </div>
+</div>
+
+s
