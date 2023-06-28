@@ -11,7 +11,7 @@
 
         <div>
         <%= f.input :start_date, label: "début", as: :string, input_html: { data: { flatpickr_target: "startTime" } } %>
-        <%= f.input :end_date, label: "au", as: :string, input_html: { data: { flatpickr_target: "endTime" } } %>
+        <%= f.input :end_date, label: "au", as: :string, input_html: { data: { flatpickr_target: "endTime" }, id: 'end_time' } %>
         </div>
 
          <%= f.input :practician, placeholder: 'The name of the practician'%>
