@@ -1,14 +1,19 @@
-<h1>New de prescription</h1>
 
-   <div>
+   <div class="calendar">
     <div class="background">
     <div class="bg-white rounded p-3 shadow">
      <h3>Create a prescription</h3>
       <%= simple_form_for @prescription, data: { controller: 'flatpickr' } do |f| %>
+       <div>
         <%= f.input :title, placeholder: 'The title of your prescription' %>
         <%= f.input :description, placeholder: 'Give us more information'%>
-        <%= f.input :start_date, as: :string, input_html: { data: { flatpickr_target: "startTime" } } %>
-        <%= f.input :end_date, as: :string, input_html: { data: { flatpickr_target: "endTime" } } %>
+       </div>
+
+        <div>
+        <%= f.input :start_date, label: "début", as: :string, input_html: { data: { flatpickr_target: "startTime" } } %>
+        <%= f.input :end_date, label: "au", as: :string, input_html: { data: { flatpickr_target: "endTime" } } %>
+        </div>
+
          <%= f.input :practician, placeholder: 'The name of the practician'%>
         <%= f.submit 'create',class: 'btn btn-ghost' %>
       <% end %>
