@@ -21,7 +21,7 @@ class FollowUpsController < ApplicationController
       if @followup.save!
         redirect_to prescription_follow_up_path(@prescription, @followup)
       else
-      render :new, status: :unprocessable_entity
+        render :new, status: :unprocessable_entity
       end
   end
 
