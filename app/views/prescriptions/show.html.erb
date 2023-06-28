@@ -1,16 +1,26 @@
 <div class="container">
-<h1> <%= @prescription.title %> </h1>
-<h4><%= @prescription.practician %></h4>
-<p><%= @prescription.description %></p>
-<p> Debut : <%= @prescription.start_date %> - Fin : <%= @prescription.end_date %></p>
-<p>Rappel de renouvellement d'ordonnance prévu le : <%= @prescription.end_date-5 %></p>
+  <h1> <%= @prescription.title %> </h1>
+  <h4><%= @prescription.practician %></h4>
+  <p><%= @prescription.description %></p>
+  <p> Debut : <%= @prescription.start_date %> - Fin : <%= @prescription.end_date %></p>
+  <p>Rappel de renouvellement d'ordonnance prévu le : <%= @prescription.end_date-5 %></p>
+
+
+  <%= link_to 'Modifier', edit_prescription_path(@prescription) %>
+
+  <div>
+    <% @prescription.follow_ups.each do |f| %>
+    <%= f.title %>
+    <% end %>
+    <p>mettre un index de followups / s'il y a </p>
+    <%= link_to 'Créer un traitement', new_prescription_follow_up_path(@prescription) %>
+  </div>
+
+  <div>
+    <% @prescription.measures.each do |m| %>
+    <%= m.title %>
+    <% end %>
+    <p>mettre un index de measures / s'il y a </p>
+    <%= link_to 'Créer une mesure', new_prescription_measure_path(@prescription) %>
+  </div>
 </div>
-
-<%= link_to 'Modifier', edit_prescription_path(@prescription) %>
-
-
-<p>mettre un index de followups / s'il y a </p>
-<%= link_to 'Créer un traitement', new_prescription_follow_up_path(@prescription) %>
-
-<p>mettre un index de measures / s'il y a </p>
-<%= link_to 'Créer une mesure', new_prescription_measure_path(@prescription) %>
