@@ -6,4 +6,11 @@
 <p>Rappel de renouvellement d'ordonnance prévu le : <%= @prescription.end_date-5 %></p>
 </div>
 
- <%= link_to 'Modifier', edit_prescription_path(@prescription) %>
+<%= link_to 'Modifier', edit_prescription_path(@prescription) %>
+
+
+<p>mettre un index de followups / s'il y a </p>
+<%= link_to 'Créer un traitement', new_prescription_follow_up_path(@prescription) %>
+
+<p>mettre un index de measures / s'il y a </p>
+<%= link_to 'Créer une mesure', new_prescription_measure_path(@prescription) %>
