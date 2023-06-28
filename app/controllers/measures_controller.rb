@@ -1,4 +1,5 @@
 class MeasuresController < ApplicationController
+
   def show
     @measure = Measure.find(params[:id])
     @prescription = @measure.prescription
