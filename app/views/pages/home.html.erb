@@ -2,16 +2,26 @@
 <p>Find me in app/views/pages/home.html.erb</p>
 
 
+
+<%= month_calendar(events: @prescriptions + @follow_ups) do |date, events| %>
+  <%= date %>
+
+  <% events.each do |event| %>
+    <% if event.is_a?(Prescription) %>
+      <div class="prescription-calendar">
+        <%= event.title %>
+      </div>
+    <% elsif event.is_a?(FollowUp) %>
+      <div class="follow-up-calendar">
+        <%= event.title %>
+      </div>
+    <% end %>
+  <% end %>
+<% end %>
+
+<h1> Legende : </h1>
+
+
 <div class="container">
 
 </div>
-
-  <div class="footer">
-      <i class="fa-solid fa-house fa-xl" style="color: #49516f;"></i>
-      <i class="fa-solid fa-qrcode fa-xl" style="color: #49516f;"></i>
-      <i class="fa-solid fa-magnifying-glass fa-xl" style="color: #49516f;"></i>
-      <i class="fa-regular fa-comments fa-xl" style="color: #49516f;"></i>
-  </div>
-
-    <%# if sur page accueil %>
-    <%# <i class="fa-solid fa-house-user fa-xl"></i> %>
