@@ -4,14 +4,14 @@
 
 <div class="container">
 
-  <div class="footer">
-    <div class="btn-footer">
-      <i class="fa-solid fa-qrcode fa-xl" style="color: #49516f;"></i>
-    </div>
-      <i class="fa-solid fa-magnifying-glass fa-xl" style="color: #49516f;"></i>
-      <i class="fa-solid fa-house fa-xl" style="color: #49516f;"></i>
-      <i class="fa-regular fa-comments fa-xl" style="color: #49516f;"></i>
-    </div>
-  </div>
 </div>
-<%= link_to "Log out", destroy_user_session_path, data: {turbo_method: :delete, turbo_confirm: "Do you want to sign out?"} %>
+
+  <div class="footer">
+      <i class="fa-solid fa-house fa-xl" style="color: #49516f;"></i>
+      <i class="fa-solid fa-qrcode fa-xl" style="color: #49516f;"></i>
+      <i class="fa-solid fa-magnifying-glass fa-xl" style="color: #49516f;"></i>
+      <i class="fa-regular fa-comments fa-xl" style="color: #49516f;"></i>
+  </div>
+
+    <%# if sur page accueil %>
+    <%# <i class="fa-solid fa-house-user fa-xl"></i> %>
