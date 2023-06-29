@@ -1,0 +1,18 @@
+<div class="calendar">
+<div class="background">
+  <div class="bg-white rounded p-3 shadow">
+    <h3>Creer un relevé d'auto-mesure</h3>
+    <%= simple_form_for [@user, @appointment], data: { controller: 'flatpickr' } do |f| %>
+      <div>
+      <%= f.input :title, placeholder: 'Titre' %>
+      </div>
+
+      <div>
+        <%= f.input :date, label: "date", as: :date %>
+      </div>
+
+      <%= f.submit class: 'btn btn-ghost'%>
+    <% end %>
+  </div>
+</div>
+</div>
