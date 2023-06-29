@@ -11,5 +11,6 @@ resources :prescriptions do
   resources :measures, only: %i[edit update destroy]
 
   resources :pathologies, only: %i[index show edit update new create]
+resources :appointments
   # get "dashboard", to: "pages#dashboard"
 end
