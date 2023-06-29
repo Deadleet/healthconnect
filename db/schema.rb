@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_06_28_134329) do
+ActiveRecord::Schema[7.0].define(version: 2023_06_29_104824) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -66,6 +66,15 @@ ActiveRecord::Schema[7.0].define(version: 2023_06_28_134329) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["prescription_id"], name: "index_follow_ups_on_prescription_id"
+  end
+
+  create_table "measurements", force: :cascade do |t|
+    t.decimal "value"
+    t.string "unit"
+    t.bigint "measure_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["measure_id"], name: "index_measurements_on_measure_id"
   end
 
   create_table "measures", force: :cascade do |t|
@@ -133,6 +142,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_06_28_134329) do
   add_foreign_key "appointments", "users"
   add_foreign_key "appointments", "users", column: "practician_id"
   add_foreign_key "follow_ups", "prescriptions"
+  add_foreign_key "measurements", "measures"
   add_foreign_key "measures", "prescriptions"
   add_foreign_key "patho_prescriptions", "pathologies", column: "pathologie_id"
   add_foreign_key "patho_prescriptions", "prescriptions"
