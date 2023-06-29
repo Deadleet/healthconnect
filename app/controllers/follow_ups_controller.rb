@@ -37,8 +37,7 @@ class FollowUpsController < ApplicationController
 
   private
 
-
   def followup_params
     params.require(:follow_up).permit(:title, :description, :start_date, :end_date, :posology, :hourly_frequency, :day_frequency)
- end
+  end
 end
