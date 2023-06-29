@@ -1,15 +1,15 @@
+
 <div class="calendar">
-<div class="background">
-  <div class="bg-white rounded p-3 shadow">
-    <h3>Creer un relevé d'auto-mesure</h3>
-    <%= simple_form_for [@prescription, @measure, @measurement] do |f| %>
-      <div>
-      <%= f.input :value, placeholder: 'Valeur'%>
-      <%= f.input :unit, placeholder: 'Unité'%>
-      </div>
-      </div>
-      <%= f.submit class: 'btn btn-ghost'%>
-    <% end %>
+  <div class="background">
+    <div class="bg-white rounded p-3 shadow">
+      <h3>Creer un relevé d'auto-mesure</h3>
+        <%= simple_form_for [@prescription, @measure, @measurement] do |f| %>
+          <div>
+            <%= f.input :value, placeholder: 'Valeur'%>
+            <%= f.input :unit, placeholder: 'Unité'%>
+        </div>
+        <%= f.submit class: 'btn btn-ghost'%>
+      <% end %>
+    </div>
   </div>
-</div>
 </div>
