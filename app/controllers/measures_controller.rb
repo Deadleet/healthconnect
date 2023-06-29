@@ -1,4 +1,8 @@
 class MeasuresController < ApplicationController
+  def index
+    @measures = Measure.all
+  end
+
   def show
     @measure = Measure.find(params[:id])
     @prescription = @measure.prescription

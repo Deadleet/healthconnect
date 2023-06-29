@@ -1,23 +1,27 @@
 <div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
   <div class="container-fluid">
-  <i class="fa-solid fa-chevron-left" style="color: #49516f;"></i>
+
+    <a href=javascript:history.go(-1)><i class="fa-solid fa-chevron-left" style="color: #49516f;"></i></a>
+
     <%= link_to "#", class: "navbar-brand" do %>
       <h1 id="navbar-logo">HealthConnect</h1>
     <% end %>
 
-    
+    <%= link_to root_path do %>
+      <i class="fa-regular fa-bell fa-xl" style="color: #49516f;"></i>
+    <% end %>
 
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
 
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <div class="collapse navbar-collapse nav" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto">
-              <%= link_to "Profil", root_path, class: "nav-link" %>
-              <%= link_to "Pathologies", pathologies_path, class: "nav-link" %>
-              <%= link_to "Log out", "#", class: "dropdown-item", data: {turbo_method: :delete} %>
-          <!--li class="nav-item"-->
-          <!--/li-->
+        <%= link_to "Profil", root_path, class: "nav-link" %>
+        <%= link_to "Pathologies", pathologies_path, class: "nav-link" %>
+        <%# <%= link_to "Suivi Médical", prescription_follow_ups_path, class: "nav-link" %>
+        <%= link_to "Automesure", measures_path, class: "nav-link" %>
+        <%= link_to "Log out", "#", class: "dropdown-item", data: {turbo_method: :delete} %>
       </ul>
     </div>
   </div>

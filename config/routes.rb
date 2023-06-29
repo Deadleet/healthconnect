@@ -10,7 +10,7 @@ resources :prescriptions do
     end
   end
   resources :follow_ups, only: %i[edit update destroy]
-  resources :measures, only: %i[edit update destroy]
+  resources :measures, only: %i[index edit update destroy]
 
   resources :pathologies, only: %i[index show edit update new create]
 resources :appointments
