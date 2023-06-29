@@ -9,10 +9,14 @@
   <%= link_to 'Modifier', edit_prescription_path(@prescription) %>
 
   <div>
-    <% @prescription.follow_ups.each do |f| %>
-    <%= f.title %>
-    <% end %>
-    <p>mettre un index de followups / s'il y a </p>
+    <ul class = "list-group">
+      <% @prescription.follow_ups.each do |f| %>
+        <li class = "list-group-item"><%= link_to f.title, prescription_follow_up_path(@prescription) %></li>
+      <% end %>
+      <p>mettre un index de followups / s'il y a </p>
+    </ul>
+
+
     <%= link_to 'Créer un traitement', new_prescription_follow_up_path(@prescription) %>
   </div>
 
