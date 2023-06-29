@@ -2,20 +2,23 @@
    <div class="calendar">
     <div class="background">
     <div class="bg-white rounded p-3 shadow">
-     <h3>Create a prescription</h3>
+     <h3>Creer une Ordonnance</h3>
       <%= simple_form_for @prescription, data: { controller: 'flatpickr' } do |f| %>
-       <div>
-        <%= f.input :title, placeholder: 'The title of your prescription' %>
-        <%= f.input :description, placeholder: 'Give us more information'%>
-       </div>
+          <div>
+          <%= f.input :title, placeholder: 'Titre' %>
+          <%= f.input :description, placeholder: 'Description'%>
+          </div>
 
-        <div>
-        <%= f.input :start_date, label: "début", as: :string, input_html: { data: { flatpickr_target: "startTime" } } %>
-        <%= f.input :end_date, label: "au", as: :string, input_html: { data: { flatpickr_target: "endTime" }, id: 'end_time' } %>
-        </div>
+          <div>
+          <%= f.input :start_date, label: "début", as: :string, input_html: { data: { flatpickr_target: "startTime" } } %>
+          <%= f.input :end_date, label: "au", as: :string, input_html: { data: { flatpickr_target: "endTime" }, id: 'end_time' } %>
+         </div>
 
-         <%= f.input :practician, placeholder: 'The name of the practician'%>
-        <%= f.submit 'create',class: 'btn btn-ghost' %>
+          <div>
+          <%= f.input :practician, placeholder: 'Le nom du Practicien'%>
+          <%= f.submit 'Creer',class: 'btn btn-ghost' %>
+          </div>
+
       <% end %>
     </div>
   </div>

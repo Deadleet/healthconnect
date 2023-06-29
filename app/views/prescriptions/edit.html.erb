@@ -1,13 +1,22 @@
-<h1>EDIT</h1>
 
-<h1 class="edit-form">What do you want to change ?</h1>
+<h1 class="edit-form"> Modifier votre ordonnance</h1>
 <div class="form">
       <%= simple_form_for @prescription, data: { controller: 'flatpickr' } do |f| %>
-        <%= f.input :title, placeholder: 'The title of your prescription' %>
-        <%= f.input :description, placeholder: 'Give us more information'%>
+
+      <div>
+        <%= f.input :title, placeholder: 'Titre' %>
+        <%= f.input :description, placeholder: 'Description'%>
+        </div>
+
+        <div>
         <%= f.input :start_date, as: :string, input_html: { data: { flatpickr_target: "startTime" } } %>
-        <%= f.input :end_date, as: :string, input_html: { data: { flatpickr_target: "endTime" } } %>
+        <%= f.input :end_date, as: :string, input_html: { data: { flatpickr_target: "endTime" }, id: 'end_time' } %>
+        </div>
+
+        <div>
         <%= f.input :practician, placeholder: 'The name of the practician'%>
-        <%= f.submit 'edit',class: 'btn btn-ghost' %>
+        </div>
+        <%= f.submit 'modifier',class: 'btn btn-ghost' %>
+
   <% end %>
 </div>
