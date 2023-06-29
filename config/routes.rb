@@ -8,7 +8,7 @@ resources :prescriptions do
   resources :measures, only: %i[show new create]
   end
   resources :follow_ups, only: %i[edit update destroy]
-  resources :measures, only: %i[edit update destroy]
+  resources :measures, only: %i[index edit update destroy]
 
   resources :pathologies, only: %i[index show edit update new create]
   # get "dashboard", to: "pages#dashboard"
