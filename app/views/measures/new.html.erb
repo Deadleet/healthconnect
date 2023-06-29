@@ -1,8 +1,8 @@
 <div class="calendar">
 <div class="background">
   <div class="bg-white rounded p-3 shadow">
-    <h3>Creer une measure</h3>
-    <%= simple_form_for [@prescription, @measure] data: { controller: 'flatpickr' } do |f| %>
+    <h3>Creer une mesure</h3>
+    <%= simple_form_for [@prescription, @measure], data: { controller: 'flatpickr' } do |f| %>
     <div>
       <%= f.input :title, placeholder: 'Titre' %>
       <%= f.input :description, placeholder: 'Description'%>

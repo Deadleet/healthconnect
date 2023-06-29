@@ -6,7 +6,6 @@
         <%= simple_form_for [@prescription, @measure, @measurement] do |f| %>
           <div>
             <%= f.input :value, placeholder: 'Valeur'%>
-            <%= f.input :unit, placeholder: 'Unité'%>
         </div>
         <%= f.submit class: 'btn btn-ghost'%>
       <% end %>
