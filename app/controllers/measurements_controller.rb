@@ -38,7 +38,7 @@ class MeasurementsController < ApplicationController
   private
 
   def measurement_params
-    params.require(:measurement).permit(:value, :unit, :measure_id, :measure_id)
+    params.require(:measurement).permit(:value, :unit, :measure_id)
   end
 
 end
