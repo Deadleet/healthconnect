@@ -1,5 +1,5 @@
 <div class="container">
-  <%= month_calendar(events: @prescriptions + @follow_ups) do |date, events| %>
+  <%= month_calendar(events: @prescriptions + @follow_ups + @measures) do |date, events| %>
     <%= date %>
 
     <% events.each do |event| %>
@@ -9,6 +9,10 @@
         </div>
       <% elsif event.is_a?(FollowUp) %>
         <div class="follow-up-calendar">
+          <%= event.title %>
+        </div>
+      <% elsif event.is_a?(Measure) %>
+        <div class="measure-calendar">
           <%= event.title %>
         </div>
       <% end %>

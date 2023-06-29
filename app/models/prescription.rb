@@ -9,8 +9,7 @@ class Prescription < ApplicationRecord
   validates :start_date, presence: true
   validates :end_date, presence: true
 
-
   def start_time
-    self.start_date
+    self.end_date
   end
 end
