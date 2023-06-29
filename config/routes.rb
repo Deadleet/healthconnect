@@ -6,7 +6,7 @@ Rails.application.routes.draw do
 resources :prescriptions do
   resources :follow_ups, only: %i[index show new create edit update]
   resources :measures, only: %i[show new create] do
-    resources :measurements, only: %i[index show new create edit update]
+    resources :measurements, only: %i[new create edit update]
     end
   end
   resources :follow_ups, only: %i[edit update destroy]

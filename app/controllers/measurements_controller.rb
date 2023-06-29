@@ -4,24 +4,26 @@ class MeasurementsController < ApplicationController
   #   @measurements = Measurement.all
   # end
 
-  def show
-    @measurement = Measurement.find(params[:id])
-    @measure = @measurement.measure
-  end
+  # def show
+  #   @measurement = Measurement.find(params[:id])
+  #   @measure = @measurement.measure
+  # end
 
   def new
+    @prescription = Prescription.find(params[:prescription_id])
     @measure = Measure.find(params[:measure_id])
     @measurement = Measurement.new
   end
 
   def create
+    @prescription = Prescription.find(params[:prescription_id])
     @measure = Measure.find(params[:measure_id])
     @measurement = Measurement.new(measurement_params)
-    @followup.prescription = @prescription
+    @measurement.measure = @measure
       if @measurement.save!
-        redirect_to measure_measurement_path(@measure, @measurement)
+        redirect_to prescription_measure_path(@prescription, @measure)
       else
-      render :new, status: :unprocessable_entity
+        render :new, status: :unprocessable_entity
       end
   end
 
