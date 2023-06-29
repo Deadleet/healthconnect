@@ -10,5 +10,12 @@
 <p><%= @measure.hourly_frequency %> fois par jour</p>
 </div>
 
+<h4>Mes prises de mesures</h4>
 
-<%# on a acces au info de la prescription %>
+<% @measure.measurements.each do |measurement| %>
+<p><%= measurement.created_at %></p>
+<h6><%= measurement.value %> <%= measurement.unit %></h6>
+<% end %>
+
+
+<%= link_to "", new_prescription_measure_measurement_path(@prescription, @measure), class: "fa-solid fa-plus", style: "color: #57973f"  %>
