@@ -29,13 +29,17 @@ class MeasurementsController < ApplicationController
   end
 
   def edit
+    @prescription = Prescription.find(params[:prescription_id])
+    @measure = Measure.find(params[:measure_id])
     @measurement = Measurement.find(params[:id])
   end
 
   def update
+    @prescription = Prescription.find(params[:prescription_id])
+    @measure = Measure.find(params[:measure_id])
     @measurement = Measurement.find(params[:id])
     @measurement.update(measurement_params)
-    redirect_to measurement_path(@measurement)
+    redirect_to prescription_measure_path(@prescription, @measure)
   end
 
   private
@@ -43,5 +47,4 @@ class MeasurementsController < ApplicationController
   def measurement_params
     params.require(:measurement).permit(:value, :unit, :measure_id)
   end
-
 end
