@@ -21,8 +21,10 @@
         <% if user_signed_in? %>
           <li class="nav-item dropdown">
             <div class="dropdown-toggle" aria-labelledby="navbarDropdown" , id="navbarDropdown", data-bs-toggle="dropdown", aria-haspopup="true", aria-expanded="false" >
-              <%= link_to "Action", "#", class: "dropdown-item" %>
-              <%= link_to "Another action", "#", class: "dropdown-item" %>
+              <%= link_to "Profil", "#", class: "dropdown-item" %>
+              <%= link_to "Pathologies", "#", class: "dropdown-item" %>
+              <%= link_to "Suivi", "#", class: "dropdown-item" %>
+              <%= link_to "Measure", "#", class: "dropdown-item" %>
               <%= link_to "Log out", "#", class: "dropdown-item", data: {turbo_method: :delete} %>
             </div>
           </li>
