@@ -1,4 +1,4 @@
-  <div class="footer">
+<div class="footer">
     <%# if sur calendar %>
     <%# <i class="fa-solid fa-calendar fa-xl" style="color: #49516f;"></i> %>
     <%# if sur page accueil %>
@@ -6,8 +6,15 @@
     <%# if sur conv %>
     <%# <i class="fa-solid fa-comments fa-xl" style="color: #49516f;"></i> %>
 
-      <i class="fa-regular fa-calendar fa-xl" style="color: #49516f;"></i>
-      <i class="fa-solid fa-house fa-xl" style="color: #49516f;"></i>
-      <i class="fa-regular fa-comments fa-xl" style="color: #49516f;"></i>
+  <%= link_to root_path do %>
+    <i class="fa-regular fa-calendar fa-xl" style="color: #49516f;"></i>
+  <% end %>
 
-  </div>
+  <%= link_to root_path do %>
+    <i class="fa-solid fa-house fa-xl" style="color: #49516f;"></i>
+  <% end %>
+
+  <%= link_to root_path do %>
+    <i class="fa-regular fa-comments fa-xl" style="color: #49516f;"></i>
+  <% end %>
+</div>
