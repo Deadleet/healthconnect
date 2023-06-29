@@ -3,7 +3,7 @@
 <div class="background">
   <div class="bg-white rounded p-3 shadow">
     <h3>Modifier une measure</h3>
-    <%= simple_form_for [@prescription, @measure] data: { controller: 'flatpickr' } do |f| %>
+    <%= simple_form_for @measure, data: { controller: 'flatpickr' } do |f| %>
     <div>
       <%= f.input :title, placeholder: 'Titre' %>
       <%= f.input :description, placeholder: 'Description'%>
