@@ -1,5 +1,5 @@
 <div class="container">
-  <%= month_calendar(events: @prescriptions + @follow_ups + @measures) do |date, events| %>
+  <%= month_calendar(events: @prescriptions + @follow_ups + @measures + @appointments) do |date, events| %>
     <%= date %>
 
     <% events.each do |event| %>
@@ -15,6 +15,10 @@
         <div class="measure-calendar">
           <%= event.title %>
         </div>
+         <%# <% elsif event.is_a?(Appointment) %>
+        <%# <div class="appointment-calendar">
+          <%= event.title %>
+        <%# </div>   %>
       <% end %>
     <% end %>
   <% end %>
@@ -23,3 +27,29 @@
   <%# <p><%= link_to "Modifier un rdv", edit_appointment_path, class: "btn btn-primary"%>
 
 </div>
+
+<%# <div class="container">
+  <%= month_calendar(events: @prescriptions + @follow_ups + @measures) do |date, events| %>
+    <%# <%= date %>
+
+    <%# <% events.each do |event| %>
+      <%# <% if event.is_a?(Prescription) %>
+        <%# <div class="prescription-calendar"> %>
+          <%# <%= event.title %>
+        <%# </div> %>
+      <%# <% elsif event.is_a?(FollowUp) %>
+        <%# <div class="follow-up-calendar"> %>
+          <%# <%= event.title %>
+        <%# </div> %>
+      <%# <% elsif event.is_a?(Measure) %>
+        <%# <div class="measure-calendar"> %>
+          <%# <%= event.title %>
+        <%# </div> %>
+      <%# <% end %>
+    <%# <% end %>
+  <%# <% end %>
+
+  <%# <p><%= link_to "Ajouter un rdv", new_appointment_path, class: "btn btn-primary"%>
+  <%# <p><%= link_to "Modifier un rdv", edit_appointment_path, class: "btn btn-primary"%>
+
+<%# </div> %>
