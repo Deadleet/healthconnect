@@ -21,6 +21,7 @@ class MeasurementsController < ApplicationController
     @measurement = Measurement.new(measurement_params)
     @measurement.measure = @measure
       if @measurement.save!
+        # ici le pb
         redirect_to prescription_measure_path(@prescription, @measure)
       else
         render :new, status: :unprocessable_entity
