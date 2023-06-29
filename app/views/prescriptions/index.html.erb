@@ -2,7 +2,7 @@
 <ul class = "list-group">
   <% @prescriptions.each do |prescription| %>
     <li class = "list-group-item">
-      <%= link_to prescription.title,prescription_path(prescription) %>
+      <%= link_to prescription.title, prescription_path(prescription) %>
     </li>
   <% end %>
 </ul>

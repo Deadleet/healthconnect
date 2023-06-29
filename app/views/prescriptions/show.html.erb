@@ -6,21 +6,31 @@
   <p>Rappel de renouvellement d'ordonnance prévu le : <%= @prescription.end_date-5 %></p>
 
 
-  <%= link_to 'Modifier', edit_prescription_path(@prescription) %>
+  <%= link_to 'Modifier mon ordonnance', edit_prescription_path(@prescription) %>
 
+
+<h2 class = "container">Mes traitements</h2>
   <div>
-    <% @prescription.follow_ups.each do |f| %>
-    <%= f.title %>
-    <% end %>
-    <p>mettre un index de followups / s'il y a </p>
-    <%= link_to 'Créer un traitement', new_prescription_follow_up_path(@prescription) %>
+    <ul class = "list-group">
+      <% @prescription.follow_ups.each do |f| %>
+        <li class = "list-group-item"><%= link_to f.title, prescription_follow_up_path(@prescription,f) %></li>
+      <% end %>
+    </ul>
+    <p class = "container">
+      <%= link_to 'Créer un traitement', new_prescription_follow_up_path(@prescription) %>
+    </p>
   </div>
 
+
+<h2 class = "container">Mes mesures</h2>
   <div>
+  <ul class = "list-group">
     <% @prescription.measures.each do |m| %>
-    <%= m.title %>
+      <li class = "list-group-item"><%= link_to m.title, prescription_measure_path(@prescription,m)  %></li>
     <% end %>
-    <p>mettre un index de measures / s'il y a </p>
-    <%= link_to 'Créer une mesure', new_prescription_measure_path(@prescription) %>
+  </ul>
+    <p class = "container">
+      <%= link_to 'Créer une mesure', new_prescription_measure_path(@prescription) %>
+    </p>
   </div>
 </div>
