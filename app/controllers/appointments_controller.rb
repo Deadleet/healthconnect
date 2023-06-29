@@ -16,6 +16,11 @@ class AppointmentsController < ApplicationController
     measures = prescriptions_user.flat_map { |prescription| prescription.measures }
     @measures = Measure.where(id: measures.pluck(:id))
     @measures.where(start_date: start_date.beginning_of_month.beginning_of_week..start_date.end_of_month.end_of_week)
+
+    # # APPOINTMENT
+    # appointments = appointments_user.flat_map { |appointment| appointment }
+    # @appointments = Appointment.where(id: appointments.pluck(:id))
+    # @appoitments.where(start_date: date.beginning_of_month.beginning_of_week)
   end
 
   def new
