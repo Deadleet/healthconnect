@@ -1,18 +1,29 @@
-
+<div class="calendar">
 <div class="background">
   <div class="bg-white rounded p-3 shadow">
-    <h3>Create a measure</h3>
-    <%= simple_form_for [@prescription,@measure] do |f| %>
-      <%= f.input :title, placeholder: 'The title of your followup' %>
-      <%= f.input :description, placeholder: 'Give us more information'%>
-      <%= f.input :valeur, placeholder: 'Give us more information'%>
-      <%= f.input :unit, placeholder: 'Give us more information'%>
-      <%= f.input :start_date, placeholder: 'When did it start?'%>
-      <%= f.input :end_date, placeholder: 'When did it end?'%>
-      <%= f.input :hourly_frequency, placeholder: 'How many times per hour?'%>
-      <%= f.input :day_frequency, placeholder: 'How many times per day?'%>
+    <h3>Creer une measure</h3>
+    <%= simple_form_for [@prescription, @measure] data: { controller: 'flatpickr' } do |f| %>
+    <div>
+      <%= f.input :title, placeholder: 'Titre' %>
+      <%= f.input :description, placeholder: 'Description'%>
+      </div>
+      <div>
+      <%= f.input :valeur, placeholder: 'Valeur'%>
+      <%= f.input :unit, placeholder: 'Unité'%>
+      </div>
+
+      <div>
+      <%= f.input :start_date, label: "début", as: :string, input_html: { data: { flatpickr_target: "startTime" } } %>
+      <%= f.input :end_date, label: "au", as: :string, input_html: { data: { flatpickr_target: "endTime" }, id: 'end_time' } %>
+      </div>
+
+      <div>
+      <%= f.input :hourly_frequency, placeholder: 'Combien de fois par jour? ex: 4'%>
+      <%= f.input :day_frequency, placeholder: 'Combien de fois par semaine? ex: 2'%>
+      </div>
       <%# <%= f.input :photo_url, as: :file %>
       <%= f.submit class: 'btn btn-ghost'%>
     <% end %>
   </div>
+</div>
 </div>

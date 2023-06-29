@@ -13,6 +13,8 @@ class MeasuresController < ApplicationController
     @prescription = Prescription.find(params[:prescription_id])
     @measure = Measure.new(measure_params)
     @measure.prescription = @prescription
+    # @measurements = []
+    # @measurements << measure.valeur
       if @measure.save!
         redirect_to prescription_measure_path(@prescription, @measure)
       else
