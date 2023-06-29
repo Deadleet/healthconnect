@@ -7,6 +7,7 @@
 #   Character.create(name: "Luke", movie: movies.first)
 PathoPrescription.destroy_all
 FollowUp.destroy_all
+Measure.destroy_all
 Pathologie.destroy_all
 Prescription.destroy_all
 User.destroy_all
@@ -27,6 +28,8 @@ puts 'creating prescription3'
 prescription3 = Prescription.create(title: 'Ordonnance Dermatologie', description: 'traitement infection talon', start_date: Date.new(2023, 02, 20), end_date: Date.new(2023, 02, 28), practician: 'DR House3', user: user1)
 # FOR USER 2
 puts 'prescriptions created!'
+
+measure1 = Measure.create!(title: "Prise de tension", description: "Prendre la tension", start_date: Date.new(2023, 06, 27), end_date: Date.new(2023, 06, 30), day_frequency: 1, hourly_frequency: 3, prescription: prescription1)
 
 puts 'creating pathologie'
 # FOR USER 1

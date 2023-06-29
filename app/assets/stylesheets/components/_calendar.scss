@@ -15,10 +15,6 @@
   transition: background 0.3s ease;
 }
 
-.prescription-calendar:hover {
-  background: #55bc8f;
-  color: white;
-}
 
 .follow-up-calendar {
   color: white;
@@ -28,7 +24,11 @@
   transition: background 0.3s ease;
 }
 
-.follow-up-calendar:hover {
-  background: pink;
+
+.measure-calendar {
   color: white;
+  padding: 8px 24px;
+  border-radius: 4px;
+  background:  royalblue;
+  transition: background 0.3s ease;
 }
