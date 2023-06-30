@@ -1,5 +1,6 @@
 class MeasuresController < ApplicationController
   def index
+    @prescriptions = Prescription.where(user_id: current_user)
     @measures = Measure.all
   end
 
