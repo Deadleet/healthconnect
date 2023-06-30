@@ -1,12 +1,13 @@
 <div class = "container">
-
-<h1 class = "">Index : prescriptions</h1>
-<ul class = "list-group">
-  <% @prescriptions.each do |prescription| %>
-    <li class = "list-group-item">
-      <%= link_to prescription.title, prescription_path(prescription) %>
-    </li>
-  <% end %>
-</ul>
-<p><%= link_to 'Créer une prescription', new_prescription_path, class: "btn-bi" %></p>
+  <h1 class = "">Index : prescriptions</h1>
+  <ul class = "list-group">
+    <% @prescriptions.each do |prescription| %>
+      <% if (Time.now < prescription.end_date && prescription.start_date < Time.now) %>
+        <li class = "list-group-item">
+          <%= link_to prescription.title, prescription_path(prescription) %>
+        </li>
+      <% end %>
+    <% end %>
+  </ul>
+    <p><%= link_to 'Créer une prescription', new_prescription_path, class: "btn-bi" %></p>
 </div>
