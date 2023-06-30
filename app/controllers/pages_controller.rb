@@ -2,6 +2,7 @@ class PagesController < ApplicationController
   skip_before_action :authenticate_user!, only: [ :home ]
 
   def home
+    @prescriptions = Prescription.where(user_id: current_user)
     # start_date = params.fetch(:start_date, Date.today).to_date
     # end_date = params.fetch(:start_date, Date.today).to_date
     # # # PRESCRIPTIONS
