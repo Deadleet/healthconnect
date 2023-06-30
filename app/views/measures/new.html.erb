@@ -1,24 +1,25 @@
 <div class="calendar">
 <div class="background">
   <div class="bg-white rounded p-3 shadow">
-    <h3>Creer une mesure</h3>
+    <h3>Creer un relevé d'automesure</h3>
     <%= simple_form_for [@prescription, @measure], data: { controller: 'flatpickr' } do |f| %>
     <div>
-      <%= f.input :title, placeholder: 'Titre' %>
-      <%= f.input :description, placeholder: 'Description'%>
+      <%= f.input :title, placeholder: 'Titre', label: "Titre" %>
+      <%= f.input :description, placeholder: 'Description', label: "Description"%>
+      <%= f.input :unit, placeholder: 'ex : ml', label: "Unité de mesure"%>
       </div>
 
       <div>
-      <%= f.input :start_date, label: "début", as: :string, input_html: { data: { flatpickr_target: "startTime" } } %>
-      <%= f.input :end_date, label: "au", as: :string, input_html: { data: { flatpickr_target: "endTime" }, id: 'end_time' } %>
+      <%= f.input :start_date, label: "Commence le", as: :string, input_html: { data: { flatpickr_target: "startTime" } }, label: "Commence le" %>
+      <%= f.input :end_date, label: "Fini le", as: :string, input_html: { data: { flatpickr_target: "endTime" }, id: 'end_time', label: "Fini le" } %>
       </div>
 
       <div>
-      <%= f.input :hourly_frequency, placeholder: 'Combien de fois par jour? ex: 4'%>
-      <%= f.input :day_frequency, placeholder: 'Combien de fois par semaine? ex: 2'%>
+      <%= f.input :hourly_frequency, placeholder: 'Combien de fois par jour? ex: 4', label: "Nombre de prise par jour"%>
+      <%= f.input :day_frequency, placeholder: 'Combien de fois par semaine? ex: 2', label: "Nombre de fois par semaine"%>
       </div>
       <%# <%= f.input :photo_url, as: :file %>
-      <%= f.submit class: 'btn btn-primary'%>
+      <%= f.submit class: 'btn btn-primary', value: "Créer mon relevé"%>
     <% end %>
   </div>
 </div>
