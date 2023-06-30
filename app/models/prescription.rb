@@ -6,8 +6,8 @@ class Prescription < ApplicationRecord
 
   validates :title, presence: true, length: { minimum: 6 }
   validates :description, presence: true, length: { maximum: 500 }
-  validates :start_date, presence: true
-  validates :end_date, presence: true
+  # validates :start_date, presence: true
+  # validates :end_date, presence: true
 
   def start_time
     self.end_date

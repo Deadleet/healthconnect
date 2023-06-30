@@ -1,6 +1,6 @@
 <div class="container">
   <% if user_signed_in? %>
-    <h1>Bonjour <%= current_user.first_name%> 👋🏼</h1>
+    <h1>Bonjour ! <%= current_user.first_name%> 👋🏼</h1>
     <div class="medical-file justify-content-center my-5">
       <div class="col-12 col-lg-6">
         <h2 class = "mt-2">Voici les prises de mesure du jour 🩺</h2>
@@ -8,7 +8,7 @@
             <% @prescriptions.each do |prescription| %>
               <% prescription.measures.each do |measure| %>
                 <li class = "list-group-item">
-                  <%= link_to measure.title, prescription_measure_path(prescription, measure) %>
+                  <p><%= link_to measure.title, prescription_measure_path(prescription, measure), style:"text-decoration:none" %></p>
                 </li>
               <% end %>
             <% end %>
@@ -21,12 +21,16 @@
             <% @prescriptions.each do |prescription| %>
               <% prescription.follow_ups.each do |followup| %>
                 <li class = "list-group-item">
-                  <%= link_to followup.title, prescription_follow_up_path(prescription, followup) %>
+                  <p><%= link_to followup.title, prescription_follow_up_path(prescription, followup), style:"text-decoration:none" %></p>
                 </li>
               <% end %>
             <% end %>
           </ul>
       </div>
     </div>
+  <% else %>
+  <div class = "mt-6 container d-flex justify-content-center">
+    <%= link_to "Se connecter", new_user_session_path, class: 'mt-5 btn btn-primary' %>
+  </div>
   <% end %>
 </div>

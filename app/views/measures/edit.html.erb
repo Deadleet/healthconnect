@@ -2,13 +2,14 @@
   <div class="calendar">
 <div class="background">
   <div class="bg-white rounded p-3 shadow">
-    <h3>Modifier une measure</h3>
+    <h3>Modifier un relevé d'automesure</h3>
     <%= simple_form_for @measure, data: { controller: 'flatpickr' } do |f| %>
     <div>
       <%= f.input :title, placeholder: 'Titre' %>
       <%= f.input :description, placeholder: 'Description'%>
+      <%= f.input :unit, placeholder: 'ex : ml', label: "Unité de mesure"%>
       </div>
-      
+
 
       <div>
       <%= f.input :start_date, label: "début", as: :string, input_html: { data: { flatpickr_target: "startTime" } } %>
@@ -20,7 +21,7 @@
       <%= f.input :day_frequency, placeholder: 'Combien de fois par semaine? ex: 2'%>
       </div>
       <%# <%= f.input :photo_url, as: :file %>
-      <%= f.submit class: 'btn btn-ghost'%>
+      <%= f.submit class: 'btn btn-primary', value: "Modifier mon relevé"%>
     <% end %>
   </div>
 </div>
