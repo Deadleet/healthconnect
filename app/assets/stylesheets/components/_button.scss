@@ -14,43 +14,26 @@
 //   background: #EDEBF3;
 // }
 
-.btn-new {
+.btn-bi {
   display: inline-block;
   outline: 0;
   border:0;
   text-decoration: none;
   position: relative;
-  color: #000;
   background: #fff;
   line-height: 30px;
   border-radius: 40px;
-  padding: 20px;
-  font-size: 30px;
-  font-weight: 600;
-  box-shadow: #49516f, #C2AAE6 0px 0px 0px 4px, rgba(0, 0, 0, 0.05) 0px 0px 2px 7px;
+  padding: 5px;
+  font-weight: bold;
+  font-size: large;
+  box-shadow: #49516f -2px -2px 0px 2px, #C2AAE6 0px 0px 0px 4px, rgba(0, 0, 0, 0.05) 0px 0px 2px 7px;
   transition: all 0.2s;
 }
 
-.btn-new:hover{
+.btn-bi:hover{
   box-shadow: #C2AAE6 -2px -2px 0px 2px, #49516F 0px 0px 0px 4px, rgba(0, 0, 0, 0.05) 0px 0px 2px 7px;
   transform: scale(1.01);
 }
-
-// display: inline-block;
-// outline: 0;
-// border:0;
-// cursor: pointer;
-// text-decoration: none;
-// position: relative;
-// color: #000;
-// background: #fff;
-// line-height: 30px;
-// border-radius: 40px;
-// padding: 20px;
-// font-size: 30px;
-// font-weight: 600;
-// box-shadow: rgb(255, 198, 0) -2px -2px 0px 2px, rgb(246, 84, 174) 0px 0px 0px 4px, rgba(0, 0, 0, 0.05) 0px 0px 2px 7px;
-// transition: all 0.2s;
 
 .btn-calendar {
   outline: 0;
