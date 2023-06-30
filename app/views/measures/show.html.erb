@@ -1,6 +1,4 @@
 <div class="container">
-  <h1>Measures#show</h1>
-  <p>Find me in app/views/measures/show.html.erb</p>
 
   <h1><%= @measure.title %></h1>
   <p><%= @measure.description %></p>
@@ -8,12 +6,10 @@
   <p>Debut <%= @measure.start_date %> fin :<%= @measure.end_date %></p>
   <p>Tous les <%= @measure.day_frequency %> jour(s)</p>
   <p><%= @measure.hourly_frequency %> fois par jour</p>
-</div>
 
-<%= link_to "Modifier", edit_measure_path(@measure), class: "btn btn-primary" %>
+  <%= link_to "Modifier", edit_measure_path(@measure), class: "btn btn-primary" %>
 
-<div class = "container">
-  <h4>Mes prises de mesures</h4>
+  <h4 class = "mt-2">Mes prises de mesures</h4>
   <ul class = "list-group">
     <% @measure.measurements.each do |measurement| %>
       <li class = "list-group-item" ><p><%= measurement.created_at %></p>
@@ -24,7 +20,9 @@
       </li>
     <% end %>
   </ul>
-</div>
+
 
 
 <%= link_to "Nouvelle mesure", new_prescription_measure_measurement_path(@prescription, @measure), class: "btn btn-primary" %>
+
+</div>
