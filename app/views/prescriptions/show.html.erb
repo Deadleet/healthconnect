@@ -6,7 +6,7 @@
   <p> Debut : <%= @prescription.start_date %> - Fin : <%= @prescription.end_date %></p>
   <p>Rappel de renouvellement : <%= @prescription.end_date-5 %></p>
 
-  <%= link_to 'Modifier mon ordonnance', edit_prescription_path(@prescription), class: "mb-3 btn btn-primary" %>
+  <%= link_to 'Modifier mon ordonnance', edit_prescription_path(@prescription), class: "mb-3 btn-bi" %>
 </div>
 
 <div class = "container">
@@ -18,7 +18,7 @@
       <% end %>
     </ul>
     <p class = "">
-      <%= link_to 'Nouveau traitement', new_prescription_follow_up_path(@prescription),class: "mt-2 btn btn-primary" %>
+      <%= link_to 'Nouveau traitement', new_prescription_follow_up_path(@prescription),class: "mt-2 btn-bi" %>
     </p>
   </div>
 </div>
@@ -33,7 +33,7 @@
       <% end %>
     </ul>
       <p>
-        <%= link_to 'Créer une mesure', new_prescription_measure_path(@prescription),class: "mt-2 btn btn-primary" %>
+        <%= link_to 'Créer une mesure', new_prescription_measure_path(@prescription),class: "mt-2 btn-bi" %>
       </p>
   </div>
 </div>

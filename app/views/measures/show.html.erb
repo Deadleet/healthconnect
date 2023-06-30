@@ -7,7 +7,7 @@
   <p>Tous les <%= @measure.day_frequency %> jour(s)</p>
   <p><%= @measure.hourly_frequency %> fois par jour</p>
 
-  <%= link_to "Modifier", edit_measure_path(@measure), class: "btn btn-primary" %>
+  <%= link_to "Modifier", edit_measure_path(@measure), class: "btn-bi" %>
 
   <h4 class = "mt-2">Mes prises de mesures</h4>
   <ul class = "list-group">
@@ -15,7 +15,7 @@
       <li class = "list-group-item" ><p><%= measurement.created_at %></p>
         <div class = "d-flex justify-content-between">
           <h4><%= measurement.value %> <%= measurement.measure.unit %></h4>
-          <%= link_to "modifier", edit_prescription_measure_measurement_path(@prescription, @measure, measurement), class: "btn btn-primary"  %>
+          <%= link_to "modifier", edit_prescription_measure_measurement_path(@prescription, @measure, measurement), class: "btn-bi"  %>
         </div>
       </li>
     <% end %>
@@ -23,7 +23,7 @@
 
 
   <div class = "d-flex">
-    <p><%= link_to "Nouvelle mesure", new_prescription_measure_measurement_path(@prescription, @measure), class: "mt-2 btn btn-primary" %></p>
-    <p><%= link_to "Retour à l'ordonnance", prescription_path(@prescription),class: "m-2 btn btn-primary" %></p>
+    <p><%= link_to "Nouvelle mesure", new_prescription_measure_measurement_path(@prescription, @measure), class: "mt-2 btn-bi" %></p>
+    <p><%= link_to "Retour à l'ordonnance", prescription_path(@prescription),class: "m-2 btn-bi" %></p>
   </div>
 </div>
