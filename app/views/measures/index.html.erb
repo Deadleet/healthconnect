@@ -1,0 +1,24 @@
+<h1 class = "m-3">Suivi des mesures</h1>
+
+
+<div class="row">
+  <% @prescriptions.each do |prescription| %>
+    <% prescription.measures.each do |measure| %>
+      <div class="col-6 mb-2 p-1">
+        <div class="card">
+          <div class="card-body">
+            <p class="card-title">
+              <strong><%= measure.title %></strong>
+            </p>
+
+            <p class="card-text">
+              <%= measure.description %>
+            </p>
+
+            <%= link_to "Détails", prescription_measure_path(prescription, measure), class: "btn btn-primary"%>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  <% end %>
+</div>
