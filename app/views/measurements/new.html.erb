@@ -1,13 +1,13 @@
 
-<div class="calendar">
-  <div class="background">
+ <div class="edit-form">
+    <div class="container form">
     <div class="bg-white rounded p-3 shadow">
       <h3>Creer un relevé d'auto-mesure</h3>
         <%= simple_form_for [@prescription, @measure, @measurement] do |f| %>
           <div>
             <%= f.input :value, placeholder: 'Valeur'%>
         </div>
-        <%= f.submit class: 'btn btn-primary'%>
+        <%= f.submit class: 'btn btn-primary', value: 'Valider'%>
       <% end %>
     </div>
   </div>

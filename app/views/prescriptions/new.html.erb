@@ -1,21 +1,21 @@
 
-   <div class="calendar">
-    <div class="background">
+   <div class="edit-form">
+    <div class="container form">
     <div class="bg-white rounded p-3 shadow">
      <h3>Creer une Ordonnance</h3>
       <%= simple_form_for @prescription, data: { controller: 'flatpickr' } do |f| %>
           <div>
-          <%= f.input :title, placeholder: 'Titre' %>
+          <%= f.input :title, placeholder: 'Titre',value: "Titre" %>
           <%= f.input :description, placeholder: 'Description'%>
           </div>
 
           <div>
-          <%= f.input :start_date, label: "début", as: :string, input_html: { data: { flatpickr_target: "startTime" } } %>
-          <%= f.input :end_date, label: "au", as: :string, input_html: { data: { flatpickr_target: "endTime" }, id: 'end_time' } %>
+          <%= f.input :start_date, label: "début", as: :string, input_html: { data: { flatpickr_target: "startTime" } },value: "Commence le" %>
+          <%= f.input :end_date, label: "au", as: :string, input_html: { data: { flatpickr_target: "endTime" }, id: 'end_time' },value: "Fini le" %>
          </div>
 
           <div>
-          <%= f.input :practician, placeholder: 'Le nom du Practicien'%>
+          <%= f.input :practician, placeholder: 'Le nom du Practicien',value: "Praticien"%>
           <%= f.submit 'Creer',class: 'btn btn-primary' %>
           </div>
 
