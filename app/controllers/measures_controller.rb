@@ -20,7 +20,7 @@ class MeasuresController < ApplicationController
     # @measurements = []
     # @measurements << measure.valeur
       if @measure.save!
-        redirect_to prescription_measure_path(@prescription, @measure)
+        redirect_to prescription_measure_path(@measure.prescription, @measure)
       else
         render :new, status: :unprocessable_entity
       end

@@ -32,7 +32,7 @@ class FollowUpsController < ApplicationController
   def update
     @followup = FollowUp.find(params[:id])
     @followup.update(followup_params)
-    redirect_to follow_up_path(@followup)
+    redirect_to prescription_follow_up_path(@followup.prescription, @followup)
   end
 
   private
