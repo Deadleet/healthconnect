@@ -1,2 +1,14 @@
-<h1>Pathologies#index</h1>
-<p>Find me in app/views/pathologies/index.html.erb</p>
+<h1>Pathologies</h1>
+
+
+  <h4 class = "mt-2">Mes pathologies</h4>
+  <ul class = "list-group">
+    <% @pathologies.each do |pathologie| %>
+      <li class = "list-group-item" ><p><%= pathologie.created_at %></p>
+        <div class = "d-flex justify-content-between">
+          <h4><%= pathologie.name %> <%= pathologie.description %></h4>
+          <%= link_to "modifier", edit_prescription_measure_measurement_path(@prescription, @measure, measurement), class: "btn btn-primary"  %>
+        </div>
+      </li>
+    <% end %>
+  </ul>
