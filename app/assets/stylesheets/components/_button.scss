@@ -1,32 +1,38 @@
-// .btn-footer {
-//   border-radius: 150px;
-//   background: #D3C3E6;
-//   box-shadow:  46px 46px 49px #bcaecd,
-//               -46px -46px 49px #ead8ff;
+// .btn-test {
+//   width: 220px;
+//   font-size: 16px;
+//   line-height: 20px;
+//   font-weight: 150;
+//   text-align:center;
+//   border-radius: 8px;
+//   padding: 1px 23px;
+//   border: 1px solid #49516f;
+//   background: #fff;
+//   color: #49516f;
+// }
+// .btn-test:hover {
+//   background: #EDEBF3;
 // }
 
-// .btn-footer:hover {
-//   border-radius: 150px;
-//   background: #D3C3E6;
-//   box-shadow: inset 25px 25px 49px #bcaecd,
-//               inset -25px -25px 49px #ead8ff;
-// }
-
-
-.btn-test {
-  width: 220px;
-  font-size: 16px;
-  line-height: 20px;
-  font-weight: 150;
-  text-align:center;
-  border-radius: 8px;
-  padding: 1px 23px;
-  border: 1px solid #49516f;
+.btn-bi {
+  display: inline-block;
+  outline: 0;
+  border:0;
+  text-decoration: none;
+  position: relative;
   background: #fff;
-  color: #49516f;
+  line-height: 30px;
+  border-radius: 40px;
+  padding: 5px;
+  font-weight: bold;
+  font-size: large;
+  box-shadow: #49516f -2px -2px 0px 2px, #C2AAE6 0px 0px 0px 4px, rgba(0, 0, 0, 0.05) 0px 0px 2px 7px;
+  transition: all 0.2s;
 }
-.btn-test:hover {
-  background: #EDEBF3;
+
+.btn-bi:hover{
+  box-shadow: #C2AAE6 -2px -2px 0px 2px, #49516F 0px 0px 0px 4px, rgba(0, 0, 0, 0.05) 0px 0px 2px 7px;
+  transform: scale(1.01);
 }
 
 .btn-calendar {
