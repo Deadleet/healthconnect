@@ -3,13 +3,31 @@
     <h1>Bonjour <%= current_user.first_name%> 👋🏼</h1>
     <div class="medical-file justify-content-center my-5">
       <div class="col-12 col-lg-6">
-        <h2>Voici ton traitemant du jour 💊</h2>
-          <ul>
-            <p>Traitement 1</p>
-            <p>Automesure 1</p>
-            <p>Rappel 1</p>
+        <h2 class = "mt-2">Voici mes traitemant du jour 💊</h2>
+          <ul class = "list-group">
+            <% @prescriptions.each do |prescription| %>
+              <% prescription.measures.each do |measure| %>
+                <li class = "list-group-item">
+                  <%= measure.title %>
+                </li>
+              <% end %>
+            <% end %>
           </ul>
       </div>
+
+      <div class="col-12 col-lg-6">
+        <h2 class = "mt-2">Voici les prises de mesure du jour 🩺</h2>
+          <ul class = "list-group">
+            <% @prescriptions.each do |prescription| %>
+              <% prescription.follow_ups.each do |followup| %>
+                <li class = "list-group-item">
+                  <%= followup.title %>
+                </li>
+              <% end %>
+            <% end %>
+          </ul>
+      </div>
+
     </div>
   <% end %>
 </div>
