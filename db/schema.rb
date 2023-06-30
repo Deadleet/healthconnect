@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_06_30_083507) do
+ActiveRecord::Schema[7.0].define(version: 2023_06_30_143402) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -71,7 +71,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_06_30_083507) do
   end
 
   create_table "measurements", force: :cascade do |t|
-    t.decimal "value"
+    t.string "value"
     t.string "unit"
     t.bigint "measure_id", null: false
     t.datetime "created_at", null: false
