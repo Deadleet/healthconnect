@@ -1,4 +1,6 @@
-<h1>Index : prescriptions</h1>
+<div class = "container">
+
+<h1 class = "">Index : prescriptions</h1>
 <ul class = "list-group">
   <% @prescriptions.each do |prescription| %>
     <li class = "list-group-item">
@@ -6,4 +8,5 @@
     </li>
   <% end %>
 </ul>
-<p><%= link_to 'Créer une prescription', new_prescription_path, class: "btn btn-primary" %></p>
+<p><%= link_to 'Créer une prescription', new_prescription_path, class: "mt-2 btn btn-primary" %></p>
+</div>
