@@ -33,7 +33,7 @@ class MeasuresController < ApplicationController
   def update
     @measure = Measure.find(params[:id])
     @measure.update(measure_params)
-    redirect_to measure_path(@measure)
+    redirect_to prescription_measure_path(@measure)
   end
 
   private
