@@ -4,16 +4,11 @@
     <div class="medical-file justify-content-center my-5">
       <div class="col-12 col-lg-6">
         <h2 class = "mt-2">Voici les prises de mesure du jour 🩺</h2>
-          <ul class = "list-group-item-modif">
+          <ul class = "list-group">
             <% @prescriptions.each do |prescription| %>
               <% prescription.measures.each do |measure| %>
-<<<<<<< HEAD
-                <li class = "list-group-item-modif">
-                  <%= link_to measure.title, prescription_measure_path(prescription, measure) %>
-=======
                 <li class = "list-group-item">
                   <p><%= link_to measure.title, prescription_measure_path(prescription, measure), style:"text-decoration:none" %></p>
->>>>>>> a12fc6108c49dfb1c8d6b095ed12ab7cecb1aec1
                 </li>
               <% end %>
             <% end %>
@@ -22,16 +17,11 @@
 
       <div class="col-12 col-lg-6">
         <h2 class = "mt-2">Voici mes traitements du jour 💊</h2>
-          <ul class = "list-group-item-modif">
+          <ul class = "list-group">
             <% @prescriptions.each do |prescription| %>
               <% prescription.follow_ups.each do |followup| %>
-<<<<<<< HEAD
-                <li class = "list-group-item-modif">
-                  <%= link_to followup.title, prescription_follow_up_path(prescription, followup) %>
-=======
                 <li class = "list-group-item">
                   <p><%= link_to followup.title, prescription_follow_up_path(prescription, followup), style:"text-decoration:none" %></p>
->>>>>>> a12fc6108c49dfb1c8d6b095ed12ab7cecb1aec1
                 </li>
               <% end %>
             <% end %>
