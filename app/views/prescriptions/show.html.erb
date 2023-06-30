@@ -1,36 +1,39 @@
-<div class="container">
+
+<div class = "container">
   <h1> <%= @prescription.title %> </h1>
   <h4><%= @prescription.practician %></h4>
   <p><%= @prescription.description %></p>
   <p> Debut : <%= @prescription.start_date %> - Fin : <%= @prescription.end_date %></p>
-  <p>Rappel de renouvellement d'ordonnance prévu le : <%= @prescription.end_date-5 %></p>
+  <p>Rappel de renouvellement : <%= @prescription.end_date-5 %></p>
 
+  <%= link_to 'Modifier mon ordonnance', edit_prescription_path(@prescription), class: "mb-3 btn btn-primary" %>
+</div>
 
-  <%= link_to 'Modifier mon ordonnance', edit_prescription_path(@prescription), class: "btn btn-primary" %>
-
-
-<h2 class = "container">Mes traitements</h2>
+<div class = "container">
+  <h2 class = "">Mes traitements</h2>
   <div>
     <ul class = "list-group">
       <% @prescription.follow_ups.each do |f| %>
         <li class = "list-group-item"><%= link_to f.title, prescription_follow_up_path(@prescription,f) %></li>
       <% end %>
     </ul>
-    <p class = "container">
-      <%= link_to 'Créer un traitement', new_prescription_follow_up_path(@prescription),class: "btn btn-primary" %>
+    <p class = "">
+      <%= link_to 'Nouveau traitement', new_prescription_follow_up_path(@prescription),class: "mt-2 btn btn-primary" %>
     </p>
   </div>
+</div>
 
+<div class = "container">
+  <h2 class = "">Mes mesures</h2>
 
-<h2 class = "container">Mes mesures</h2>
   <div>
-  <ul class = "list-group">
-    <% @prescription.measures.each do |m| %>
-      <li class = "list-group-item"><%= link_to m.title, prescription_measure_path(@prescription,m)  %></li>
-    <% end %>
-  </ul>
-    <p class = "container">
-      <%= link_to 'Créer une mesure', new_prescription_measure_path(@prescription),class: "btn btn-primary" %>
-    </p>
+    <ul class = "list-group">
+      <% @prescription.measures.each do |m| %>
+        <li class = "list-group-item"><%= link_to m.title, prescription_measure_path(@prescription,m)  %></li>
+      <% end %>
+    </ul>
+      <p>
+        <%= link_to 'Créer une mesure', new_prescription_measure_path(@prescription),class: "mt-2 btn btn-primary" %>
+      </p>
   </div>
 </div>
