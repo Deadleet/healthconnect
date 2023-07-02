@@ -18,19 +18,21 @@ puts 'User created!'
 
 puts 'creating prescription1'
 # FOR USER 1
-prescription1 = Prescription.create(title: 'Ordonnance Cardio', description: 'pour mon hypertension', start_date: Date.new(2023, 02, 12), end_date: Date.new(2023, 03, 18), practician: 'DR House', user: user1)
+prescription1 = Prescription.create(title: 'Ordonnance Cardio', description: 'pour mon hypertension', start_date: Date.new(2023, 07, 02), end_date: Date.new(2023, 07, 30), practician: 'DR House', user: user1)
 puts 'creating prescription2'
-prescription2 = Prescription.create(title: 'Ordonnance Poulmonaire', description: "pour mes crises d'asthme", start_date: Date.new(2023, 03, 13), end_date: Date.new(2023, 03, 19), practician: 'DR House2', user: user1)
+prescription2 = Prescription.create(title: 'Ordonnance Endocrinologue', description: "pour mon diabete", start_date: Date.new(2023, 06, 13), end_date: Date.new(2023, 07, 19), practician: 'DR House2', user: user1)
 puts 'creating prescription3'
-prescription3 = Prescription.create(title: 'Ordonnance Dermatologie', description: 'traitement infection talon', start_date: Date.new(2023, 02, 20), end_date: Date.new(2023, 02, 28), practician: 'DR House3', user: user1)
+prescription3 = Prescription.create(title: 'Ordonnance Poulmonaire', description: "pour mes crises d'asthme", start_date: Date.new(2023, 06, 13), end_date: Date.new(2023, 07, 19), practician: 'DR House2', user: user1)
+puts 'creating prescription4'
+prescription4 = Prescription.create(title: 'Ordonnance Dermatologie', description: 'traitement infection talon', start_date: Date.new(2023, 02, 20), end_date: Date.new(2023, 02, 28), practician: 'DR House3', user: user1)
 # FOR USER 2
 puts 'prescriptions created!'
 
 puts 'creating 2 measures for user 1 et prescription 1'
 # FOR USER 1 ET PRESCRIPTION 1
-measure1 = Measure.create!(title: "Prise de tension", description: "Prendre la tension", start_date: Date.new(2023, 06, 27), end_date: Date.new(2023, 06, 30), day_frequency: 1, hourly_frequency: 3, prescription: prescription1)
+measure1 = Measure.create!(title: "Prise de tension", description: "Prendre la tension", start_date: Date.new(2023, 07, 02), end_date: Date.new(2023, 07, 30), day_frequency: 1, hourly_frequency: 3, prescription: prescription1)
 puts 'creating measure2'
-measure1 = Measure.create!(title: "Glycémie", description: "2 hrs après le repas", start_date: Date.new(2023, 06, 27), end_date: Date.new(2023, 06, 30), day_frequency: 1, hourly_frequency: 3, prescription: prescription1)
+measure1 = Measure.create!(title: "Glycémie", description: "2 hrs après le repas", start_date: Date.new(2023, 07, 02), end_date: Date.new(2023, 07, 30), day_frequency: 1, hourly_frequency: 3, prescription: prescription2)
 puts 'measures created!'
 
 
@@ -55,7 +57,7 @@ follow_up1 = FollowUp.create!(title: 'Medicament Aldactone ', description: 'A pr
 follow_up2 = FollowUp.create!(title: 'Medicament warfarine', description: 'A prendre le soir', start_date: Date.new(2023, 02, 04), end_date: Date.new(2023, 02, 20), hourly_frequency: 3, day_frequency: 1, prescription: prescription1)
 
 #POUR PRESCRIPTION 2
-follow_up3 = FollowUp.create(title: 'Pompe cortico', description: "A l'effort", start_date: '2023/03/11', end_date: '2023/03/17', hourly_frequency: 3, day_frequency: 2, prescription: prescription2)
+follow_up3 = FollowUp.create(title: 'Pompe cortico', description: "A l'effort", start_date: '2023/03/11', end_date: '2023/03/17', hourly_frequency: 3, day_frequency: 2, prescription: prescription3)
 puts 'done'
 
 
