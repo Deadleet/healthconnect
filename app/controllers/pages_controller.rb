@@ -24,4 +24,9 @@ class PagesController < ApplicationController
   def historical
     @prescriptions = Prescription.where(user_id: current_user)
   end
+
+  def profil
+    @user = current_user
+    @pathologies = Pathologie.where(user_id: current_user)
+  end
 end
