@@ -1,0 +1,24 @@
+<div class = "container">
+  <h1>Votre profil </h1>
+  <p><%= @user.first_name %> <%= @user.last_name %></p>
+  <p>Age : 38 ans</p>
+  <p>Sexe : Femme </p>
+  <p>Adresse : 1 rue de la paix, 75000 Paris</p>
+  <p>Numéro de téléphone : 06 12 34 56 78</p>
+  <p>Adresse mail : <%= @user.email %></p>
+  <p>Numéro de sécurité sociale : 1 38 05 12 345 678 90</p>
+  <p>Numéro de carte vitale : 1 38 05 12 345 678 90</p>
+  <p>Numéro de carte mutuelle : 1 38 05 12 345 678 90</p>
+  <p>Numéro de carte de groupe sanguin : 1 38 05 12 345 678 90</p>
+  <p>Donneur d'organe : Oui</p>
+  <ul class = "list-group">
+    <% @pathologies.each do |pathologie| %>
+      <li class = "list-group-item border">
+        <p>Pathologie : <%= pathologie.name %></p>
+        <p>Description : <%= pathologie.description %></p>
+      </li>
+    <% end %>
+  </ul>
+
+
+</div>
