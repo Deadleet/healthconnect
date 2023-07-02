@@ -1,14 +1,15 @@
 <div class="container">
   <% if user_signed_in? %>
     <h1>Bonjour ! <%= current_user.first_name%> 👋🏼</h1>
-    <div class="medical-file justify-content-center my-5">
-      <div class="col-12 col-lg-6">
-        <h2 class = "mt-2">Voici les prises de mesure du jour 🩺</h2>
+
+    <div class="medical-file justify-content-center my-5 rounded bg-transparent">
+      <div class="mb-2 col-12 col-lg-6 rounded">
+        <h2 class = "mt-2 my-2"> Mesure du jour 🩺</h2>
           <ul class = "list-group">
             <% @prescriptions.each do |prescription| %>
               <% prescription.measures.each do |measure| %>
                 <% if ((Time.now < measure.end_date && measure.start_date < Time.now)) %>
-                  <li class = "list-group-item">
+                  <li class = "list-group-item rounded m-1 bg-transparent border border-primary d-flex justify-content-center pt-4">
                     <p><%= link_to measure.title, prescription_measure_path(prescription, measure), style:"text-decoration:none" %></p>
                   </li>
                 <% end %>
@@ -17,13 +18,13 @@
           </ul>
       </div>
 
-      <div class="col-12 col-lg-6">
-        <h2 class = "mt-2">Voici mes traitements du jour 💊</h2>
+      <div class="mb-2 col-12 col-lg-6 rounded">
+        <h2 class = "mt-2">Traitements du jour 💊</h2>
           <ul class = "list-group">
             <% @prescriptions.each do |prescription| %>
               <% prescription.follow_ups.each do |followup| %>
                 <% if ((Time.now < followup.end_date && followup.start_date < Time.now)) %>
-                  <li class = "list-group-item">
+                  <li class = "list-group-item rounded m-1 bg-transparent border border-primary d-flex justify-content-center pt-4">
                     <p><%= link_to followup.title, prescription_follow_up_path(prescription, followup), style:"text-decoration:none" %></p>
                   </li>
                 <% end %>
@@ -32,6 +33,7 @@
           </ul>
       </div>
     </div>
+
   <% else %>
   <div class = "mt-6 container d-flex justify-content-center">
     <%= link_to "Se connecter", new_user_session_path, class: 'mt-5 btn btn-primary' %>
