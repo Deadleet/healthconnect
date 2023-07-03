@@ -7,11 +7,12 @@
 
   <%= link_to 'Modifier mon ordonnance', edit_prescription_path(@prescription), class: "mb-3 bi" %>
 
-  <div class="d-flex justify-content-between">
+  <div class="d-flex align-items-center justify-content-between col-8">
     <h2>Mes traitements</h2>
-    <%= link_to '+', new_prescription_follow_up_path(@prescription),class: "mt-1 bi" %>
+    <%= link_to new_prescription_follow_up_path(@prescription), class: "plus" do %>
+      <i class="fa-solid fa-arrow-right" style="color: #49516F;"></i>
+    <% end %>
   </div>
-
 
   <div>
     <ul class = "list-group">
@@ -23,9 +24,11 @@
     </p>
   </div>
 
-  <div class = "d-flex justify-content-between">
+  <div class = "d-flex align-items-center justify-content-between col-8">
     <h2>Mes mesures</h2>
-    <p><%= link_to '+', new_prescription_measure_path(@prescription),class: "mt-1 bi" %></p>
+    <%= link_to new_prescription_measure_path(@prescription), class: "plus" do %>
+      <i class="fa-solid fa-arrow-right" style="color: #49516F;"></i>
+    <% end %>
   </div>
   <div>
     <ul class = "list-group">
