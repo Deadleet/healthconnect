@@ -4,7 +4,12 @@
   <p><%= @measure.description %></p>
   <p><%= @measure.valeur %> Unité de mesure : <%= @measure.unit %></p>
   <p>Debut <%= @measure.start_date %> fin :<%= @measure.end_date %></p>
-  <p>Tous les <%= @measure.day_frequency %> jour(s)</p>
+  <% if @measure.day_frequency != 1%>
+    <p>Tous les <%= @measure.day_frequency %> jour(s)</p>
+  <% else %>
+    <p>Tous les jours</p>
+  <% end %>
+
   <p><%= @measure.hourly_frequency %> fois par jour</p>
 
   <%= link_to "Modifier", edit_measure_path(@measure), class: "btn-bi" %>
