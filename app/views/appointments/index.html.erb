@@ -28,6 +28,30 @@
   <% end %>
 
   <p>Légende :</p>
+  <div class="d-flex">
+    <div class = "prescription-calendar">
+    </div>
+    <p>: Prescription</p>
+  </div>
+
+  <div class="d-flex">
+    <div class = "follow-up-calendar">
+    </div>
+    <p>: Traitement</p>
+  </div>
+
+  <div class="d-flex">
+    <div class = "measure-calendar">
+    </div>
+    <p>: Auto-relevé</p>
+  </div>
+
+  <div class="d-flex">
+    <div class = "appointment-calendar">
+    </div>
+    <p>: Rendez-vous</p>
+  </div>
+
 
   <p><%= link_to "Ajouter un rdv", new_appointment_path, class: "btn-bi"%></p>
   <%# <p><%= link_to "Modifier un rdv", edit_appointment_path, class: "btn-bi"%>
