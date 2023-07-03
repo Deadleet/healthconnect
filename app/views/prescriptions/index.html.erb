@@ -4,11 +4,13 @@
     <% @prescriptions.each do |prescription| %>
       <% if (Date.today <= prescription.end_date && prescription.start_date <= Date.today) %>
         <div class = "card-title h2">
-        <%= link_to prescription.title, prescription_path(prescription) %>
+          <%= link_to prescription.title, prescription_path(prescription) %>
         </div>
-        <div class = "card-description" p>
-        <ul>Description:<%= prescription.description %></ul>
-        <ul>Expiration:<%= prescription.end_date %></ul>
+        <div class = "card-description">
+          <ul>
+            <li>Description:<%= prescription.description %></li>
+            <li>Expiration:<%= prescription.end_date %></li>
+          </ul>
         </div>
         <% else %>
         <%# <div>
