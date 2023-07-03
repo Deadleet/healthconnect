@@ -10,6 +10,7 @@ export default class extends Controller {
   connect() {
     console.log('hello')
     flatpickr(this.startTimeTarget, {
+      disableMobile: "true",
       enableTime: true,
       // Provide an id for the plugin to work
       plugins: [new rangePlugin({ input: "#end_time"})]})
