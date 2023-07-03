@@ -6,26 +6,28 @@
       <% if event.is_a?(Prescription) %>
         <div class="prescription-calendar">
           <%# <%= event.title %>
-          <p>P</p>
+          <p></p>
         </div>
       <% elsif event.is_a?(FollowUp) %>
         <div class="follow-up-calendar">
           <%# <%= event.title.first %>
-          <p>F</p>
+          <p></p>
         </div>
       <% elsif event.is_a?(Measure) %>
         <div class="measure-calendar">
           <%# <%= event.title %>
-          <p>M</p>
+          <p></p>
         </div>
          <% elsif event.is_a?(Appointment) %>
          <div class="appointment-calendar">
           <%# <%= event.title %>
-          <p>A</p>
+          <p></p>
          </div>
       <% end %>
     <% end %>
   <% end %>
+
+  <p>Légende :</p>
 
   <p><%= link_to "Ajouter un rdv", new_appointment_path, class: "btn-bi"%></p>
   <%# <p><%= link_to "Modifier un rdv", edit_appointment_path, class: "btn-bi"%>
