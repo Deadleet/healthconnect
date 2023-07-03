@@ -2,28 +2,31 @@
 
   <h1><%= @measure.title %></h1>
   <p><%= @measure.description %></p>
-  <p><%= @measure.valeur %> Unité de mesure : <%= @measure.unit %></p>
-  <p>Debut <%= @measure.start_date %> fin :<%= @measure.end_date %></p>
-  <p>Tous les <%= @measure.day_frequency %> jour(s)</p>
-  <p><%= @measure.hourly_frequency %> fois par jour</p>
+    <p>Votre calendrier de mesure commence le <strong><%= @measure.start_date %> </strong> et se termine le : <strong><%= @measure.end_date %></strong></p>
 
-  <%= link_to "Modifier", edit_measure_path(@measure), class: "btn btn-primary" %>
+  <p><%= @measure.valeur %> Unité de mesure : <strong><%= @measure.unit %></strong>.</p>
+  <% if @measure.day_frequency != 1%>
+    <p>La mesure sera effectuée tous les <strong><%= @measure.day_frequency %></strong> jours à une fréquence de <strong><%= @measure.hourly_frequency %> fois</strong> par jour.</p>
+  <% else %>
+    <p>La mesure sera effectuée <strong>tous les jours</strong> à une fréquence de  <strong><%= @measure.hourly_frequency %> fois</strong> par jour.</p>
+  <% end %>
 
-  <h4 class = "mt-2">Mes prises de mesures</h4>
+<div class ="d-flex justify-content-around">
+  <%= link_to "Modifier le recapitulatif", edit_measure_path(@measure), class: "btn-bi" %>
+  <%= link_to "Retour à l'ordonnance", prescription_path(@prescription),class: "btn-bi" %>
+</div>
+  <div class ="d-flex">
+    <h4 class = "mt-2 pt-2">Mes mesures</h4>
+    <%= link_to " + ", new_prescription_measure_measurement_path(@prescription, @measure), class: "mt-2 btn-bi m-3" %>
+  </div>
   <ul class = "list-group">
     <% @measure.measurements.each do |measurement| %>
-      <li class = "list-group-item" ><p><%= measurement.created_at %></p>
+      <li class = "list-group-item" ><p>Mesure faite le : <%= measurement.created_at %></p>
         <div class = "d-flex justify-content-between">
-          <h4><%= measurement.value %> <%= measurement.measure.unit %></h4>
-          <%= link_to "modifier", edit_prescription_measure_measurement_path(@prescription, @measure, measurement), class: "btn btn-primary"  %>
+          <h4 class = "mt-5"><%= measurement.value %> <%= measurement.measure.unit %></h4>
+          <%= link_to "Modifier", edit_prescription_measure_measurement_path(@prescription, @measure, measurement), class: "btn-bi"  %>
         </div>
       </li>
     <% end %>
   </ul>
-
-
-  <div class = "d-flex">
-    <p><%= link_to "Nouvelle mesure", new_prescription_measure_measurement_path(@prescription, @measure), class: "mt-2 btn-bi" %></p>
-    <p><%= link_to "Retour à l'ordonnance", prescription_path(@prescription),class: "m-2 btn-bi" %></p>
-  </div>
 </div>
