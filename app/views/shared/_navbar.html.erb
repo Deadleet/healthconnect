@@ -1,24 +1,15 @@
 <nav class="navi">
  <div class="navbar-items px-2">
-  <div class="titre">
     <a href=javascript:history.go(-1)><i class="fa-solid fa-chevron-left" style="color: #49516F;"></i></a>
-    <%= link_to "#", class: "navbar-brand" do %>
-      <h1 id="navbar-logo">HealthConnect</h1>
+  <div class="titre">
+    <%= link_to root_path, class: "navbar-brand" do %>
+      <%= cl_image_tag("https://res.cloudinary.com/dubgne8f0/image/upload/v1688389033/Union_eb810v.png")%>
     <% end %>
-    <div class="onglets">
-      <ul class="nav-links">
-        <input type="checkbox" id="checkbox_toggle" />
-        <label for="checkbox_toggle" class="hamburger">&#9776;</label>
-        <div class="menu">
-          <li> <%= link_to 'Profil', profil_path %></li>
-          <li> <%= link_to 'Pathologies', pathologies_path %></li>
-          <li><%= link_to "Suivi Médical", prescriptions_path%></li>
-          <li><%= link_to 'Automesure', measures_path %></li>
-          <li><%= link_to 'Historique', historical_path %></li>
-          <li><%= link_to 'Log out', "#", class: "dropdown-item", data: {turbo_method: :delete}  %></li>
-        </div>
-      </ul>
-    </div>
+  </div>
+  <div class="log-out-button">
+    <%= link_to "/users/sign_out", class: "dropdown-item", data: {turbo_method: :delete} do  %>
+        <i class="fa-solid fa-user-slash"></i>
+    <% end %>
   </div>
  </div>
 </nav>

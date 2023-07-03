@@ -66,7 +66,7 @@ measurement1 = Measurement.create!(value: "140/90", unit: "mmHg", measure: measu
 measurement2 = Measurement.create!(value: "150/90", unit: "mmHg", measure: measure1)
 puts "2 measurements created!"
 
-appointment1 = Appointment.create!(title: 'Dentiste', appointment_date: Date.new(2023, 03, 11), appointment_time: Time.now, address: "Place de l'ecureuil", user: user1, practician: user5)
+appointment1 = Appointment.create!(title: 'Dentiste', appointment_date: Date.new(2023, 03, 11), appointment_time: Time.now, address: "Place de l'ecureuil", user: user1)
 puts 'done'
 
 

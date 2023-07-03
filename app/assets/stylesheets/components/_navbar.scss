@@ -6,6 +6,8 @@
   width: 100%;
   display: flex;
   justify-content: space-around;
+  min-height: 7vh;
+  align-items: center;
 }
 
 .navi p{
@@ -22,69 +24,9 @@
 }
 
 .titre {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  column-gap: 10px;
-  align-items: center;
-  justify-content: center;
+  margin-left: 10px;
 }
 
-.onglets {
-  display: flex;
-  justify-content: space-around;
-}
-
-.menu {
-display: flex;
-gap: 1em;
-font-size: 18px;
-}
-
-.menu li {
-padding: 5px 14px;
-}
-
-.nav-links a:hover {
-color: black;
-text-decoration: none;
-}
-
-.services {
-position: relative;
-}
-.dropdown {
-background-color: whitesmoke;
-padding: 1em 0;
-position: absolute;
-display: none;
-border-radius: 8px;
-top: 35px;
-}
-.dropdown li + li {
-margin-top: 10px;
-}
-.dropdown li {
-padding: 0.5em 1em;
-width: 8em;
-text-align: center;
-}
-.dropdown li:hover {
-background-color: white;
-}
-.nav-links a:hover {
-color: black;
-text-decoration: none;
-}
-
-input[type=checkbox]{
-display: none;
-}
-.hamburger {
-display: none;
-font-size: 30px;
-user-select: none;
-margin-top: 10px;
-}
 
 @media (max-width: 1076px) {
   .navbar-items {
@@ -92,31 +34,6 @@ margin-top: 10px;
     justify-content: space-between;
     width: 100%;
    }
-  .menu {
-    display:none;
-    position: absolute;
-    background-color: whitesmoke;
-    right: 0;
-    left: 0;
-    text-align: center;
-    padding: 16px 0;
-  }
-  .menu li:hover {
-    display: inline-block;
-    background-color: white;
-    transition: 0.3s ease;
-  }
-  .menu li + li {
-    margin-top: 12px;
-  }
-  input[type=checkbox]:checked ~ .menu{
-    display: block;
-  }
-  .hamburger {
-    margin-bottom: 0;
-    display: block;
-    text-align: center;
-  }
   .navbar p{
     display: contents;
     font-family: Arial, Helvetica, sans-serif;
@@ -132,4 +49,14 @@ margin-top: 10px;
   .navbar-items {
     display: flex;
    }
+}
+
+
+.fa-user-slash {
+  padding: 10px;
+}
+
+.fa-chevron-left {
+  font-style: 20px;
+  margin-top: 10px;
 }
