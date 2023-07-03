@@ -1,6 +1,6 @@
 .simple-calendar {
   table {
-    min-height: 80vh;
+    // min-height: 80vh;
   }
   .today {
     background-color: #F2EEFF;
@@ -9,7 +9,7 @@
 
 .prescription-calendar {
   color: white;
-  padding: 8px 24px;
+  // padding: 8px 24px;
   border-radius: 4px;
   background: #129e5f;
   transition: background 0.3s ease;
@@ -18,7 +18,7 @@
 
 .follow-up-calendar {
   color: white;
-  padding: 8px 24px;
+  // padding: 8px 24px;
   border-radius: 4px;
   background: rgb(104, 62, 96);
   transition: background 0.3s ease;
@@ -27,7 +27,7 @@
 
 .measure-calendar {
   color: white;
-  padding: 8px 24px;
+  // padding: 8px 24px;
   border-radius: 4px;
   background:  royalblue;
   transition: background 0.3s ease;
@@ -36,7 +36,7 @@
 
 .appointment-calendar {
   color: white;
-  padding: 8px 24px;
+  // padding: 8px 24px;
   border-radius: 4px;
   background:  rgb(224, 131, 24);
   transition: background 0.3s ease;
@@ -44,17 +44,17 @@
 
 
 .prev-month {
-  background-color: #C0BAC8 !important;
+  background-color: #d8c2f6 !important;
 }
 
 .future {
-  background-color: #C0BAC8 !important;
+  background-color: #b6f2ed !important;
 }
 
 .current-month {
-  background-color: #F2EEFF !important;
+  background-color: #aeedec !important;
 }
 
 .today {
-  background-color: #E3DBFC !important;
+  background-color: #87e96e !important;
 }
