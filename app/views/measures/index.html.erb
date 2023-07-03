@@ -3,23 +3,17 @@
   <h1 class = "m-3">Suivi des mesures</h1>
 
       <% @prescriptions.each do |prescription| %>
-
-          <% prescription.measures.each do |measure| %>
+        <% prescription.measures.each do |measure| %>
+          <%= link_to(prescription_measure_path(prescription, measure)) do %>
             <div class="measures">
-            <div class="measure-title">
-              <strong><%= measure.title %></strong>
+              <div class="measure-title">
+                <strong><%= measure.title %></strong>
+              </div>
+
             </div>
-
-            <div class="measure-description">
-              <%= measure.description %>
-            </div>
-
-            <%= link_to "Détails", prescription_measure_path(prescription, measure), class: "btn-bi"%>
-
-
           <% end %>
-          </div>
         <% end %>
+      <% end %>
 
 
 </div>
