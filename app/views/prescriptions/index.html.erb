@@ -1,14 +1,14 @@
 <div class = "container">
   <h1 class = "">Vos prescriptions</h1>
-  <ul class = "card-product">
+  <ul class = "measures" style = "padding-left: 0px">
     <% @prescriptions.each do |prescription| %>
       <% if (Date.today <= prescription.end_date && prescription.start_date <= Date.today) %>
-        <div class = "card-title h2">
-        <%= link_to prescription.title, prescription_path(prescription) %>
+        <div class = "measure-title">
+        <%= link_to prescription.title, prescription_path(prescription)  %>
         </div>
-        <div class = "card-description" p>
-        <ul>Description:<%= prescription.description %></ul>
-        <ul>Expiration:<%= prescription.end_date %></ul>
+        <div class = "measure-description" >
+        <li><%= prescription.description %><br></li>
+        <li>Expiration:<%= prescription.end_date %></li>
         </div>
         <% else %>
         <%# <div>
@@ -19,3 +19,27 @@
   </ul>
     <p><%= link_to 'Créer une prescription', new_prescription_path, class: "btn-bi" %></p>
 </div>
+
+
+
+<%# <div class = "container">
+  <h1 class = "">Vos prescriptions</h1>
+  <ul class = "card-product">
+    <% @prescriptions.each do |prescription| %>
+      <%# <% if (Date.today <= prescription.end_date && prescription.start_date <= Date.today) %>
+        <%# <div class = "card-title h2"> %>
+        <%# <%= link_to prescription.title, prescription_path(prescription) %>
+        <%# </div> %>
+        <%# <div class = "card-description" p> %>
+        <%# <ul>Description:<%= prescription.description %>
+        <%# <ul>Expiration:<%= prescription.end_date %>
+        <%# </div> %>
+        <%# <% else %>
+        <%# <div>
+        <p class = "card-title h2"> Vous n'avez pas de prescription </p>
+        </div> %>
+      <%# <% end %>
+    <%# <% end %>
+  <%# </ul> %>
+    <%# <p><%= link_to 'Créer une prescription', new_prescription_path, class: "btn-bi" %>
+<%# </div> %>
