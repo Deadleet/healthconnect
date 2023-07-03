@@ -3,7 +3,7 @@
     min-height: 80vh;
   }
   .today {
-    background-color: #FAF3DD;
+    background-color: #F2EEFF;
   }
 }
 
@@ -40,4 +40,21 @@
   border-radius: 4px;
   background:  rgb(224, 131, 24);
   transition: background 0.3s ease;
+}
+
+
+.prev-month {
+  background-color: #C0BAC8 !important;
+}
+
+.future {
+  background-color: #C0BAC8 !important;
+}
+
+.current-month {
+  background-color: #F2EEFF !important;
+}
+
+.today {
+  background-color: #E3DBFC !important;
 }
