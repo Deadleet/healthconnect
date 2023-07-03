@@ -5,24 +5,20 @@
     <%= link_to "#", class: "navbar-brand" do %>
       <h1 id="navbar-logo">HealthConnect</h1>
     <% end %>
-    <%= link_to root_path do %>
-      <i class="fa-regular fa-bell fa-xl" style="color: #49516F;"></i>
-    <% end %>
-  </div>
-  <br>
-  <div class="onglets">
-    <ul class="nav-links">
-      <input type="checkbox" id="checkbox_toggle" />
-      <label for="checkbox_toggle" class="hamburger">&#9776;</label>
-      <div class="menu">
-        <li> <%= link_to 'Profil', profil_path %></li>
-        <li> <%= link_to 'Pathologies', pathologies_path %></li>
-        <li><%= link_to "Suivi Médical", prescriptions_path%></li>
-        <li><%= link_to 'Automesure', measures_path %></li>
-        <li><%= link_to 'Historique', historical_path %></li>
-        <li><%= link_to 'Log out', "#", class: "dropdown-item", data: {turbo_method: :delete}  %></li>
-      </div>
-    </ul>
+    <div class="onglets">
+      <ul class="nav-links">
+        <input type="checkbox" id="checkbox_toggle" />
+        <label for="checkbox_toggle" class="hamburger">&#9776;</label>
+        <div class="menu">
+          <li> <%= link_to 'Profil', profil_path %></li>
+          <li> <%= link_to 'Pathologies', pathologies_path %></li>
+          <li><%= link_to "Suivi Médical", prescriptions_path%></li>
+          <li><%= link_to 'Automesure', measures_path %></li>
+          <li><%= link_to 'Historique', historical_path %></li>
+          <li><%= link_to 'Log out', "#", class: "dropdown-item", data: {turbo_method: :delete}  %></li>
+        </div>
+      </ul>
+    </div>
   </div>
  </div>
 </nav>
