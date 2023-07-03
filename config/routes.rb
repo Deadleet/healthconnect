@@ -2,6 +2,8 @@ Rails.application.routes.draw do
 
   devise_for :users
   root to: "pages#home"
+  get "historical", to: "pages#historical"
+  get "profil", to: "pages#profil"
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 resources :prescriptions do
   resources :follow_ups, only: %i[index show new create edit update]

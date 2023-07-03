@@ -2,7 +2,7 @@ class PrescriptionsController < ApplicationController
 before_action :set_prescription, only: [:show, :edit, :update, :destroy]
 
   def index
-    @prescriptions = Prescription.all
+    @prescriptions = Prescription.where(user_id: current_user)
   end
 
   def show; end

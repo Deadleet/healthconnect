@@ -1,0 +1,49 @@
+.measures {
+  display: grid;
+  justify-content: center;
+  justify-items: center;
+}
+
+.measure-title {
+  h2 {
+    color: green;
+    font-size: large;
+  }
+  h3 {
+    color: maroon;
+    font-size: medium;
+    padding: 4vmin;
+  }
+  padding: 4vmin;
+  overflow: hidden;
+
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+  display: flex;
+  align-items: center;
+  margin: 5px;
+  width: 200%;
+  height: 50px;
+  text-align: center;
+}
+
+.measure-description {
+  h2 {
+    color: green;
+    font-size: large;
+  }
+  h3 {
+    color: maroon;
+    font-size: medium;
+    padding: 4vmin;
+  }
+  padding: 4vmin;
+  overflow: hidden;
+  background: white;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+  display: flex;
+  align-items: center;
+  margin: 5px;
+  width: 200%;
+  height: 50px;
+  text-align: center;
+}

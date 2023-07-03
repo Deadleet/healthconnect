@@ -25,11 +25,13 @@
 
 body {
   min-height: 100vh;
-  position: relative;
-  background-image: url("back.jpg");
+  background-image: url("back1.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
+  display: flex;
+  flex-direction: column;
+ // position: relative;
   // opacity: 0.33;
   // background-color: aquamarine;
 }

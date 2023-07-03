@@ -20,4 +20,13 @@ class PagesController < ApplicationController
     # @measures.where(start_date: start_date.beginning_of_month.beginning_of_week..start_date.end_of_month.end_of_week)
 
   end
+
+  def historical
+    @prescriptions = Prescription.where(user_id: current_user)
+  end
+
+  def profil
+    @user = current_user
+    @pathologies = Pathologie.where(user_id: current_user)
+  end
 end
