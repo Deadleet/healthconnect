@@ -1,16 +1,22 @@
-<div class = "container">
-<div class="mt-2 d-flex justify-content-between">
-  <h1 class = "mt-2">Vos prescriptions</h1>
-  <p><%= link_to '+', new_prescription_path, class: "btn-bi mt-2" %></p>
+<div class = "container mt-5">
+<div class="medical-file bg-transparent d-flex justify-content-between">
+  <h1>Vos prescriptions</h1>
+  <p><%= link_to '+', new_prescription_path, class: "btn-plus mt-2"%></p>
 </div>
   <ul class = "measures" style = "padding-left: 0px">
     <% @prescriptions.each do |prescription| %>
       <% if (Date.today <= prescription.end_date && prescription.start_date <= Date.today) %>
         <%= link_to(prescription_path(prescription)) do %>
-          <div class = "measure-title">
+          <div class = "measure-title btn-home">
             <p><%= prescription.title %></p>
           </div>
         <% end %>
+<<<<<<< HEAD
+
+
+
+=======
+>>>>>>> d68aa9541f1828978af4e59796d75ac7102b25c7
       <% else %>
         <%# <div>
         <p class = "card-title h2"> Vous n'avez pas de prescription </p>

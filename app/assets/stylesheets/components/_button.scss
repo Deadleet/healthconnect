@@ -67,3 +67,26 @@
   color: #49516f;
   box-shadow: rgba(9, 30, 66, 0.25) 0px 4px 8px -2px, rgba(9, 30, 66, 0.08) 0px 0px 0px 1px;
 }
+
+.btn-plus {
+  display: inline-block;
+  outline: 0;
+  border:0;
+  color: #49516F;
+  text-decoration: none;
+  position: relative;
+  background: #fff;
+  line-height: 30px;
+  border-radius: 50%;
+  padding: 5px;
+  font-weight: bold;
+  font-size: large;
+  box-shadow: #49516f -2px -2px 0px 2px, #C2AAE6 0px 0px 0px 4px, rgba(0, 0, 0, 0.05) 0px 0px 2px 7px;
+  transition: all 0.2s;
+}
+
+.btn-plus:hover {
+  box-shadow: #C2AAE6 -2px -2px 0px 2px, #49516F 0px 0px 0px 4px, rgba(0, 0, 0, 0.05) 0px 0px 2px 7px;
+  transform: scale(1.01);
+  text-decoration: none;
+}
