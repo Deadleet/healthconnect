@@ -2,13 +2,13 @@
 <div class="background">
   <div class="bg-white rounded p-3 shadow">
     <h3>Creer un rendez-vous</h3>
-    <%= simple_form_for [@user, @appointment], data: { controller: 'flatpickr' } do |f| %>
+    <%= simple_form_for @appointment do |f| %>
       <div>
       <%= f.input :title,  label: "Titre", placeholder: 'Titre' %>
       </div>
 
       <div>
-        <%= f.input :appointment_date, label: "Date", as: :date %>
+        <%= f.input :appointment_date, label: "Date", as: :date, html5: true %>
       </div>
 
        <div>
@@ -20,7 +20,8 @@
       </div>
 
        <div>
-        <%= f.input :practician, label: "Praticien", placeholder: 'Practicien'  %>
+       <%  @users = User.where(patient: false).map { |user| 'Dr.' + user.last_name + " " + user.first_name } %>
+        <%= f.association :practician, collection: @users ,label: "Praticien", placeholder: "Practicien "%>
       </div>
 
       <%= f.submit class: "btn-bi", value: "Creer" %>

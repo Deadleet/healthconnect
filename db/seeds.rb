@@ -10,7 +10,7 @@ User.destroy_all
 
 puts 'creating user'
 user1 = User.create(email: 'healthconnect@gmail.com', password: '123456', reset_password_token: '654321', first_name: 'Josephine', last_name: 'BALDIN',patient: true)
-user2 = User.create(email: 'john@gmail.com', password: '111111', reset_password_token: '222222', first_name: 'John', last_name: 'FABRET',patient: false)
+user2 = User.create!(email: 'john@gmail.com', password: '111111', reset_password_token: '222222', first_name: 'John', last_name: 'FABRET', patient: false)
 user3 = User.create(email: 'barbara@gmail.com', password: '222222', reset_password_token: '333333', first_name: 'Barbara', last_name: 'GOUET',patient: true)
 user4 = User.create(email: 'sara@gmail.com', password: '333333', reset_password_token: '4444444', first_name: 'Sara', last_name: 'TATIN',patient: true)
 user5 = User.create(email: 'alexis@gmail.com', password: '444444', reset_password_token: '555555', first_name: 'Alexis', last_name: 'QUEBET',patient: true)

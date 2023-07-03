@@ -31,7 +31,7 @@ class AppointmentsController < ApplicationController
     @appointment = Appointment.new(appointment_params)
     @appointment.user = @user
       if @appointment.save!
-        redirect_to appointment_path
+        redirect_to appointments_path
       else
       render :new, status: :unprocessable_entity
       end
@@ -50,7 +50,7 @@ class AppointmentsController < ApplicationController
     private
 
   def appointment_params
-    params.require(:appointment).permit(:titre, :date, :measure_id)
+    params.require(:appointment).permit(:title, :appointment_date, :appointment_time, :address, :practician_id, :measure_id)
   end
 
 end

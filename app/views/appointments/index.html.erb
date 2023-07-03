@@ -5,19 +5,23 @@
     <% events.each do |event| %>
       <% if event.is_a?(Prescription) %>
         <div class="prescription-calendar">
-          <%= event.title %>
+          <%# <%= event.title %>
+          <p>P</p>
         </div>
       <% elsif event.is_a?(FollowUp) %>
         <div class="follow-up-calendar">
-          <%= event.title %>
+          <%# <%= event.title.first %>
+          <p>F</p>
         </div>
       <% elsif event.is_a?(Measure) %>
         <div class="measure-calendar">
-          <%= event.title %>
+          <%# <%= event.title %>
+          <p>M</p>
         </div>
          <% elsif event.is_a?(Appointment) %>
          <div class="appointment-calendar">
-          <%= event.title %>
+          <%# <%= event.title %>
+          <p>A</p>
          </div>
       <% end %>
     <% end %>
