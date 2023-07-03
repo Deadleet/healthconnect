@@ -10,7 +10,11 @@
 .prescription-calendar {
   color: white;
   // padding: 8px 24px;
-  border-radius: 4px;
+  border-radius: 50%;
+  align-items: center;
+  justify-content: center;
+  width: 20px;
+  height: 20px;
   background: #129e5f;
   transition: background 0.3s ease;
 }
@@ -19,7 +23,11 @@
 .follow-up-calendar {
   color: white;
   // padding: 8px 24px;
-  border-radius: 4px;
+  border-radius: 50%;
+  align-items: center;
+  justify-content: center;
+  width: 20px;
+  height: 20px;
   background: rgb(104, 62, 96);
   transition: background 0.3s ease;
 }
@@ -28,7 +36,11 @@
 .measure-calendar {
   color: white;
   // padding: 8px 24px;
-  border-radius: 4px;
+  border-radius: 50%;
+  align-items: center;
+  justify-content: center;
+  width: 20px;
+  height: 20px;
   background:  royalblue;
   transition: background 0.3s ease;
 }
@@ -37,7 +49,11 @@
 .appointment-calendar {
   color: white;
   // padding: 8px 24px;
-  border-radius: 4px;
+  border-radius: 50%;
+  align-items: center;
+  justify-content: center;
+  width: 20px;
+  height: 20px;
   background:  rgb(224, 131, 24);
   transition: background 0.3s ease;
 }
@@ -48,13 +64,13 @@
 }
 
 .future {
-  background-color: #b6f2ed !important;
+  background-color: #87a8ef !important;
 }
 
 .current-month {
-  background-color: #aeedec !important;
+  background-color: white !important;
 }
 
 .today {
-  background-color: #87e96e !important;
+  background-color: #7b9cea !important;
 }
