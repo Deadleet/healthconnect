@@ -2,10 +2,10 @@
    <div class="edit-form">
     <div class="container form">
     <div class="bg-white rounded p-3 shadow">
-     <h3>Creer une Ordonnance</h3>
+     <h3>Créer une Ordonnance</h3>
       <%= simple_form_for @prescription, data: { controller: 'flatpickr' } do |f| %>
           <div>
-          <%= f.input :title, placeholder: 'Titre',value: "Titre" %>
+          <%= f.input :title, placeholder: 'Titre', value: "Titre", label: "Titre" %>
           <%= f.input :description, placeholder: 'Description'%>
           </div>
 
@@ -15,8 +15,8 @@
          </div>
 
           <div>
-          <%= f.input :practician, placeholder: 'Le nom du Practicien',value: "Praticien"%>
-          <%= f.submit 'Creer', class: "btn-bi" %>
+          <%= f.input :practician, placeholder: 'Le nom du Practicien',label: "Praticien"%>
+          <%= f.submit 'Créer', class: "btn-bi" %>
           </div>
 
       <% end %>
