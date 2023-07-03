@@ -10,7 +10,12 @@
 </div>
 
 <div class = "container">
-  <h2 class = "">Mes traitements</h2>
+<div class="d-flex justify-content-between">
+  <h2 class = "mt-1">Mes traitements</h2>
+  <%= link_to '+', new_prescription_follow_up_path(@prescription),class: "mt-1 btn-bi" %>
+</div>
+
+
   <div>
     <ul class = "list-group">
       <% @prescription.follow_ups.each do |f| %>
@@ -18,22 +23,20 @@
       <% end %>
     </ul>
     <p class = "">
-      <%= link_to 'Nouveau traitement', new_prescription_follow_up_path(@prescription),class: "mt-2 btn-bi" %>
     </p>
   </div>
 </div>
 
 <div class = "container">
-  <h2 class = "">Mes mesures</h2>
-
+  <div class = "d-flex justify-content-between">
+    <h2 class = "mt-1">Mes mesures</h2>
+    <p><%= link_to '+', new_prescription_measure_path(@prescription),class: "mt-1 btn-bi" %></p>
+  </div>
   <div>
     <ul class = "list-group">
       <% @prescription.measures.each do |m| %>
         <li class = "list-group-item"><%= link_to m.title, prescription_measure_path(@prescription,m)  %></li>
       <% end %>
     </ul>
-      <p>
-        <%= link_to 'Créer une mesure', new_prescription_measure_path(@prescription),class: "mt-2 btn-bi" %>
-      </p>
   </div>
 </div>
