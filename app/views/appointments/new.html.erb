@@ -20,8 +20,7 @@
       </div>
 
        <div>
-       <%  @users = User.where(patient: false).map { |user| 'Dr.' + user.last_name + " " + user.first_name } %>
-        <%= f.association :practician, collection: @users ,label: "Praticien", placeholder: "Practicien "%>
+        <%= f.input :practician, label: "Practicien", placeholder: "Practicien "%>
       </div>
 
       <%= f.submit class: "btn-bi", value: "Creer" %>

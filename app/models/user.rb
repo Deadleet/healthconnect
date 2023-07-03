@@ -9,5 +9,4 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
   has_many :appointments
-  has_many :practicians, through: :appointments, class_name: 'User'
 end
