@@ -6,15 +6,11 @@
   <ul class = "measures" style = "padding-left: 0px">
     <% @prescriptions.each do |prescription| %>
       <% if (Date.today <= prescription.end_date && prescription.start_date <= Date.today) %>
-
         <%= link_to(prescription_path(prescription)) do %>
           <div class = "measure-title">
             <p><%= prescription.title %></p>
           </div>
         <% end %>
-
-        
-
       <% else %>
         <%# <div>
         <p class = "card-title h2"> Vous n'avez pas de prescription </p>
@@ -22,7 +18,6 @@
       <% end %>
     <% end %>
   </ul>
-
 </div>
 
 
