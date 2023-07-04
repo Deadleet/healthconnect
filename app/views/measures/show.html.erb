@@ -11,15 +11,17 @@
     <p>La mesure sera effectuée <strong>tous les jours</strong> à une fréquence de  <strong><%= @measure.hourly_frequency %> fois</strong> par jour.</p>
   <% end %>
 
-  <%= line_chart Measurement.pluck(:created_at, :value),
-    xtitle: "Dates", ytitle: "Values",
-    colors: ["#b00", "#666"]
-    %>
+  <div class="container">
+    <%= line_chart Measurement.pluck(:created_at, :value),
+      xtitle: "Dates", ytitle: "Values",
+      colors: ["#b00", "#666"]
+      %>
+  </div>
 
-<div class ="d-flex justify-content-around">
-  <%= link_to "Modifier le recapitulatif", edit_measure_path(@measure), class: "btn-bi" %>
-  <%= link_to "Retour à l'ordonnance", prescription_path(@prescription),class: "btn-bi" %>
-</div>
+  <div class ="d-flex justify-content-around">
+    <%= link_to "Modifier le recapitulatif", edit_measure_path(@measure), class: "btn-bi" %>
+    <%= link_to "Retour à l'ordonnance", prescription_path(@prescription),class: "btn-bi" %>
+  </div>
   <div class ="d-flex">
     <h4 class = "mt-2 pt-2">Mes mesures</h4>
     <%= link_to " + ", new_prescription_measure_measurement_path(@prescription, @measure), class: "mt-2 btn-bi m-3" %>
