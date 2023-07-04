@@ -9,4 +9,14 @@ class Measure < ApplicationRecord
   def measurements_for_graph
     measurements.pluck(:created_at, :value)
   end
+
+  def measure_for_calendar
+    measures = []
+    (self.start_date..self.end_date).each do |d|
+      intermediate_measure = Measure.new(self.attributes)
+      intermediate_measure.start_date = d
+      measures << intermediate_measure
+    end
+    measures
+  end
 end
