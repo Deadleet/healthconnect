@@ -12,7 +12,6 @@
   margin-top: auto;
 }
 
-
 .footer-links {
   display: flex;
   align-items: center;
@@ -20,4 +19,33 @@
 
 .footer-links a:hover {
   opacity: 1;
+}
+
+.fa-calendar {
+  font-size: 30px;
+}
+
+.middle-footer-button {
+  position: relative;
+  bottom: 23px;
+  height: 25px;
+  background-color: #E3DBFC;
+  border-radius: 28px 28px 0 0;
+  padding: 20px;
+}
+
+.fa-house {
+  font-size: 18px;
+}
+
+.fa-file-lines{
+  font-size: 18px;
+}
+
+.fa-chart-column{
+  font-size: 18px;
+}
+
+.fa-user{
+  font-size: 18px;
 }
