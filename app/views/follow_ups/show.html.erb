@@ -6,16 +6,15 @@
   </div>
 </div>
 <div class = "container">
-<h1><%= @followup.title %></h1>
+<h1><strong><%= @followup.title %></strong></h1>
 <p><%= @followup.description %></p>
-<h4> Debut : <%= @followup.start_date %>, fin : <%= @followup.end_date %></h4>
+<p> Debut : <strong><%= @followup.start_date %></strong> - Fin : <strong><%= @followup.end_date %></strong></p>
 
-<p>Posologie : <%= @followup.posology %></p>
-<h4>Tous les <%= @followup.hourly_frequency %> jour(s), <%= @followup.day_frequency %> fois/jour</h4>
+<p>Posologie : <%= @followup.posology %>. Tous les <%= @followup.hourly_frequency %> jour(s), <%= @followup.day_frequency %> fois/jour</p>
 
 
-  <div class = "d-flex">
-    <p><%= link_to "Modifier", edit_prescription_follow_up_path(@prescription, @followup),class: "bouton" %></p>
-    <p><%= link_to "Retour à l'ordonnance", prescription_path(@prescription),class: "bouton" %></p>
+  <div class ="my-2">
+    <p><%= link_to "Modifier mon traitement", edit_prescription_follow_up_path(@prescription, @followup),class: "m-1 bouton d-flex justify-content-center" %></p>
+    <p><%= link_to "Retour à l'ordonnance", prescription_path(@prescription),class: "m-1 bouton d-flex justify-content-center" %></p>
   </div>
 </div>
