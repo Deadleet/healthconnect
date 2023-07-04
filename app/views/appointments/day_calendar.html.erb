@@ -13,14 +13,14 @@
       <% events.each do |event| %>
         <% if event.is_a?(Prescription) %>
       <%= link_to prescription_path(event) do %>
-          <div class="prescription-calendar">
+          <div class="prescription-daily-calendar">
                 <%= event.title.end_date%>
             <p></p>
           </div>
         <% end %>
         <% elsif event.is_a?(FollowUp) %>
             <%= link_to prescription_follow_up_path(event.prescription, event) do %>
-              <div class="follow-up-calendar">
+              <div class="follow-up-daily-calendar">
                 <%= event.title %>
                   <p class="hourly-frequency"><%= event.hourly_frequency %></p>
 
@@ -28,14 +28,14 @@
             <% end %>
         <% elsif event.is_a?(Measure) %>
             <%= link_to measures_path(event) do %>
-              <div class="measure-calendar"> <%= event.hourly_frequency %></p>
+              <div class="measure-daily-calendar"> <%= event.hourly_frequency %></p>
                 <%= event.title %>
                 <p></p>
               </div>
             <% end %>
           <% elsif event.is_a?(Appointment) %>
             <%= link_to appointment_path(event) do %>
-              <div class="appointment-calendar">
+              <div class="appointment-daily-calendar">
                 <%= event.title %>
                 <p></p>
               </div>

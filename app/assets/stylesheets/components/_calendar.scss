@@ -149,27 +149,71 @@
 
 .daily_calendar_header {
   margin-top: 7px;
-  background-color: #2492b3 !important;
+  background-color: #d8ecf2 !important;
   height: 50vh;
 }
 
 
 .daily_calendar {
-  background-color: #e68713 !important;
+  background-color: #d8ecf2 !important;
 }
 
 .prescription-daily-calendar {
+  margin-right: 5px;
+  color: rgb(41, 7, 63);
+  // padding: 8px 24px;
+  border-radius: 50%;
+  align-items: center;
+  justify-content: center;
+  width: 20px;
+  height: 20px;
+  background: #129e5f;
+  transition: background 0.3s ease;
+  list-style-type: none;
 
 }
 
 .follow-up-daily-calendar {
+  margin-right: 5px;
+  color: rgb(41, 7, 63);
+  // padding: 8px 24px;
+  border-radius: 50%;
+  align-items: center;
+  justify-content: center;
+  width: 20px;
+  height: 20px;
+  background: #129e5f;
+  transition: background 0.3s ease;
+  list-style-type: none;
 
 }
 
 .measure-daily-calendar {
+  margin-right: 5px;
+  color: rgb(41, 7, 63);
+  // padding: 8px 24px;
+  border-radius: 50%;
+  align-items: center;
+  justify-content: center;
+  width: 20px;
+  height: 20px;
+  background: #129e5f;
+  transition: background 0.3s ease;
+  list-style-type: none;
 
 }
 
 .appointment-daily-calendar {
+  margin-right: 5px;
+  color: rgb(41, 7, 63);
+  // padding: 8px 24px;
+  border-radius: 50%;
+  align-items: center;
+  justify-content: center;
+  width: 20px;
+  height: 20px;
+  background: #129e5f;
+  transition: background 0.3s ease;
+  list-style-type: none;
 
 }
