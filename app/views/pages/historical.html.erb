@@ -1,45 +1,39 @@
 <div class="header">
   <div class= "header-title">
   <% if user_signed_in? %>
-    <h1>Bonjour, <%= current_user.first_name%></h1>
+    <h1>Mon historique</h1>
     <% end %>
   </div>
 </div>
-<h1>Mon historique</h1>
+<div class = "container">
+  <h1 class = "mt-2"><strong>Mes ordonnances passées</strong></h1>
+  <ul class = "list-group">
+    <% @prescriptions.each do |prescription| %>
+        <% if prescription.end_date < Time.now %>
+          <li class = "">
+            <p><%= link_to prescription.title, prescription_path(prescription), style:"text-decoration:none", class:"m-1 bouton d-flex justify-content-center" %></p>
+            <p class ="ms-3">Terminée le <%= prescription.start_date %></p>
+            <p class ="ms-3">Precrit par : <%= prescription.practician %></p>
+          </li>
+        <% end %>
+    <% end %>
+  </ul>
 
 
-      <div class="col-12 col-lg-6">
-        <h2 class = "mt-2">📄 Mes ordonnances passées 📄</h2>
-          <ul class = "list-group">
-            <% @prescriptions.each do |prescription| %>
-                <% if prescription.end_date < Time.now %>
-                  <li class = "list-group-item">
-                    <p><%= link_to prescription.title, prescription_path(prescription), style:"text-decoration:none" %></p>
-                  </li>
-                  <li class = "d-flex">
-                    <p>[ Du <%= prescription.start_date %> au <%= prescription.start_date %> ] - </p>
-                    <p>- Precrit par : <%= prescription.practician %></p>
-                  </li>
-                <% end %>
-            <% end %>
-          </ul>
-      </div>
 
-      <div class="col-12 col-lg-6">
-        <h2 class = "mt-2">💊 Mes traitements passés 💊</h2>
-          <ul class = "list-group">
-            <% @prescriptions.each do |prescription| %>
-              <% prescription.follow_ups.each do |followup| %>
-                <% if followup.end_date < Time.now %>
-                  <li class = "list-group-item">
-                    <p><%= link_to followup.title, prescription_follow_up_path(prescription, followup), style:"text-decoration:none" %></p>
-                  </li>
-                  <li class = "d-flex">
-                    <p>[ Du <%= followup.start_date %> au <%= followup.start_date %> -]</p>
-                    <p>- Precrit par : <%= prescription.practician %></p>
-                  </li>
-                <% end %>
-              <% end %>
-            <% end %>
-          </ul>
-      </div>
+  <h1 class = "mt-2"><strong>Mes traitements passés</strong></h1>
+    <ul class = "list-group">
+      <% @prescriptions.each do |prescription| %>
+        <% prescription.follow_ups.each do |followup| %>
+          <% if followup.end_date < Time.now %>
+            <li class = "">
+              <p><%= link_to followup.title, prescription_follow_up_path(prescription, followup), style:"text-decoration:none", class:"m-1 bouton d-flex justify-content-center" %></p>
+              <p class ="ms-3">Terminée le <%= followup.start_date %></p>
+              <p class ="ms-3">Precrit par : <%= prescription.practician %></p>
+            </li>
+          <% end %>
+        <% end %>
+      <% end %>
+    </ul>
+
+</div>
