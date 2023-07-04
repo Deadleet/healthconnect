@@ -8,6 +8,7 @@
 }
 
 .prescription-calendar {
+  margin-right: 5px;
   color: rgb(41, 7, 63);
   // padding: 8px 24px;
   border-radius: 50%;
@@ -22,6 +23,7 @@
 
 
 .follow-up-calendar {
+  margin-right: 5px;
   color: rgb(41, 7, 63);
   // padding: 8px 24px;
   border-radius: 50%;
@@ -36,6 +38,7 @@
 
 
 .measure-calendar {
+  margin-right: 5px;
   color: rgb(41, 7, 63);
   // padding: 8px 24px;
   border-radius: 50%;
@@ -50,6 +53,7 @@
 
 
 .appointment-calendar {
+  margin-right: 5px;
   color: rgb(41, 7, 63);
   // padding: 8px 24px;
   border-radius: 50%;
@@ -77,4 +81,54 @@
 
 .today {
   background-color: #7b9cea !important;
+}
+
+.legend-container {
+  text-align: center;
+  background-color: #d8c2f6;
+  position: relative;
+  bottom: 16px;
+  border-radius: 0 0 12px 12px;
+}
+
+.legend-title {
+  font-weight: bold;
+  font-size: 12px;
+}
+
+.left-side-legend {
+  text-align: center;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+
+.right-side-legend {
+  text-align: center;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+
+.bullet-prescription{
+  display: flex;
+}
+.bullet-follow-up{
+  display: flex;
+  margin-right: 19px;
+}
+.bullet-measures{
+  display: flex;
+}
+.bullet-appointment{
+  display: flex;
+}
+
+
+.calendar-button-container {
+  text-align: center;
+  font-weight: bold;
+  .calendar-button {
+    width: 33%;
+  }
 }
