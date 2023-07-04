@@ -10,15 +10,15 @@
       <% @prescriptions.each do |prescription| %>
         <% prescription.measures.each do |measure| %>
           <%= link_to(prescription_measure_path(prescription, measure)) do %>
-            <div class="measures">
-              <div class="m-1 bouton d-flex justify-content-center">
-                <strong><%= measure.title %></strong>
-              </div>
 
-              <p class = "text-left"><%= measure.start_date %></p>
+            <div class="m-1 mt-3 bouton d-flex justify-content-center">
+              <strong><%= measure.title %></strong>
             </div>
 
-            <div class="measures">
+            <p class = "text-left ms-3"><%= measure.start_date %></p>
+
+
+            <div class="container">
               <%= line_chart measure.measurements_for_graph,
                 xtitle: "Dates", ytitle: "Values",
                 colors: ["#AAA1C8", "#666"]
