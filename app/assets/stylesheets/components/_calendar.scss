@@ -151,6 +151,7 @@
   margin-top: 7px;
   background-color: #d8ecf2 !important;
   height: 50vh;
+  padding-top: 20px;
 }
 
 
@@ -170,7 +171,7 @@
   background: #129e5f;
   transition: background 0.3s ease;
   list-style-type: none;
-
+  margin: 10px;
 }
 
 .follow-up-daily-calendar {
@@ -185,7 +186,7 @@
   background: #129e5f;
   transition: background 0.3s ease;
   list-style-type: none;
-
+  margin: 10px;
 }
 
 .measure-daily-calendar {
@@ -200,6 +201,9 @@
   background: #129e5f;
   transition: background 0.3s ease;
   list-style-type: none;
+  margin: 10px;
+  margin-top: 20px;
+  margin-bottom: 30px;
 
 }
 
@@ -215,5 +219,44 @@
   background: #129e5f;
   transition: background 0.3s ease;
   list-style-type: none;
+  margin: 10px;
+
+}
+
+
+.text-daily-calendar {
+  justify-content: center;
+  // text-align: center;
+  width: 300px;
+  margin-left: 48px;
+  margin-top: -12px;
+
+}
+
+
+.bullet-daily-prescription{
+  display: flex;
+  margin: 10px;
+}
+.bullet-daily-follow-up{
+  display: flex;
+  margin: 10px;
+}
+.bullet-daily-measures{
+  display: flex;
+  margin: 10px;
+}
+.bullet-daily-appointment{
+  display: flex;
+  margin: 10px;
+}
+
+
+
+.daily-hourly-frequency {
+  color: rgb(30, 29, 29);
+  z-index: 99;
+  margin-left: -15px;
+  margin-top: -18px;
 
 }
