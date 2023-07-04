@@ -68,6 +68,9 @@ measurement3 = Measurement.create!(value: "160", unit: "mmHg", measure: measure1
 measurement4 = Measurement.create!(value: "155", unit: "mmHg", measure: measure1, created_at: measure1.start_date + 3.day)
 measurement5 = Measurement.create!(value: "165", unit: "mmHg", measure: measure1, created_at: measure1.start_date + 4.day)
 measurement6 = Measurement.create!(value: "140", unit: "mmHg", measure: measure1, created_at: measure1.start_date + 5.day)
+measurement6 = Measurement.create!(value: "140", unit: "mmHg", measure: measure1, created_at: measure1.start_date + 5.day)
+measurement6 = Measurement.create!(value: "140", unit: "mmHg", measure: measure1, created_at: measure1.start_date + 5.day)
+
 puts "2 measurements created!"
 
 appointment1 = Appointment.create!(title: 'Dentiste', appointment_date: Date.new(2023, 03, 11), appointment_time: Time.now, address: "Place de l'ecureuil", user: user1)
