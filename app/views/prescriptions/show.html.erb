@@ -33,7 +33,7 @@
   <div>
     <ul class = "list-group">
       <% @prescription.measures.each do |m| %>
-        <li class = "list-group-item"><%= link_to m.title, prescription_measure_path(@prescription,m)  %></li>
+        <li class = "list-group-item"><%= link_to m.title, prescription_measure_path(@prescription,m) %></li>
       <% end %>
     </ul>
   </div>
