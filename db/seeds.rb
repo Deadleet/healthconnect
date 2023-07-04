@@ -22,7 +22,7 @@ prescription1 = Prescription.create(title: 'Ordonnance Cardio', description: 'po
 puts 'creating prescription2'
 prescription2 = Prescription.create(title: 'Ordonnance Endocrinologue', description: "pour mon diabete", start_date: Date.new(2023, 06, 13), end_date: Date.new(2023, 07, 19), practician: 'DR House2', user: user1)
 puts 'creating prescription3'
-prescription3 = Prescription.create(title: 'Ordonnance Poulmonaire', description: "pour mes crises d'asthme", start_date: Date.new(2023, 06, 13), end_date: Date.new(2023, 07, 19), practician: 'DR House2', user: user1)
+prescription3 = Prescription.create(title: 'Ordonnance Pulmonaire', description: "pour mes crises d'asthme", start_date: Date.new(2023, 06, 13), end_date: Date.new(2023, 07, 19), practician: 'DR House2', user: user1)
 puts 'creating prescription4'
 prescription4 = Prescription.create(title: 'Ordonnance Dermatologie', description: 'traitement infection talon', start_date: Date.new(2023, 02, 20), end_date: Date.new(2023, 02, 28), practician: 'DR House3', user: user1)
 # FOR USER 2
@@ -62,8 +62,12 @@ puts 'done'
 
 
 puts '2 creating measurement'
-measurement1 = Measurement.create!(value: "140/90", unit: "mmHg", measure: measure1)
-measurement2 = Measurement.create!(value: "150/90", unit: "mmHg", measure: measure1)
+measurement1 = Measurement.create!(value: "140", unit: "mmHg", measure: measure1, created_at: measure1.start_date)
+measurement2 = Measurement.create!(value: "150", unit: "mmHg", measure: measure1, created_at: measure1.start_date + 40.day)
+measurement3 = Measurement.create!(value: "200", unit: "mmHg", measure: measure1, created_at: measure1.start_date)
+measurement4 = Measurement.create!(value: "1000", unit: "mmHg", measure: measure1, created_at: measure1.start_date + 20.day)
+measurement5 = Measurement.create!(value: "120", unit: "mmHg", measure: measure1, created_at: measure1.start_date)
+measurement6 = Measurement.create!(value: "450", unit: "mmHg", measure: measure1, created_at: measure1.start_date + 30.day)
 puts "2 measurements created!"
 
 appointment1 = Appointment.create!(title: 'Dentiste', appointment_date: Date.new(2023, 03, 11), appointment_time: Time.now, address: "Place de l'ecureuil", user: user1)
