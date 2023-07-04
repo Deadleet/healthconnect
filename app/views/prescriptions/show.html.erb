@@ -1,11 +1,13 @@
 <div class="container">
-  <h1> <%= @prescription.title %> </h1>
-  <h4><%= @prescription.practician %></h4>
-  <p><%= @prescription.description %></p>
-  <p> Debut : <%= @prescription.start_date %> - Fin : <%= @prescription.end_date %></p>
-  <p>Rappel de renouvellement : <%= @prescription.end_date-5 %></p>
+  <div class="mb-2">
+    <h1> <%= @prescription.title %> </h1>
+    <h4><%= @prescription.practician %></h4>
+    <p><%= @prescription.description %></p>
+    <p> Debut : <%= @prescription.start_date %> - Fin : <%= @prescription.end_date %></p>
+    <p>Rappel de renouvellement : <%= @prescription.end_date-5 %></p>
+  </div>
 
-  <%= link_to 'Modifier mon ordonnance', edit_prescription_path(@prescription), class: "mb-3 bi" %>
+  <%= link_to 'Modifier mon ordonnance', edit_prescription_path(@prescription), class: "bouton mb-3" %>
 
   <div class="d-flex align-items-center justify-content-between col-8">
     <h2>Mes traitements</h2>
@@ -17,7 +19,7 @@
   <div>
     <ul class = "list-group">
       <% @prescription.follow_ups.each do |f| %>
-        <li class = "list-group-item"><%= link_to f.title, prescription_follow_up_path(@prescription,f) %></li>
+        <li class = "m-1 bouton d-flex justify-content-center"><%= link_to f.title, prescription_follow_up_path(@prescription,f) %></li>
       <% end %>
     </ul>
     <p class = "">
