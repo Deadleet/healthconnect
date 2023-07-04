@@ -12,7 +12,7 @@
   <% end %>
 
   <div class="container">
-    <%= line_chart Measurement.pluck(:created_at, :value),
+    <%= line_chart @measurements,
       xtitle: "Dates", ytitle: "Values",
       colors: ["#b00", "#666"]
       %>
