@@ -10,12 +10,17 @@ class AppointmentsController < ApplicationController
     prescriptions_user = Prescription.where(user_id: current_user)
     follow_ups = prescriptions_user.flat_map { |prescription| prescription.follow_ups }
     @follow_ups = FollowUp.where(id: follow_ups.pluck(:id))
-    @follow_ups.where(start_date: start_date.beginning_of_month.beginning_of_week..start_date.end_of_month.end_of_week)
+    @follow_ups = @follow_ups.map(&:fus_for_calendar).flatten
+    # @follow_ups.where(start_date: start_date.beginning_of_month.beginning_of_week..start_date.end_of_month.end_of_week)
+    # raise
+    # Generate bullets for calendar
 
       # # MEASURES
     measures = prescriptions_user.flat_map { |prescription| prescription.measures }
     @measures = Measure.where(id: measures.pluck(:id))
-    @measures.where(start_date: start_date.beginning_of_month.beginning_of_week..start_date.end_of_month.end_of_week)
+    @measures = @measures.map(&:measure_for_calendar).flatten
+
+    # @measures.where(start_date: start_date.beginning_of_month.beginning_of_week..start_date.end_of_month.end_of_week)
 
     # # APPOINTMENT
     @appointments = Appointment.where(user: current_user, appointment_date: start_date.beginning_of_month.beginning_of_week..start_date.end_of_month.end_of_week)
