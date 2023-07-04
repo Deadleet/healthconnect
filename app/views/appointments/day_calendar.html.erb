@@ -14,32 +14,55 @@
         <% if event.is_a?(Prescription) %>
       <%= link_to prescription_path(event) do %>
           <div class="prescription-daily-calendar">
+              <p class = "bullet-daily-prescription"></p>
+              <div class="text-daily-calendar">
                 <%= event.title.end_date%>
-            <p></p>
+              </div>
           </div>
         <% end %>
+        <br>
+
         <% elsif event.is_a?(FollowUp) %>
             <%= link_to prescription_follow_up_path(event.prescription, event) do %>
               <div class="follow-up-daily-calendar">
-                <%= event.title %>
-                  <p class="hourly-frequency"><%= event.hourly_frequency %></p>
-
+              <p class = "bullet-daily-follow-up"></p>
+                  <div class="text-daily-calendar">
+                   <%= event.title %>
+                   <br>
+                  <%= event.description %>
+                  <%# <p class="daily-hourly-frequency"><%= event.hourly_frequency %>
+                  </div>
               </div>
             <% end %>
+            <br>
+
         <% elsif event.is_a?(Measure) %>
             <%= link_to measures_path(event) do %>
-              <div class="measure-daily-calendar"> <%= event.hourly_frequency %></p>
+              <div class="measure-daily-calendar">
+                <p class = "bullet-daily-measures"></p>
+                <div class="text-daily-calendar">
                 <%= event.title %>
-                <p></p>
+                <br>
+                <%= event.description%>
+                <%# <p class="daily-hourly-frequency"><%= event.hourly_frequency %>
+                </div>
               </div>
+
             <% end %>
+            <br>
+
           <% elsif event.is_a?(Appointment) %>
             <%= link_to appointment_path(event) do %>
               <div class="appointment-daily-calendar">
+              <p class = "bullet-daily-appointment" ></p>
+                <div class="text-daily-calendar">
                 <%= event.title %>
-                <p></p>
+                <br>
+                <%= event.description%>
+                </div>
               </div>
           <% end %>
+          <br>
         <% end %>
       <% end %>
     <% end %>
