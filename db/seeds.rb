@@ -22,7 +22,7 @@ prescription1 = Prescription.create(title: 'Ordonnance Cardio', description: 'po
 puts 'creating prescription2'
 prescription2 = Prescription.create(title: 'Ordonnance Endocrinologue', description: "pour mon diabete", start_date: Date.new(2023, 06, 13), end_date: Date.new(2023, 07, 19), practician: 'DR House2', user: user1)
 puts 'creating prescription3'
-prescription3 = Prescription.create(title: 'Ordonnance Poulmonaire', description: "pour mes crises d'asthme", start_date: Date.new(2023, 06, 13), end_date: Date.new(2023, 07, 19), practician: 'DR House2', user: user1)
+prescription3 = Prescription.create(title: 'Ordonnance Pulmonaire', description: "pour mes crises d'asthme", start_date: Date.new(2023, 06, 13), end_date: Date.new(2023, 07, 19), practician: 'DR House2', user: user1)
 puts 'creating prescription4'
 prescription4 = Prescription.create(title: 'Ordonnance Dermatologie', description: 'traitement infection talon', start_date: Date.new(2023, 02, 20), end_date: Date.new(2023, 02, 28), practician: 'DR House3', user: user1)
 # FOR USER 2
