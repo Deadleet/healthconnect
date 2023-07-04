@@ -5,6 +5,7 @@ class MeasuresController < ApplicationController
   end
 
   def show
+    @measurements = Measurement.where(params[:measurement_id])
     @measure = Measure.find(params[:id])
     @prescription = @measure.prescription
   end
@@ -44,3 +45,8 @@ class MeasuresController < ApplicationController
     params.require(:measure).permit(:title, :description, :start_date, :end_date, :valeur, :unit, :hourly_frequency, :day_frequency)
   end
 end
+
+
+# @measurements.each do |measure|
+#  line_chart measure.group_by_day(:created_at).count
+#  end
