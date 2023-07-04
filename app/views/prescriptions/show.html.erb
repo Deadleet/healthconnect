@@ -10,7 +10,7 @@
     <h1 class =""><strong><%= @prescription.title %></strong> </h1>
     <h4><%= @prescription.practician %></h4>
     <p><%= @prescription.description %></p>
-    <p> Debut : <%= @prescription.start_date %> - Fin : <%= @prescription.end_date %></p>
+    <p> Debut : <strong><%= @prescription.start_date %></strong> - Fin : <strong><%= @prescription.end_date %></strong></p>
     <p>Rappel de renouvellement : <%= @prescription.end_date-5 %></p>
   </div>
 
