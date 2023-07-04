@@ -48,10 +48,10 @@
   border: 1px solid transparent;
   padding: 6px 12px;
   font-size: 16px;
-  border-radius: .25rem;
+  border-radius: 25px;
 }
 
-.btn-home {
+.home {
   outline: 0;
   display: inline-block;
   font-size: 800;
@@ -59,14 +59,37 @@
   line-height: 1.5;
   text-align: center;
   background:rgba(251, 248, 254, 0.826);
-  padding: 6px 12px;
+  padding: 5px !important;
   font-size: 1rem;
-  border-radius: .25rem;
+  border-radius: 25px;
   color: #49516f;
   box-shadow: rgba(9, 30, 66, 0.25) 0px 4px 8px -2px, rgba(9, 30, 66, 0.08) 0px 0px 0px 1px;
+  text-align: center !important;
 }
 
 .plus {
   font-weight: bold;
   font-size: 1.5em;
+}
+
+
+.bouton {
+  display: inline-block;
+  outline: 0;
+  border: 0;
+  font-weight: bold;
+  color: rgb(72, 76, 122);
+  font-size: 800;
+  height: 38px;
+  padding: 8px 24px;
+  border-radius: 50px;
+  box-shadow: rgba(9, 30, 66, 0.25) 0px 4px 8px -2px, rgba(9, 30, 66, 0.08) 0px 0px 0px 1px;
+  background-image: linear-gradient(180deg,#fff,#f5f5fa);
+}
+
+.bouton li{
+  height: 24px;
+}
+.bouton p{
+  height: 100%;
 }

@@ -11,7 +11,7 @@
         <% prescription.measures.each do |measure| %>
           <%= link_to(prescription_measure_path(prescription, measure)) do %>
             <div class="measures">
-              <div class="measure-title">
+              <div class="m-1 bouton d-flex justify-content-center">
                 <strong><%= measure.title %></strong>
               </div>
 
@@ -21,7 +21,7 @@
             <div class="measures">
               <%= line_chart measure.measurements_for_graph,
                 xtitle: "Dates", ytitle: "Values",
-                colors: ["#b00", "#666"]
+                colors: ["#AAA1C8", "#666"]
                 %>
             </div>
           <% end %>

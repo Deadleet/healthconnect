@@ -18,10 +18,11 @@
           </div>
         <% end %>
         <% elsif event.is_a?(FollowUp) %>
-            <%= link_to prescription_path(event) do %>
+            <%= link_to prescription_follow_up_path(event.prescription, event) do %>
               <div class="follow-up-calendar">
                 <%# <%= event.title.first %>
-                  <p></p>
+                  <p class="hourly-frequency"><%= event.hourly_frequency %></p>
+
               </div>
             <% end %>
         <% elsif event.is_a?(Measure) %>
@@ -77,7 +78,7 @@
 </div>
  </div>
 <p class= "calendar-button-container">
-    <%= link_to "Ajouter un rdv", new_appointment_path, class: "calendar-button" %>
+    <%= link_to "Ajouter un rdv", new_appointment_path, class: "bouton" %>
 </p>
-  <%# <p><%= link_to "Modifier un rdv", edit_appointment_path, class: "btn-bi"%>
+  <%# <p><%= link_to "Modifier un rdv", edit_appointment_path, class: "bouton"%>
 </div>

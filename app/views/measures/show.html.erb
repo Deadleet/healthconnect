@@ -21,24 +21,24 @@
   <div class="container">
     <%= line_chart @measurements,
       xtitle: "Dates", ytitle: "Values",
-      colors: ["#b00", "#666"]
+      colors: ["#AAA1C8", "#666"]
       %>
   </div>
 
   <div class ="d-flex justify-content-around">
-    <%= link_to "Modifier le recapitulatif", edit_measure_path(@measure), class: "btn-bi" %>
-    <%= link_to "Retour à l'ordonnance", prescription_path(@prescription),class: "btn-bi" %>
+    <%= link_to "Modifier le recapitulatif", edit_measure_path(@measure), class: "bouton" %>
+    <%= link_to "Retour à l'ordonnance", prescription_path(@prescription),class: "bouton" %>
   </div>
   <div class ="d-flex">
     <h4 class = "mt-2 pt-2">Mes mesures</h4>
-    <%= link_to " + ", new_prescription_measure_measurement_path(@prescription, @measure), class: "mt-2 btn-bi m-3" %>
+    <%= link_to " + ", new_prescription_measure_measurement_path(@prescription, @measure), class: "mt-2 bouton m-3" %>
   </div>
   <ul class = "list-group">
     <% @measure.measurements.each do |measurement| %>
       <li class = "list-group-item" ><p>Mesure faite le : <%= measurement.created_at %></p>
         <div class = "d-flex justify-content-between">
           <h4 class = "mt-5"><%= measurement.value %> <%= measurement.measure.unit %></h4>
-          <%= link_to "Modifier", edit_prescription_measure_measurement_path(@prescription, @measure, measurement), class: "btn-bi"  %>
+          <%= link_to "Modifier", edit_prescription_measure_measurement_path(@prescription, @measure, measurement), class: "bouton"  %>
         </div>
       </li>
     <% end %>
