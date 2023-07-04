@@ -68,8 +68,20 @@
 }
 
 .plus {
+  display: flex;
   font-weight: bold;
-  font-size: 1.5em;
+  font-size: 45px;
+  // background-color: transparent;
+  width: 50px;
+  height: 50px;
+  // border: 3px solid #C2AAE6;
+  border-radius: 50%;
+  justify-content: center;
+  align-items: center;
+
+  background: linear-gradient(145deg, #E3DBFC, #DAD6E6);
+  box-shadow:  5px 5px 10px #CECAD9,
+              -5px -5px 10px #FFFFFF;
 }
 
 
