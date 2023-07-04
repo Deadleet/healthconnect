@@ -7,7 +7,7 @@
     <% @prescriptions.each do |prescription| %>
       <% if (Date.today <= prescription.end_date && prescription.start_date <= Date.today) %>
         <%= link_to(prescription_path(prescription)) do %>
-          <div class = "measure-title btn-home">
+          <div class = "measure-title home">
             <p><%= prescription.title %></p>
           </div>
         <% end %>
