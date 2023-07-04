@@ -1,12 +1,14 @@
+
 class MeasuresController < ApplicationController
   def index
+    @graph_data = current_user.measures_for_graph
+    @measurements = Measurement.where(measure: params[:id])
     @prescriptions = Prescription.where(user_id: current_user)
-    @measures = Measure.all
   end
 
   def show
-    @measurements = Measurement.where(params[:measurement_id])
     @measure = Measure.find(params[:id])
+    @measurements = @measure.measurements_for_graph
     @prescription = @measure.prescription
   end
 
