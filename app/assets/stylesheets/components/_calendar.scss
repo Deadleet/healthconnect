@@ -8,7 +8,7 @@
 }
 
 .prescription-calendar {
-  color: white;
+  color: rgb(41, 7, 63);
   // padding: 8px 24px;
   border-radius: 50%;
   align-items: center;
@@ -17,11 +17,12 @@
   height: 20px;
   background: #129e5f;
   transition: background 0.3s ease;
+  list-style-type: none;
 }
 
 
 .follow-up-calendar {
-  color: white;
+  color: rgb(41, 7, 63);
   // padding: 8px 24px;
   border-radius: 50%;
   align-items: center;
@@ -30,11 +31,12 @@
   height: 20px;
   background: rgb(104, 62, 96);
   transition: background 0.3s ease;
+  list-style-type: none;
 }
 
 
 .measure-calendar {
-  color: white;
+  color: rgb(41, 7, 63);
   // padding: 8px 24px;
   border-radius: 50%;
   align-items: center;
@@ -43,11 +45,12 @@
   height: 20px;
   background:  royalblue;
   transition: background 0.3s ease;
+  list-style-type: none;
 }
 
 
 .appointment-calendar {
-  color: white;
+  color: rgb(41, 7, 63);
   // padding: 8px 24px;
   border-radius: 50%;
   align-items: center;
@@ -56,6 +59,7 @@
   height: 20px;
   background:  rgb(224, 131, 24);
   transition: background 0.3s ease;
+  list-style-type: none;
 }
 
 
