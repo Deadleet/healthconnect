@@ -1,11 +1,14 @@
+
 class MeasuresController < ApplicationController
   def index
+    @graph_data = current_user.measures_for_graph
+    @measurements = Measurement.where(measure: params[:id])
     @prescriptions = Prescription.where(user_id: current_user)
-    @measures = Measure.all
   end
 
   def show
     @measure = Measure.find(params[:id])
+    @measurements = @measure.measurements_for_graph
     @prescription = @measure.prescription
   end
 
@@ -44,3 +47,8 @@ class MeasuresController < ApplicationController
     params.require(:measure).permit(:title, :description, :start_date, :end_date, :valeur, :unit, :hourly_frequency, :day_frequency)
   end
 end
+
+
+# @measurements.each do |measure|
+#  line_chart measure.group_by_day(:created_at).count
+#  end

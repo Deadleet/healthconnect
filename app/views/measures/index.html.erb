@@ -9,7 +9,15 @@
               <div class="measure-title">
                 <strong><%= measure.title %></strong>
               </div>
+
               <p class = "text-left"><%= measure.start_date %></p>
+            </div>
+
+            <div class="measures">
+              <%= line_chart measure.measurements_for_graph,
+                xtitle: "Dates", ytitle: "Values",
+                colors: ["#b00", "#666"]
+                %>
             </div>
           <% end %>
         <% end %>
