@@ -62,8 +62,12 @@ puts 'done'
 
 
 puts '2 creating measurement'
-measurement1 = Measurement.create!(value: "140/90", unit: "mmHg", measure: measure1)
-measurement2 = Measurement.create!(value: "150/90", unit: "mmHg", measure: measure1)
+measurement1 = Measurement.create!(value: "140", unit: "mmHg", measure: measure1, created_at: measure1.start_date)
+measurement2 = Measurement.create!(value: "150", unit: "mmHg", measure: measure1, created_at: measure1.start_date + 40.day)
+measurement3 = Measurement.create!(value: "200", unit: "mmHg", measure: measure1, created_at: measure1.start_date)
+measurement4 = Measurement.create!(value: "1000", unit: "mmHg", measure: measure1, created_at: measure1.start_date + 20.day)
+measurement5 = Measurement.create!(value: "120", unit: "mmHg", measure: measure1, created_at: measure1.start_date)
+measurement6 = Measurement.create!(value: "450", unit: "mmHg", measure: measure1, created_at: measure1.start_date + 30.day)
 puts "2 measurements created!"
 
 appointment1 = Appointment.create!(title: 'Dentiste', appointment_date: Date.new(2023, 03, 11), appointment_time: Time.now, address: "Place de l'ecureuil", user: user1)
