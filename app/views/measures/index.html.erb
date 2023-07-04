@@ -6,7 +6,7 @@
         <% prescription.measures.each do |measure| %>
           <%= link_to(prescription_measure_path(prescription, measure)) do %>
             <div class="measures">
-              <div class="measure-title">
+              <div class="m-1 bouton d-flex justify-content-center">
                 <strong><%= measure.title %></strong>
               </div>
 

@@ -1,13 +1,13 @@
 <div class = "container mt-5">
 <div class="medical-file bg-transparent d-flex justify-content-between">
   <h1>Vos prescriptions</h1>
-  <p><%= link_to '+', new_prescription_path, class: "btn-plus mt-2"%></p>
+  <%= link_to '+', new_prescription_path, class: "plus align-items-center justify-content-between"%>
 </div>
-  <ul class = "measures" style = "padding-left: 0px">
+  <ul class = "list-group" style = "padding-left: 0px">
     <% @prescriptions.each do |prescription| %>
       <% if (Date.today <= prescription.end_date && prescription.start_date <= Date.today) %>
         <%= link_to(prescription_path(prescription)) do %>
-          <div class = "measure-title btn-home">
+          <div class = "m-1 bouton d-flex justify-content-center">
             <p><%= prescription.title %></p>
           </div>
         <% end %>
@@ -40,5 +40,5 @@
       <%# <% end %>
     <%# <% end %>
   <%# </ul> %>
-    <%# <p><%= link_to 'Créer une prescription', new_prescription_path, class: "btn-bi" %>
+    <%# <p><%= link_to 'Créer une prescription', new_prescription_path, class: "bouton" %>
 <%# </div> %>
