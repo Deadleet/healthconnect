@@ -80,7 +80,7 @@
 }
 
 .today {
-  background-color: #7b9cea !important;
+  background-color: #d8ecf2 !important;
 }
 
 .legend-container {
@@ -137,4 +137,39 @@
   color: white;
   z-index: 99;
   text-align: center;
+}
+
+
+
+
+
+
+
+///// DAILY CALENDAR ////
+
+.daily_calendar_header {
+  margin-top: 7px;
+  background-color: #2492b3 !important;
+  height: 50vh;
+}
+
+
+.daily_calendar {
+  background-color: #e68713 !important;
+}
+
+.prescription-daily-calendar {
+
+}
+
+.follow-up-daily-calendar {
+
+}
+
+.measure-daily-calendar {
+
+}
+
+.appointment-daily-calendar {
+
 }

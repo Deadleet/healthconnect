@@ -2,7 +2,6 @@
 // Run that command whenever you add a new controller or create them with
 // ./bin/rails generate stimulus controllerName
 
-
 import { application } from "./application"
 
 import FlatpickrController from "./flatpickr_controller"
@@ -10,3 +9,6 @@ application.register("flatpickr", FlatpickrController)
 
 import HelloController from "./hello_controller"
 application.register("hello", HelloController)
+
+import TooltipController from "./tooltip_controller"
+application.register("tooltip", TooltipController)
