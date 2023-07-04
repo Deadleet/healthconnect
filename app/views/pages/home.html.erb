@@ -10,7 +10,7 @@
               <% prescription.measures.each do |measure| %>
                 <%= link_to(prescription_measure_path(prescription, measure)) do %>
                   <% if ((Time.now < measure.end_date && measure.start_date < Time.now)) %>
-                    <li class = " m-1 home d-flex justify-content-center pt-4">
+                    <li class = " m-1 bouton d-flex justify-content-center">
                       <p><%= measure.title %></p>
                     </li>
                   <% end %>
@@ -28,7 +28,7 @@
               <% prescription.follow_ups.each do |followup| %>
                 <%= link_to(prescription_follow_up_path(prescription, followup)) do %>
                   <% if ((Time.now < followup.end_date && followup.start_date < Time.now)) %>
-                    <li class = "m-1 default d-flex justify-content-center pt-4">
+                    <li class = "m-1 bouton d-flex justify-content-center">
                       <p> <%= followup.title %></p>
                     </li>
                   <% end %>

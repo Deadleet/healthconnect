@@ -21,9 +21,17 @@
   // background-color: #F2EEFF;
 }
 
+ul {
+  list-style: none;
+}
+
 a {
   text-decoration: none;
   color: #49516F;
+}
+
+p{
+  margin: 0;
 }
 
 body {
@@ -51,7 +59,7 @@ body {
  top: 0;
  position: relative;
  border-bottom-right-radius: 30px;
- 
+
 }
 // .header::after {
 //   content: "";
