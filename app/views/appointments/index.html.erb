@@ -13,7 +13,7 @@
           </div>
         <% end %>
         <% elsif event.is_a?(FollowUp) %>
-            <%= link_to prescription_path(event) do %>
+            <%= link_to prescription_follow_up_path(event.prescription, event) do %>
               <div class="follow-up-calendar">
                 <%# <%= event.title.first %>
                   <p class="hourly-frequency"><%= event.hourly_frequency %></p>
