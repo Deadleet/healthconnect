@@ -16,7 +16,8 @@
             <%= link_to prescription_path(event) do %>
               <div class="follow-up-calendar">
                 <%# <%= event.title.first %>
-                  <p></p>
+                  <p class="hourly-frequency"><%= event.hourly_frequency %></p>
+
               </div>
             <% end %>
         <% elsif event.is_a?(Measure) %>
