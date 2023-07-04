@@ -1,35 +1,40 @@
 <div class="header">
   <div class= "header-title">
   <% if user_signed_in? %>
-    <h1>Bonjour, <%= current_user.first_name%></h1>
+    <h1>Mon profil</h1>
     <% end %>
   </div>
 </div>
 <div class = "container">
-  <h1>Votre profil </h1>
-  <p><%= @user.first_name %> <%= @user.last_name %></p>
+  <h1 class ="mt-2">Données personnelles </h1>
+  <p>Prénom : <%= @user.first_name %></p>
+  <p>Nom : <%= @user.last_name %></p>
   <p>Age : 38 ans</p>
   <p>Sexe : Femme </p>
   <p>Adresse : 1 rue de la paix, 75000 Paris</p>
   <p>Numéro de téléphone : 06 12 34 56 78</p>
   <p>Adresse mail : <%= @user.email %></p>
-  <p>Numéro de sécurité sociale : 1 38 05 12 345 678 90</p>
-  <p>Numéro de carte vitale : 1 38 05 12 345 678 90</p>
-  <p>Numéro de carte mutuelle : 1 38 05 12 345 678 90</p>
-  <p>Numéro de carte de groupe sanguin : 1 38 05 12 345 678 90</p>
-  <p>Donneur d'organe : Oui</p>
-  <ul class = "list-group">
-    <% @pathologies.each do |pathologie| %>
-      <li class = "list-group-item border">
-        <p>Pathologie : <%= pathologie.name %></p>
-        <p>Description : <%= pathologie.description %></p>
-      </li>
-    <% end %>
-  </ul>
 
+  <h1 class ="mt-2">Données administratives </h1>
+  <p>N° sécurité sociale : 1 38 05 12 345 678 90</p>
+  <p>N° carte vitale : 1 38 05 12 345 678 90</p>
+  <p>N° carte mutuelle : 1 38 05 12 345 678 90</p>
+  <p>N° carte groupe sanguin : 1 38 05 12 345 678 90</p>
+
+  <h1 class ="mt-2">A savoir sur moi </h1>
+  <p>Donneur d'organe : Oui</p>
+  <p>Fumeur non : Oui</p>
+  <p>Contact ICE : </p>
+  <p> - M.BALDIN (pére) : 06 12 34 56 78</p>
+  <p> - Mme.BALDIN (mère) : 06 98 76 54 32</p>
 
 </div>
 
+<%= link_to(pathologies_path) do %>
+  <p class= "m-1 bouton d-flex justify-content-center">Pathologies</p>
+<% end %>
 
-          <li> <%= link_to 'Pathologies', pathologies_path %></li>
-          <li><%= link_to 'Historique', historical_path %></li>
+<%= link_to(historical_path) do %>
+  <p class= "m-1 bouton d-flex justify-content-center">Historique</p>
+<% end %>
+<p>.</p>

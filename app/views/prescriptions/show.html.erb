@@ -14,13 +14,13 @@
     <p>Rappel de renouvellement : <%= @prescription.end_date-5 %></p>
   </div>
 
-<%= link_to(edit_prescription_path(@prescription)) do %>
-  <p class= "m-1 bouton d-flex justify-content-center">Modifier mon ordonnance</p>
-<% end %>
+  <%= link_to(edit_prescription_path(@prescription)) do %>
+    <p class= "m-1 bouton d-flex justify-content-center">Modifier mon ordonnance</p>
+  <% end %>
 
 
   <div class="m-3 d-flex align-items-center justify-content-between">
-    <h2 class = "my-1">Mes traitements</h2>
+    <h2 class = "my-1">Mes traitements </h2>
     <p class = "plus"><%= link_to "+", new_prescription_follow_up_path(@prescription) %></p>
   </div>
 
@@ -35,7 +35,7 @@
   </div>
 
   <div class = "m-3 d-flex align-items-center justify-content-between">
-    <h2 class = "my-1">Mes mesures</h2>
+    <h2 class = "my-1">Mes mesures </h2>
     <p class = "plus"><%= link_to "+", new_prescription_measure_path(@prescription) %></p>
   </div>
   <div>
