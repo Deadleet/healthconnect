@@ -1,7 +1,12 @@
+<div class="header">
+  <div class= "header-title">
+    <h1>Créer un RDV</h1>
+  </div>
+</div>
 <div class="calendar">
 <div class="background">
   <div class="bg-white rounded p-3 shadow">
-    <h3>Creer un rendez-vous</h3>
+
     <%= simple_form_for @appointment do |f| %>
       <div>
       <%= f.input :title,  label: "Titre", placeholder: 'Titre' %>
@@ -23,7 +28,9 @@
         <%= f.input :practician, label: "Practicien", placeholder: "Practicien "%>
       </div>
 
+
       <%= f.submit class: "bouton", value: "Créer" %>
+
     <% end %>
   </div>
 </div>

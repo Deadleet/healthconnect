@@ -1,7 +1,11 @@
+<div class="header">
+  <div class= "header-title">
+    <h1>Mon traitement</h1>
+  </div>
+</div>
  <div class="edit-form">
     <div class="container form">
     <div class="bg-white rounded p-3 shadow">
-      <h3>Modifier mon traitement</h3>
       <%= simple_form_for [@prescription, @followup], data: { controller: 'flatpickr' } do |f| %>
 
       <div>

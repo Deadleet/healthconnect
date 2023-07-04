@@ -1,4 +1,9 @@
-<div class="container">
+<div class="header">
+  <div class= "header-title">
+    <h1>Calendrier</h1>
+  </div>
+</div>
+  <div class="container">
  <div class="calendar-container">
     <%= month_calendar(events: @prescriptions + @follow_ups + @measures + @appointments) do |date, events| %>
       <%= date %>

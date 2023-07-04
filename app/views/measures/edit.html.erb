@@ -1,8 +1,13 @@
-
+<div class="header">
+  <div class= "header-title">
+  <% if user_signed_in? %>
+    <h1>Modifier un relevé </h1>
+    <% end %>
+  </div>
+</div>
  <div class="edit-form">
     <div class="container form">
   <div class="bg-white rounded p-3 shadow">
-    <h3>Modifier un relevé d'automesure</h3>
     <%= simple_form_for @measure, data: { controller: 'flatpickr' } do |f| %>
     <div>
       <%= f.input :title, placeholder: 'Titre', value: 'Titre' %>

@@ -1,8 +1,13 @@
-
+<div class="header">
+  <div class= "header-title">
+  <% if user_signed_in? %>
+    <h1>Relevé d'auto-mesure</h1>
+    <% end %>
+  </div>
+</div>
  <div class="edit-form">
     <div class="container form">
     <div class="bg-white rounded p-3 shadow">
-      <h3>Creer un relevé d'auto-mesure</h3>
         <%= simple_form_for [@prescription, @measure, @measurement] do |f| %>
           <div>
             <%= f.input :value, placeholder: 'Valeur'%>

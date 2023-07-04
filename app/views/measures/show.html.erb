@@ -1,3 +1,10 @@
+<div class="header">
+  <div class= "header-title">
+  <% if user_signed_in? %>
+    <h1>Mes mesures</h1>
+    <% end %>
+  </div>
+</div>
 <div class="container">
 
   <h1><%= @measure.title %></h1>

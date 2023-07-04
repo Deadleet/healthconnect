@@ -1,5 +1,11 @@
-
-<h1 class="edit-form"> Modifier votre ordonnance</h1>
+<div class="header">
+  <div class= "header-title">
+  <% if user_signed_in? %>
+    <h1>Modifier votre ordonnance</h1>
+    <% end %>
+  </div>
+</div>
+<h1 class="edit-form"></h1>
 <div class="container form">
       <%= simple_form_for @prescription, data: { controller: 'flatpickr' } do |f| %>
 

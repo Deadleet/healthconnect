@@ -1,6 +1,11 @@
-
+<div class="header">
+  <div class= "header-title">
+  <% if user_signed_in? %>
+    <h1>Suivi des mesures</h1>
+    <% end %>
+  </div>
+</div>
 <div class = "container">
-  <h1 class = "m-3">Suivi des mesures</h1>
 
       <% @prescriptions.each do |prescription| %>
         <% prescription.measures.each do |measure| %>
