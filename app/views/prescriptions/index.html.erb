@@ -5,12 +5,12 @@
     <% end %>
   </div>
 </div>
-<div class = "container mt-5">
-<div class="medical-file bg-transparent d-flex justify-content-between">
-
-  <p><%= link_to '+', new_prescription_path, class: "plus mt-2"%></p>
-
-</div>
+<div class = "container mt-1">
+  <div class="medical-file bg-transparent d-flex justify-content-center m-2">
+      <div class= "plus">
+        <p><%= link_to '+', new_prescription_path, class: ""%></p>
+      </div>
+  </div>
   <ul class = "list-group" style = "padding-left: 0px">
     <% @prescriptions.each do |prescription| %>
       <% if (Date.today <= prescription.end_date && prescription.start_date <= Date.today) %>
