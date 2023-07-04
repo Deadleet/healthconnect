@@ -1,3 +1,10 @@
+<div class="header">
+  <div class= "header-title">
+  <% if user_signed_in? %>
+    <h1>Bonjour, <%= current_user.first_name%></h1>
+    <% end %>
+  </div>
+</div>
 <h1>Pathologies#show</h1>
 <p>Find me in app/views/pathologies/show.html.erb</p>
 

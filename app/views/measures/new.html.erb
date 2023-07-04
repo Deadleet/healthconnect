@@ -1,7 +1,13 @@
+<div class="header">
+  <div class= "header-title">
+  <% if user_signed_in? %>
+    <h1>Creer un relevé d'automesure</h1>
+    <% end %>
+  </div>
+</div>
  <div class="edit-form">
     <div class="container form">
   <div class="bg-white rounded p-3 shadow">
-    <h3>Creer un relevé d'automesure</h3>
     <%= simple_form_for [@prescription, @measure], data: { controller: 'flatpickr' } do |f| %>
     <div>
       <%= f.input :title, placeholder: 'Titre', label: "Titre" %>

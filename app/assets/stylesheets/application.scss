@@ -39,7 +39,7 @@ body {
   // background-color: aquamarine;
 }
 .header{
-  min-height: 25vh;
+  min-height: 20vh;
  background-image: url("HealthConnect.jpg");
  background-repeat: no-repeat;
  background-size: cover;
@@ -51,7 +51,11 @@ body {
  top: 0;
  position: relative;
  border-bottom-right-radius: 30px;
- 
+}
+
+.header-title {
+  margin-top: 90px;
+  margin-left: 10px;
 }
 // .header::after {
 //   content: "";

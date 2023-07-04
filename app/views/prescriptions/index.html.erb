@@ -1,6 +1,12 @@
+<div class="header">
+  <div class= "header-title">
+  <% if user_signed_in? %>
+    <h1>Mes prescriptions</h1>
+    <% end %>
+  </div>
+</div>
 <div class = "container mt-5">
 <div class="medical-file bg-transparent d-flex justify-content-between">
-  <h1>Vos prescriptions</h1>
   <p><%= link_to '+', new_prescription_path, class: "btn-plus mt-2"%></p>
 </div>
   <ul class = "measures" style = "padding-left: 0px">

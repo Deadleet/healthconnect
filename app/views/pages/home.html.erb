@@ -1,8 +1,13 @@
-<div class="container mt-5">
+<div class="header">
+  <div class= "header-title">
   <% if user_signed_in? %>
-    <h1>Bonjour ! <%= current_user.first_name%> 👋🏼</h1>
-
-    <div class="medical-file justify-content-center my-5 rounded bg-transparent">
+    <h1>Bonjour, <%= current_user.first_name%></h1>
+    <% end %>
+  </div>
+</div>
+<div class="container">
+  <% if user_signed_in? %>
+    <div class="medical-file justify-content-center rounded bg-transparent">
       <div class="mb-2 col-12 col-lg-6 rounded">
         <h2 class = "mt-2 my-2"> Mesure du jour 🩺</h2>
           <ul class = "list-group">

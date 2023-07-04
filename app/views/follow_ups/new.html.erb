@@ -1,8 +1,13 @@
-
+<div class="header">
+  <div class= "header-title">
+  <% if user_signed_in? %>
+    <h1>Création du traitement</h1>
+    <% end %>
+  </div>
+</div>
  <div class="edit-form">
     <div class="container form">
     <div class="bg-white rounded p-3 shadow">
-      <h3>Création du traitement</h3>
       <%= simple_form_for [@prescription, @followup], data: { controller: 'flatpickr' } do |f| %>
 
       <div>
