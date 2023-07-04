@@ -12,8 +12,7 @@
         <% if event.is_a?(Prescription) %>
       <%= link_to prescription_path(event) do %>
           <div class="prescription-calendar">
-            <%# <%= event.title %>
-            <%# <% @prescription = Prescription %>
+
             <p></p>
           </div>
         <% end %>
@@ -27,7 +26,7 @@
             <% end %>
         <% elsif event.is_a?(Measure) %>
             <%= link_to measures_path(event) do %>
-              <div class="measure-calendar">
+              <div class="measure-calendar"> <%= event.hourly_frequency %></p>
                 <%# <%= event.title %>
                 <p></p>
               </div>
