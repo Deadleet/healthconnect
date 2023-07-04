@@ -6,21 +6,19 @@
   </div>
 </div>
 <div class="container">
-  <div class="mb-2">
-    <h1> <%= @prescription.title %> </h1>
+  <div class="my-2 ">
+    <h1 class =""><strong><%= @prescription.title %></strong> </h1>
     <h4><%= @prescription.practician %></h4>
     <p><%= @prescription.description %></p>
     <p> Debut : <%= @prescription.start_date %> - Fin : <%= @prescription.end_date %></p>
     <p>Rappel de renouvellement : <%= @prescription.end_date-5 %></p>
   </div>
 
-  <%= link_to 'Modifier mon ordonnance', edit_prescription_path(@prescription), class: "bouton mb-3" %>
+  <%= link_to 'Modifier mon ordonnance', edit_prescription_path(@prescription), class: "m-1 bouton d-flex justify-content-center" %>
 
-  <div class="d-flex align-items-center justify-content-between col-8">
-    <h2>Mes traitements</h2>
-    <%= link_to new_prescription_follow_up_path(@prescription), class: "plus" do %>
-      <i class="fa-solid fa-arrow-right" style="color: #49516F;"></i>
-    <% end %>
+  <div class="m-3 d-flex align-items-center justify-content-between">
+    <h2 class = "my-1">Mes traitements</h2>
+    <p class = "plus"><%= link_to "+", new_prescription_follow_up_path(@prescription) %></p>
   </div>
 
   <div>
@@ -33,16 +31,14 @@
     </p>
   </div>
 
-  <div class = "d-flex align-items-center justify-content-between col-8">
-    <h2>Mes mesures</h2>
-    <%= link_to new_prescription_measure_path(@prescription), class: "plus" do %>
-      <i class="fa-solid fa-arrow-right" style="color: #49516F;"></i>
-    <% end %>
+  <div class = "m-3 d-flex align-items-center justify-content-between">
+    <h2 class = "my-1">Mes mesures</h2>
+    <p class = "plus"><%= link_to "+", new_prescription_measure_path(@prescription) %></p>
   </div>
   <div>
     <ul class = "list-group">
       <% @prescription.measures.each do |m| %>
-        <li class = "list-group-item"><%= link_to m.title, prescription_measure_path(@prescription,m) %></li>
+        <li class = "m-1 bouton d-flex justify-content-center"><%= link_to m.title, prescription_measure_path(@prescription,m) %></li>
       <% end %>
     </ul>
   </div>
