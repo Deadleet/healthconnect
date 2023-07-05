@@ -30,7 +30,7 @@ puts 'prescriptions created!'
 
 puts 'creating 2 measures for user 1 et prescription 1'
 # FOR USER 1 ET PRESCRIPTION 1
-measure1 = Measure.create!(title: "Prise de tension", description: "Prendre la tension", start_date: Date.new(2023, 06, 02), end_date: Date.new(2023, 07, 30), day_frequency: 1, hourly_frequency: 3, prescription: prescription1)
+measure1 = Measure.create!(title: "Prise de tension", description: "Le matin et au repos", start_date: Date.new(2023, 06, 02), end_date: Date.new(2023, 07, 30), day_frequency: 1, hourly_frequency: 3, prescription: prescription1)
 puts 'creating measure2'
 measure2 = Measure.create!(title: "Glycémie", description: "2 hrs après le repas", start_date: Date.new(2023, 07, 02), end_date: Date.new(2023, 07, 30), day_frequency: 1, hourly_frequency: 3, prescription: prescription2)
 puts 'measures created!'

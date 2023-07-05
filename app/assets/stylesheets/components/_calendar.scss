@@ -1,22 +1,27 @@
 .simple-calendar {
   table {
     // min-height: 80vh;
+
   }
   .today {
     background-color: #F2EEFF;
   }
 }
 
+#month-table {
+  table-layout: fixed;
+}
+
 .prescription-calendar {
   margin-right: 5px;
-  color: rgb(41, 7, 63);
+  color: rgb(59, 16, 198);
   // padding: 8px 24px;
   border-radius: 50%;
   align-items: center;
   justify-content: center;
   width: 20px;
   height: 20px;
-  background: #129e5f;
+  // background: #129e5f;
   transition: background 0.3s ease;
   list-style-type: none;
 }
@@ -24,29 +29,32 @@
 
 .follow-up-calendar {
   margin-right: 5px;
-  color: rgb(41, 7, 63);
+  // color: rgb(41, 7, 63);
   // padding: 8px 24px;
   border-radius: 50%;
   align-items: center;
   justify-content: center;
   width: 20px;
   height: 20px;
-  background: rgb(104, 62, 96);
+  // background: rgb(104, 62, 96);
   transition: background 0.3s ease;
   list-style-type: none;
+    p {
+      display: flex;
+    }
 }
 
 
 .measure-calendar {
   margin-right: 5px;
-  color: rgb(41, 7, 63);
+  color: rgb(207, 173, 231);
   // padding: 8px 24px;
   border-radius: 50%;
   align-items: center;
   justify-content: center;
   width: 20px;
   height: 20px;
-  background:  royalblue;
+  // background:  royalblue;
   transition: background 0.3s ease;
   list-style-type: none;
 }
@@ -61,7 +69,7 @@
   justify-content: center;
   width: 20px;
   height: 20px;
-  background:  rgb(224, 131, 24);
+  // background:  rgb(224, 131, 24);
   transition: background 0.3s ease;
   list-style-type: none;
 }
@@ -80,7 +88,7 @@
 }
 
 .today {
-  background-color: #d8ecf2 !important;
+  background-color: #a5c1fe !important;
 }
 
 .legend-container {
@@ -139,9 +147,27 @@
   text-align: center;
 }
 
+.div-flex {
+  display: flex;
+}
 
+.emojis {
+  display: flex;
+  flex-direction: column;
+}
 
+.aligned-emojis {
+  display: flex;
+}
 
+.emoji {
+  font-size: 0.5em;
+}
+
+.emoji-presc {
+  font-size: 0.8em;
+  color: blue;
+}
 
 
 
@@ -149,26 +175,31 @@
 
 .daily_calendar_header {
   margin-top: 7px;
-  background-color: #d8ecf2 !important;
+  background-color: white !important;
   height: 50vh;
   padding-top: 20px;
 }
 
+.calendar-heading {
+  margin-bottom: 10px !important;
+}
+
 
 .daily_calendar {
-  background-color: #d8ecf2 !important;
+  background-color: #ecadf7 !important;
+
 }
 
 .prescription-daily-calendar {
   margin-right: 5px;
-  color: rgb(41, 7, 63);
+  // color: rgb(41, 7, 63);
   // padding: 8px 24px;
-  border-radius: 50%;
+  // border-radius: 50%;
   align-items: center;
   justify-content: center;
   width: 20px;
   height: 20px;
-  background: #129e5f;
+  // background: #129e5f;
   transition: background 0.3s ease;
   list-style-type: none;
   margin: 10px;
@@ -176,14 +207,14 @@
 
 .follow-up-daily-calendar {
   margin-right: 5px;
-  color: rgb(41, 7, 63);
+  // color: rgb(41, 7, 63);
   // padding: 8px 24px;
-  border-radius: 50%;
+  // border-radius: 50%;
   align-items: center;
   justify-content: center;
   width: 20px;
   height: 20px;
-  background: #129e5f;
+  // background: #129e5f;
   transition: background 0.3s ease;
   list-style-type: none;
   margin: 10px;
@@ -191,14 +222,14 @@
 
 .measure-daily-calendar {
   margin-right: 5px;
-  color: rgb(41, 7, 63);
+  // color: rgb(41, 7, 63);
   // padding: 8px 24px;
-  border-radius: 50%;
+  // border-radius: 50%;
   align-items: center;
   justify-content: center;
   width: 20px;
   height: 20px;
-  background: #129e5f;
+  // background: #129e5f;
   transition: background 0.3s ease;
   list-style-type: none;
   margin: 10px;
@@ -209,14 +240,14 @@
 
 .appointment-daily-calendar {
   margin-right: 5px;
-  color: rgb(41, 7, 63);
+  // color: rgb(41, 7, 63);
   // padding: 8px 24px;
   border-radius: 50%;
   align-items: center;
   justify-content: center;
   width: 20px;
   height: 20px;
-  background: #129e5f;
+  // background: #129e5f;
   transition: background 0.3s ease;
   list-style-type: none;
   margin: 10px;
@@ -229,7 +260,7 @@
   // text-align: center;
   width: 300px;
   margin-left: 48px;
-  margin-top: -12px;
+  margin-top: -37px;
 
 }
 
@@ -258,5 +289,9 @@
   z-index: 99;
   margin-left: -15px;
   margin-top: -18px;
+}
 
+.month-td {
+  // width: 14vw !important;
+  overflow: hidden;
 }

@@ -1,7 +1,11 @@
 class AppointmentsController < ApplicationController
   before_action :calendar_models, only: [:day_calendar, :index]
 
-  def day_calendar; end
+  def day_calendar
+
+    params[:start_date]
+
+  end
 
   def index; end
 
