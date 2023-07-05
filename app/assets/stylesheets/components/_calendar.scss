@@ -176,7 +176,7 @@
 .daily_calendar_header {
   margin-top: 7px;
   background-color: white !important;
-  height: 50vh;
+  height: 30vh;
   padding-top: 20px;
 }
 
@@ -294,4 +294,9 @@
 .month-td {
   // width: 14vw !important;
   overflow: hidden;
+}
+
+
+.table-striped {
+height: 40px;
 }
