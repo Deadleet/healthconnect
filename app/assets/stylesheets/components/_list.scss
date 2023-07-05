@@ -33,10 +33,10 @@
   flex-direction: column-reverse;
   align-items: stretch;
   border-top-width: initial!important;
-  border: 1px solid rgba(73, 73, 73, 0.125);
+  border: 2px solid rgba(73, 81, 111, 0.125);
 }
 
-.list-groupd ul{
+.list-groupd ul {
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-gap: 10px;
