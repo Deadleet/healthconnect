@@ -17,13 +17,13 @@
 
 
       <div>
-      <%= f.input :start_date, label: "début", as: :string, input_html: { data: { flatpickr_target: "startTime" } }, value: 'Commence le' %>
-      <%= f.input :end_date, label: "au", as: :string, input_html: { data: { flatpickr_target: "endTime" }, id: 'end_time' }, value: 'Fini le' %>
+      <%= f.input :start_date, label: "Commence le", as: :string, input_html: { data: { flatpickr_target: "startTime" } }, value: 'Commence le' %>
+      <%= f.input :end_date, label: "Fini le", as: :string, input_html: { data: { flatpickr_target: "endTime" }, id: 'end_time' }, value: 'Fini le' %>
       </div>
 
       <div>
-      <%= f.input :hourly_frequency, placeholder: 'ex: 4', value: "Nombre de fois par jour"%>
-      <%= f.input :day_frequency, placeholder: 'ex: 2', value: 'Tous les combiens de jour ?'%>
+      <%= f.input :hourly_frequency, placeholder: 'ex: 4', label: "Fréquence journalière des mesures"%>
+      <%= f.input :day_frequency, placeholder: 'ex: 2', label: 'Fréquence de prise (en jours)'%>
       </div>
       <%# <%= f.input :photo_url, as: :file %>
       <%= f.submit class: 'bouton', value: "Modifier mon relevé"%>
