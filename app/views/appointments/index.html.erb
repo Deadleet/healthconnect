@@ -1,84 +1,87 @@
 <div class="header">
   <div class= "header-title">
-    <h1>Calendrier</h1>
+  <h1>Calendrier</h1>
   </div>
 </div>
-  <div class="container">
- <div class="calendar-container">
+
+<div class="container">
+  <div class="calendar-container">
     <%= month_calendar(events: @prescriptions + @follow_ups + @measures + @appointments) do |date, events| %>
-      <%= date %>
-
-      <% events.each do |event| %>
-        <% if event.is_a?(Prescription) %>
-      <%= link_to prescription_path(event) do %>
-          <div class="prescription-calendar">
-
-            <p></p>
-          </div>
-        <% end %>
-        <% elsif event.is_a?(FollowUp) %>
-            <%= link_to prescription_follow_up_path(event.prescription, event) do %>
-              <div class="follow-up-calendar">
-                <%# <%= event.title.first %>
-                  <p class="hourly-frequency"><%= event.hourly_frequency %></p>
-
-              </div>
-            <% end %>
-        <% elsif event.is_a?(Measure) %>
-            <%= link_to measures_path(event) do %>
-              <div class="measure-calendar"> <%= event.hourly_frequency %></p>
-                <%# <%= event.title %>
-                <p></p>
-              </div>
-            <% end %>
-          <% elsif event.is_a?(Appointment) %>
-            <%= link_to appointment_path(event) do %>
-              <div class="appointment-calendar">
-                <%# <%= event.title %>
-                <p></p>
-              </div>
-          <% end %>
-        <% end %>
+      <%= link_to day_calendar_path(date), class: "day-link" do %>
+        <%= date %>
       <% end %>
+      <div class="emojis">
+        <% @prescriptions = events.select { |event| event.is_a?(Prescription) } %>
+        <% @follow_ups = events.select { |event| event.is_a?(FollowUp) } %>
+        <% @measures = events.select { |event| event.is_a?(Measure) } %>
+        <% @appointments = events.select { |event| event.is_a?(Appointment) } %>
+
+        <div class="aligned-emojis">
+          <% @prescriptions.each do |prescription| %>
+            <%= link_to prescription_path(prescription) do %>
+              <p class="emoji-presc">⚕️</p>
+            <% end %>
+          <% end %>
+        </div>
+
+        <div class="aligned-emojis">
+          <% @follow_ups.each do |follow_up| %>
+            <%= link_to follow_up_path(follow_up) do %>
+              <p class="emoji">💊</p>
+            <% end %>
+          <% end %>
+        </div>
+
+        <div class="aligned-emojis">
+          <% @measures.each do |measure| %>
+            <%= link_to measure_path(measure) do %>
+              <p class="emoji">📈</p>
+            <% end %>
+          <% end %>
+        </div>
+
+        <div class="aligned-emojis">
+          <% @appointments.each do |appointment| %>
+            <%= link_to appointment_path(appointment) do %>
+              <p class="emoji">🛎️</p>
+            <% end %>
+          <% end %>
+        </div>
+      </div>
     <% end %>
     <div class="legend-container">
       <p class="legend-title">Légende</p>
-  <div class="colored-legend">
-      <div class="left-side-legend">
-        <div class="bullet-prescription">
-          <div class = "prescription-calendar">
+      <div class="colored-legend">
+        <div class="left-side-legend">
+          <div class="bullet-prescription">
+            <div class = "prescription-calendar">⚕️</div>
+            <p> Prescription</p>
           </div>
-          <p> Prescription</p>
-        </div>
 
-        <div class="bullet-follow-up">
-            <div class = "follow-up-calendar">
-            </div>
+          <div class="bullet-follow-up">
+            <div class = "follow-up-calendar">💊</div>
             <p> Traitement</p>
-        </div>
-      </div>
-
-      <div class="right-side-legend">
-
-        <div class="bullet-measures">
-            <div class = "measure-calendar">
-            </div>
-            <p> Auto-relevé</p>
-        </div>
-
-        <div class="bullet-appointment">
-          <div class = "appointment-calendar">
           </div>
-          <p> Rendez-vous</p>
         </div>
+        <div class="right-side-legend">
 
+          <div class="bullet-measures">
+            <div class = "measure-calendar">📈</div>
+            <p> Auto-relevé</p>
+          </div>
+
+          <div class="bullet-appointment">
+            <div class = "appointment-calendar">🛎️</div>
+            <p> Rendez-vous</p>
+          </div>
+        </div>
       </div>
+    </div>
   </div>
-</div>
- </div>
-<p class= "calendar-button-container">
+  <p class= "calendar-button-container">
     <%= link_to "Ajouter un rdv", new_appointment_path, class: "bouton" %>
-</p>
+  </p>
   <%# <p><%= link_to "Modifier un rdv", edit_appointment_path, class: "bouton"%>
 </div>
-<p>.</p>
+
+<p class = "mt-3 justify-content-center">.</p>
