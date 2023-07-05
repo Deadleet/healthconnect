@@ -29,7 +29,15 @@
       %>
   </div>
 
-    <%= link_to "Retour à l'ordonnance", prescription_path(@prescription),class: "m-1 bouton d-flex justify-content-center" %>
+
+
+    <%= link_to(prescription_path(@prescription)) do %>
+      <div class = "d-flex justify-content-center">
+        <div class ="m-1 bouton justify-content-center">
+          <i class="fa-sharp fa-solid fa-arrow-left" style="color: #49516F;"></i>
+        </div>
+      </div>
+    <% end %>
 
 
 <div class ="m-3 d-flex align-items-center justify-content-between">
