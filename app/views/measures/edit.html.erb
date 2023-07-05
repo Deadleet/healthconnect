@@ -10,8 +10,8 @@
   <div class="bg-white rounded p-3 shadow">
     <%= simple_form_for @measure, data: { controller: 'flatpickr' } do |f| %>
     <div>
-      <%= f.input :title, placeholder: 'Titre', value: 'Titre' %>
-      <%= f.input :description, placeholder: 'Description', value: 'Description'%>
+      <%= f.input :title, placeholder: 'Titre', label: "Titre" %>
+      <%= f.input :description, placeholder: 'Description', label: "Description"%>
       <%= f.input :unit, placeholder: 'ex : ml', label: "Unité de mesure"%>
       </div>
 
@@ -22,8 +22,8 @@
       </div>
 
       <div>
-      <%= f.input :hourly_frequency, placeholder: 'Combien de fois par jour? ex: 4', value: "Nombre de fois par jour"%>
-      <%= f.input :day_frequency, placeholder: 'Combien de fois par semaine? ex: 2', value: 'Nombre de fois par semaine'%>
+      <%= f.input :hourly_frequency, placeholder: 'ex: 4', value: "Nombre de fois par jour"%>
+      <%= f.input :day_frequency, placeholder: 'ex: 2', value: 'Tous les combiens de jour ?'%>
       </div>
       <%# <%= f.input :photo_url, as: :file %>
       <%= f.submit class: 'bouton', value: "Modifier mon relevé"%>
