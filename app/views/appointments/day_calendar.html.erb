@@ -1,22 +1,22 @@
+<div class = "container">
 <div class="header">
   <div class= "header-title">
     <h1>Calendrier <br>Journalier</h1>
   </div>
 </div>
 
-
 <div class = "container">
   <div class = "daily_calendar_header">
     <%= calendar(number_of_days: 1, events: @prescriptions + @follow_ups + @measures + @appointments) do |date, events| %>
     <%= date %>
-      <div class = "daily_calendar_header">
+    <div class = "daily_calendar_header">
       <% events.each do |event| %>
         <% if event.is_a?(Prescription) %>
       <%= link_to prescription_path(event) do %>
           <div class="prescription-daily-calendar">
-              <p class = "bullet-daily-prescription"></p>
+              <p class = "bullet-daily-prescription">⚕️</p>
               <div class="text-daily-calendar">
-                <%= event.title.end_date%>
+                <%= event.end_date%>
               </div>
           </div>
         <% end %>
@@ -25,7 +25,7 @@
         <% elsif event.is_a?(FollowUp) %>
             <%= link_to prescription_follow_up_path(event.prescription, event) do %>
               <div class="follow-up-daily-calendar">
-              <p class = "bullet-daily-follow-up"></p>
+              <p class = "bullet-daily-follow-up">💊</p>
                   <div class="text-daily-calendar">
                    <%= event.title %>
                    <br>
@@ -37,9 +37,9 @@
             <br>
 
         <% elsif event.is_a?(Measure) %>
-            <%= link_to measures_path(event) do %>
+            <%= link_to measure_path(event) do %>
               <div class="measure-daily-calendar">
-                <p class = "bullet-daily-measures"></p>
+                <p class = "bullet-daily-measures">📈</p>
                 <div class="text-daily-calendar">
                 <%= event.title %>
                 <br>
@@ -47,14 +47,13 @@
                 <%# <p class="daily-hourly-frequency"><%= event.hourly_frequency %>
                 </div>
               </div>
-
             <% end %>
             <br>
 
           <% elsif event.is_a?(Appointment) %>
             <%= link_to appointment_path(event) do %>
               <div class="appointment-daily-calendar">
-              <p class = "bullet-daily-appointment" ></p>
+              <p class = "bullet-daily-appointment" >🛎️</p>
                 <div class="text-daily-calendar">
                 <%= event.title %>
                 <br>
@@ -67,8 +66,7 @@
       <% end %>
     <% end %>
     </div>
-
-
-
  </div>
+</div>
+
 </div>
