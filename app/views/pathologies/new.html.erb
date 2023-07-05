@@ -9,8 +9,8 @@
     <div class="container form">
     <h3>Create a pathologie</h3>
     <%= simple_form_for @pathologie do |f| %>
-      <%= f.input :name, placeholder: 'The title of your pathology' %>
-      <%= f.input :description, placeholder: 'Give us more information'%>
+      <%= f.input :name, placeholder: 'Nom de votre pathologie', label: "Nom de votre pathologie" %>
+      <%= f.input :description, placeholder: 'Description', label: "Description"%>
       <%# <%= f.input :photo_url, as: :file %>
       <%= f.submit class: "bouton", value: "Creer"%>
     <% end %>
