@@ -51,7 +51,7 @@
     <h2 class = "mt-2 pt-2">Mes mesures</h2>
     <%= link_to " + ", new_prescription_measure_measurement_path(@prescription, @measure), class: "plus" %>
   </div>
-  <ul class = "list-group">
+  <ul class = "list-groupp">
     <% @measure.measurements.each do |measurement| %>
       <li class = "list-group-item" >
         <div class="measures-created_at">
