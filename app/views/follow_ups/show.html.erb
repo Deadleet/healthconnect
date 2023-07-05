@@ -6,7 +6,10 @@
   </div>
 </div>
 <div class = "container">
-<h1><strong><%= @followup.title %></strong></h1>
+<div class = "d-flex justify-content-between">
+  <h1><strong><%= @followup.title %></strong></h1>
+  <p class = "mt-2"><%= link_to "✏️", edit_prescription_follow_up_path(@prescription, @followup),class: "" %></p>
+</div>
 <p><%= @followup.description %></p>
 <p> Debut : <strong><%= @followup.start_date %></strong> - Fin : <strong><%= @followup.end_date %></strong></p>
 
@@ -14,7 +17,13 @@
 
 
   <div class ="my-2">
-    <p><%= link_to "Modifier mon traitement", edit_prescription_follow_up_path(@prescription, @followup),class: "m-1 bouton d-flex justify-content-center" %></p>
-    <p><%= link_to "Retour à l'ordonnance", prescription_path(@prescription),class: "m-1 bouton d-flex justify-content-center" %></p>
+
+    <%= link_to(prescription_path(@prescription)) do %>
+    <div class = "d-flex justify-content-center">
+      <div class ="m-1 bouton justify-content-center">
+        <i class="fa-sharp fa-solid fa-arrow-left" style="color: #49516F;"></i>
+      </div>
+    </div>
+    <% end %>
   </div>
 </div>
