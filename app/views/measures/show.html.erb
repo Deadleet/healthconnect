@@ -12,6 +12,7 @@
   <p class =  "mt-1"><%= link_to "✏️", edit_measure_path(@measure), class: "mt-2" %></p>
 </div>
 
+
     <div class="measure__description">
           <p><%= @measure.description %></p>
           <p class="measure-date-range"><strong><%= @measure.start_date.strftime("%d %b %Y") %> </strong>→<strong><%= @measure.end_date.strftime("%d %b %Y") %></strong></p>

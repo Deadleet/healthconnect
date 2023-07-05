@@ -3,7 +3,7 @@
 }
 
 
-.measure__descriptiond {
+.measure__description {
   padding: 4vmin;
   display: flex;
   overflow: hidden;
@@ -15,7 +15,7 @@
   box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
 }
 
-.measures__valuesd {
+.measures__values {
   margin: 10px;
   padding: 4vmin;
   display: flex;
@@ -28,6 +28,7 @@
 }
 
 .list-group-itemd {
+  background: white;
   display: flex;
   flex-direction: column-reverse;
   align-items: stretch;
