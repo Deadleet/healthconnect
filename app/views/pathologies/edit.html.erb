@@ -10,8 +10,8 @@
 <h1 class="edit-form">Modifier vos pathologies</h1>
 <div class="form">
     <%= simple_form_for @pathologie do |f| %>
-      <%= f.input :name, placeholder: 'The title of your pathologie' %>
-      <%= f.input :description, placeholder: 'Give us more information'%>
+      <%= f.input :name, placeholder: 'Nom de votre pathologie', label: "Nom de votre pathologie" %>
+      <%= f.input :description, placeholder: 'Description', label: "Description" %>
         <%= f.submit value: "Modifier", class: "bouton" %>
   <% end %>
 </div>
