@@ -80,3 +80,9 @@ body {
   // background: #000;
   box-shadow: 0 -20px 0 0 #E3DBFC;
 }
+
+@media(max-height: 684px) {
+  .header-title{
+    margin-top: 85px;
+  }
+}
