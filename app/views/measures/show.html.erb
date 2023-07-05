@@ -7,19 +7,26 @@
 </div>
 <div class="container">
 
-<div class = "d-flex justify-content-between">
+<div class = "d-flex justify-content-between measure-header" >
   <h1><strong><%= @measure.title %></strong></h1>
   <p class =  "mt-1"><%= link_to "✏️", edit_measure_path(@measure), class: "mt-2" %></p>
 </div>
-  <p><%= @measure.description %></p>
-    <p>Votre calendrier de mesure commence le <strong><%= @measure.start_date %> </strong> et se termine le : <strong><%= @measure.end_date %></strong></p>
 
-  <p><%= @measure.valeur %> Unité de mesure : <strong><%= @measure.unit %></strong>.</p>
-  <% if @measure.day_frequency != 1%>
-    <p>La mesure sera effectuée tous les <strong><%= @measure.day_frequency %></strong> jours à une fréquence de <strong><%= @measure.hourly_frequency %> fois</strong> par jour.</p>
-  <% else %>
-    <p>La mesure sera effectuée <strong>tous les jours</strong> à une fréquence de  <strong><%= @measure.hourly_frequency %> fois</strong> par jour.</p>
-  <% end %>
+    <div class="measure__description">
+          <p><%= @measure.description %></p>
+          <p class="measure-date-range"><strong><%= @measure.start_date.strftime("%d %b %Y") %> </strong>→<strong><%= @measure.end_date.strftime("%d %b %Y") %></strong></p>
+
+          <p>
+    </div>
+      <div class="measures__values">
+          <%= @measure.valeur %><strong><%= @measure.unit %></strong>.
+        </p>
+        <% if @measure.day_frequency != 1 %>
+          <p><strong><%= @measure.day_frequency %></strong><strong><%= @measure.hourly_frequency %> fois</strong> par jour.</p>
+        <% else %>
+          <p><strong><%= @measure.hourly_frequency %> fois</strong> par jour.</p>
+        <% end %>
+      </div>
 
 
   <div class="container">
@@ -46,8 +53,17 @@
   </div>
   <ul class = "list-group">
     <% @measure.measurements.each do |measurement| %>
-      <li class = "list-group-item" ><p>Mesure faite le : <%= measurement.created_at %></p>
-        <div class = "d-flex justify-content-between">
+      <li class = "list-group-item" >
+        <div class="measures-created_at">
+            <p class= "measures-date">
+              <%= measurement.created_at.strftime("%d %b %Y") %>
+            </p>
+            <p class= "measures-time">
+              <%= measurement.created_at.strftime("%H:%M") %>
+            </p>
+        </div>
+
+        <div class = "measures-count">
           <h4 class = ""><%= measurement.value %> <%= measurement.measure.unit %></h4>
           <%= link_to "✏️", edit_prescription_measure_measurement_path(@prescription, @measure, measurement), class: ""  %>
         </div>
