@@ -7,16 +7,20 @@
 </div>
 <div class="container">
   <div class="my-2 ">
+  <div class = "d-flex justify-content-between">
     <h1 class =""><strong><%= @prescription.title %></strong> </h1>
+    <%= link_to(edit_prescription_path(@prescription)) do %>
+      <p class= "mt-1">✏️</p>
+    <% end %>
+  </div>
+
     <h4><%= @prescription.practician %></h4>
     <p><%= @prescription.description %></p>
     <p> Debut : <strong><%= @prescription.start_date %></strong> - Fin : <strong><%= @prescription.end_date %></strong></p>
     <p>Rappel de renouvellement : <%= @prescription.end_date-5 %></p>
   </div>
 
-  <%= link_to(edit_prescription_path(@prescription)) do %>
-    <p class= "m-1 bouton d-flex justify-content-center">Modifier mon ordonnance</p>
-  <% end %>
+
 
 
   <div class="m-3 d-flex align-items-center justify-content-between">

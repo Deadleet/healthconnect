@@ -7,7 +7,10 @@
 </div>
 <div class="container">
 
+<div class = "d-flex justify-content-between">
   <h1><strong><%= @measure.title %></strong></h1>
+  <p class =  "mt-1"><%= link_to "✏️", edit_measure_path(@measure), class: "mt-2" %></p>
+</div>
   <p><%= @measure.description %></p>
     <p>Votre calendrier de mesure commence le <strong><%= @measure.start_date %> </strong> et se termine le : <strong><%= @measure.end_date %></strong></p>
 
@@ -26,7 +29,6 @@
       %>
   </div>
 
-    <%= link_to "Modifier le recapitulatif", edit_measure_path(@measure), class: "m-1 bouton d-flex justify-content-center" %>
     <%= link_to "Retour à l'ordonnance", prescription_path(@prescription),class: "m-1 bouton d-flex justify-content-center" %>
 
 
@@ -39,7 +41,7 @@
       <li class = "list-group-item" ><p>Mesure faite le : <%= measurement.created_at %></p>
         <div class = "d-flex justify-content-between">
           <h4 class = ""><%= measurement.value %> <%= measurement.measure.unit %></h4>
-          <%= link_to "Modifier", edit_prescription_measure_measurement_path(@prescription, @measure, measurement), class: "bouton"  %>
+          <%= link_to "✏️", edit_prescription_measure_measurement_path(@prescription, @measure, measurement), class: ""  %>
         </div>
       </li>
     <% end %>
