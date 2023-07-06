@@ -1,16 +1,27 @@
 <div class="header">
   <div class= "header-title">
   <% if user_signed_in? %>
-    <h1>Bonjour, <%= current_user.first_name%></h1>
+    <h1>Bonjour <%= current_user.first_name%></h1>
     <% end %>
   </div>
 </div>
 <div class="container">
-    <h5 class="couleur">HealthConnect</h5>
+    <h5 class="couleur mt-3">HealthConnect</h5>
   <% if user_signed_in? %>
+
     <div class="medical-file justify-content-center rounded bg-transparent">
       <div class="mb-2 col-12 col-lg-6 rounded">
-        <h2 class = "mt-2 my-2"> Mesures du jour 📈</h2>
+        <h2 class = "mb-2"> Vous avez un rendez-vous 🛎️</h2>
+          <ul class = "list-group">
+            <li class = " m-1 bouton d-flex justify-content-center">
+              <p>RDV - Dr.HOUSE</p>
+            </li>
+          </ul>
+      </div>
+
+
+      <div class="mb-2 col-12 col-lg-6 rounded">
+        <h2 class = "mt-4"> Mesures du jour 📈</h2>
           <ul class = "list-group">
             <% @prescriptions.each do |prescription| %>
               <% prescription.measures.each do |measure| %>
@@ -26,7 +37,7 @@
           </ul>
       </div>
       <div class="mb-2 col-12 col-lg-6 rounded">
-        <h2 class = "mt-2">Traitements du jour 💊</h2>
+        <h2 class = "mt-4">Traitements du jour 💊</h2>
           <ul class = "list-group">
             <% @prescriptions.each do |prescription| %>
               <% prescription.follow_ups.each do |followup| %>
