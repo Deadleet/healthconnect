@@ -11,14 +11,14 @@
       <%= simple_form_for [@prescription, @followup], data: { controller: 'flatpickr' } do |f| %>
 
       <div>
-        <%= f.input :title, placeholder: 'Titre', label:"Titre" %>
-        <%= f.input :description, placeholder: 'Description', label:"Description"%>
+        <%= f.input :title, placeholder: 'Cardio pré-opé', label:"Titre" %>
+        <%= f.input :description, placeholder: 'Tous les matin au reveil - Aldactone', label:"Description"%>
       </div>
 
       <div>
-        <%= f.input :posology, placeholder: 'ex: 400mg', label:"Posologie"%>
-        <%= f.input :hourly_frequency, placeholder: 'Combien de fois par jour? ex: 3', label:"Fréquence d'administration"%>
-        <%= f.input :day_frequency, placeholder: 'Combien de fois par semaine? ex: 4', label:"Fréquence du traitement (en jours)"%>
+        <%= f.input :posology, placeholder: 'ex: 10mg', label:"Posologie"%>
+        <%= f.input :hourly_frequency, placeholder: 'ex: 3', label:"Fréquence d'administration"%>
+        <%= f.input :day_frequency, placeholder: 'ex: 4', label:"Fréquence du traitement (en jours)"%>
       </div>
 
       <div>
