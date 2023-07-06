@@ -18,13 +18,13 @@ puts 'User created!'
 
 puts 'creating prescription1'
 # FOR USER 1
-prescription1 = Prescription.create(title: 'Ordonnance Cardio', description: 'pour mon hypertension', start_date: Date.new(2023, 07, 02), end_date: Date.new(2023, 07, 30), practician: 'DR House', user: user1)
+prescription1 = Prescription.create(title: 'Ordonnance Cardio', description: 'pour mon hypertension', start_date: Date.new(2023, 07, 02), end_date: Date.new(2023, 07, 30), practician: 'Dr HOUSE', user: user1)
 puts 'creating prescription2'
-prescription2 = Prescription.create(title: 'Ordonnance Endocrinologue', description: "pour mon diabete", start_date: Date.new(2023, 06, 13), end_date: Date.new(2023, 07, 19), practician: 'DR House2', user: user1)
+prescription2 = Prescription.create(title: 'Ordonnance Endocrinologue', description: "pour mon diabete", start_date: Date.new(2023, 06, 13), end_date: Date.new(2023, 07, 19), practician: 'Dr GUERIN', user: user1)
 puts 'creating prescription3'
-prescription3 = Prescription.create(title: 'Ordonnance Pulmonaire', description: "pour mes crises d'asthme", start_date: Date.new(2023, 06, 13), end_date: Date.new(2023, 07, 19), practician: 'DR House2', user: user1)
+prescription3 = Prescription.create(title: 'Ordonnance Pulmonaire', description: "pour mes crises d'asthme", start_date: Date.new(2023, 06, 13), end_date: Date.new(2023, 07, 19), practician: 'Dr DRE', user: user1)
 puts 'creating prescription4'
-prescription4 = Prescription.create(title: 'Ordonnance Dermatologie', description: 'traitement infection talon', start_date: Date.new(2023, 02, 20), end_date: Date.new(2023, 02, 28), practician: 'DR House3', user: user1)
+prescription4 = Prescription.create(title: 'Ordonnance Dermatologie', description: 'traitement infection talon', start_date: Date.new(2023, 02, 20), end_date: Date.new(2023, 02, 28), practician: 'Dr ROSS', user: user1)
 # FOR USER 2
 puts 'prescriptions created!'
 
