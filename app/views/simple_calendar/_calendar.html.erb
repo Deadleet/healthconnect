@@ -2,7 +2,7 @@
   <div class="calendar-heading">
     <p class="btn btn-calendar"><%= link_to t('simple_calendar.previous', default: 'Previous'), calendar.url_for_previous_view %></p>
     <span class="calendar-title btn-month"><%= t('date.month_names')[start_date.month] %> <%= start_date.year %></span>
-    <p class="btn btn-calendar"><%= link_to t('simple_calendar.next', default: 'Next'), calendar.url_for_next_view %></p>
+    <p class="btn btn-calendar"><%= link_to t('simple_calendar.next', default: 'Next'), calendar.url_for_previous_view %></p>
   </div>
 
   <table class="table table-striped">
