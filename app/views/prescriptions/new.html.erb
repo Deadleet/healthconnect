@@ -1,30 +1,31 @@
 <div class="header">
   <div class= "header-title">
-  <% if user_signed_in? %>
-    <h1>Créer une Ordonnance</h1>
+    <% if user_signed_in? %>
+      <h1>Créer une Ordonnance</h1>
     <% end %>
   </div>
 </div>
-   <div class="edit-form">
-    <div class="container form">
+
+<div class="edit-form">
+  <div class="container form">
     <div class="bg-white rounded p-3 shadow">
       <%= simple_form_for @prescription, data: { controller: 'flatpickr' } do |f| %>
-          <div>
-          <%= f.input :title, placeholder: 'Titre', value: "Titre", label: "Titre" %>
+        <div>
+          <%= f.input :title, placeholder: 'Titre', value: "Titre", label: "Titre", class: "black-label"%>
           <%= f.input :description, placeholder: 'Description'%>
-          </div>
+        </div>
 
-          <div>
+        <div>
           <%= f.input :start_date, label: "Commence le", as: :string, input_html: { data: { flatpickr_target: "startTime" } },value: "Commence le" %>
-          <%= f.input :end_date, label: "FIni le", as: :string, input_html: { data: { flatpickr_target: "endTime" }, id: 'end_time' },value: "Fini le" %>
-         </div>
+          <%= f.input :end_date, label: "Fini le", as: :string, input_html: { data: { flatpickr_target: "endTime" }, id: 'end_time' },value: "Fini le" %>
+        </div>
 
-          <div>
+        <div>
           <%= f.input :practician, placeholder: 'Le nom du Practicien',label: "Praticien"%>
-          <%= f.submit 'Créer', class: "bouton" %>
-          </div>
-
+          <%= f.submit 'Créer', class: "bouton edit-style" %>
+        </div>
       <% end %>
+      </div>
     </div>
   </div>
 </div>
