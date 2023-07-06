@@ -125,7 +125,7 @@ measurement1_28 = Measurement.create!(value: "1.35", unit: "mmol", measure: meas
 measurement1_29 = Measurement.create!(value: "1.36", unit: "mmol", measure: measure2, created_at: measure2.start_date + 28.day)
 puts "3 measurements created!"
 
-appointment1 = Appointment.create!(title: 'Dentiste', appointment_date: Date.new(2023, 03, 11), appointment_time: Time.now, address: "Place de l'ecureuil", user: user1)
+appointment1 = Appointment.create!(title: 'Cardio', appointment_date: Date.new(2023, 07, 07), appointment_time: Time.now, address: "Place de l'ecureuil", user: user1)
 puts 'done'
 
 
