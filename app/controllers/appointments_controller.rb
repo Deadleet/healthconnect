@@ -1,10 +1,9 @@
 class AppointmentsController < ApplicationController
-  before_action :calendar_models, only: [:day_calendar, :index]
+  before_action :calendar_models, only: [:index]
 
   def day_calendar
-
-    params[:start_date]
-
+    @searched_date = Date.parse(params[:date_str])
+    calendar_models(@searched_date)
   end
 
   def index; end
@@ -44,11 +43,11 @@ class AppointmentsController < ApplicationController
     params.require(:appointment).permit(:title, :appointment_date, :appointment_time, :address, :user_id)
   end
 
-  def calendar_models
-      start_date = params.fetch(:start_date, Date.today).to_date
-      end_date = params.fetch(:start_date, Date.today).to_date
+  def calendar_models(searched_date = Date.today)
+      # start_date = params.fetch(:start_date, Date.today).to_date
+      # end_date = params.fetch(:start_date, Date.today).to_date
         # # PRESCRIPTIONS
-      @prescriptions = Prescription.where(user: current_user, end_date: end_date.beginning_of_month.beginning_of_week..end_date.end_of_month.end_of_week)
+      @prescriptions = Prescription.where(user: current_user, end_date: searched_date.beginning_of_month.beginning_of_week..searched_date.end_of_month.end_of_week)
 
         # # FOLLOw-UPS
       prescriptions_user = Prescription.where(user_id: current_user)
@@ -67,7 +66,7 @@ class AppointmentsController < ApplicationController
       # @measures.where(start_date: start_date.beginning_of_month.beginning_of_week..start_date.end_of_month.end_of_week)
 
       # # APPOINTMENT
-      @appointments = Appointment.where(user: current_user, appointment_date: start_date.beginning_of_month.beginning_of_week..start_date.end_of_month.end_of_week)
+      @appointments = Appointment.where(user: current_user, appointment_date: searched_date.beginning_of_month.beginning_of_week..searched_date.end_of_month.end_of_week)
   end
 
 end

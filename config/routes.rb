@@ -5,10 +5,10 @@ Rails.application.routes.draw do
   get "historical", to: "pages#historical"
   get "profil", to: "pages#profil"
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
-resources :prescriptions do
-  resources :follow_ups, only: %i[index show new create edit update]
-  resources :measures, only: %i[show new create] do
-    resources :measurements, only: %i[new create edit update]
+  resources :prescriptions do
+    resources :follow_ups, only: %i[index show new create edit update]
+    resources :measures, only: %i[show new create] do
+      resources :measurements, only: %i[new create edit update]
     end
   end
   resources :follow_ups, only: %i[edit update destroy]
@@ -16,6 +16,6 @@ resources :prescriptions do
 
   resources :pathologies, only: %i[index show edit update new create]
   resources :appointments
-  get "day_calendar", to: "appointments#day_calendar"
+  get "day_calendar/:date_str", to: "appointments#day_calendar", as: :day_calendar
   # get "dashboard", to: "pages#dashboard"
 end

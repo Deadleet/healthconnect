@@ -7,8 +7,8 @@
 <div class="container">
   <div class="calendar-container">
     <%= month_calendar(events: @prescriptions + @follow_ups + @measures + @appointments) do |date, events| %>
-      <%= link_to day_calendar_path(date), class: "day-link" do %>
-        <%= date %>
+      <%= link_to day_calendar_path(date.to_s), class: "day-link" do %>
+        <%= date.day %>
       <% end %>
       <div class="emojis">
         <% @prescriptions = events.select { |event| event.is_a?(Prescription) } %>
