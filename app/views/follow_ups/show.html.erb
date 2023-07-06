@@ -10,9 +10,9 @@
   <h1><strong><%= @followup.title %></strong></h1>
   <p class = "mt-2"><%= link_to "✏️", edit_prescription_follow_up_path(@prescription, @followup),class: "" %></p>
 </div>
+
 <p><%= @followup.description %></p>
 <p> Debut : <strong><%= @followup.start_date %></strong> - Fin : <strong><%= @followup.end_date %></strong></p>
-
 <p>Posologie : <%= @followup.posology %>. Tous les <%= @followup.hourly_frequency %> jour(s), <%= @followup.day_frequency %> fois/jour</p>
 
 

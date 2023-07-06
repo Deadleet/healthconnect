@@ -17,6 +17,21 @@
   border-radius: 15px;
 }
 
+.measures__values-2 {
+  padding: 4vmin;
+  display: flex;
+  flex-wrap: wrap;
+  overflow: hidden;
+  background: white;
+  /* align-items: center; */
+  margin: 10px;
+  font-size: 14px;
+  justify-content: space-between;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+  border-color: #49516F;
+  border-radius: 15px;
+}
+
 .measures__values {
   margin: 10px;
   padding: 4vmin;
