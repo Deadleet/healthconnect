@@ -17,3 +17,9 @@ legend~div.form-check:first-of-type {
 .form abbr {
   display: none;
 }
+
+.form-label {
+  font-family: $headers-font;
+  color: #987DBA !important;
+  font-weight: bold;
+}
