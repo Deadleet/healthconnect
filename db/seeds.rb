@@ -53,8 +53,8 @@ puts 'pathologies created!'
 
 puts 'creating 2 follow-up'
 # POUR PRESCRIPTION 1
-follow_up1 = FollowUp.create!(title: 'Medicament Aldactone ', description: 'A prendre le matin avant le petit-dej', start_date: Date.new(2023, 04, 04), end_date: Date.new(2023, 07, 30), hourly_frequency: 3, day_frequency: 1, prescription: prescription1)
-follow_up2 = FollowUp.create!(title: 'Medicament warfarine', description: 'A prendre le soir', start_date: Date.new(2023, 02, 04), end_date: Date.new(2023, 02, 20), hourly_frequency: 3, day_frequency: 1, prescription: prescription1)
+follow_up1 = FollowUp.create!(title: 'Medicament Aldactone ', description: 'A prendre le matin au réveil', start_date: Date.new(2023, 04, 04), end_date: Date.new(2023, 07, 30), hourly_frequency: 3, day_frequency: 1, prescription: prescription1)
+follow_up2 = FollowUp.create!(title: 'Medicament warfarine', description: 'A prendre le soir avant de dormir', start_date: Date.new(2023, 02, 04), end_date: Date.new(2023, 02, 20), hourly_frequency: 3, day_frequency: 1, prescription: prescription1)
 
 #POUR PRESCRIPTION 2
 follow_up3 = FollowUp.create(title: 'Pompe cortico', description: "A l'effort", start_date: '2023/03/11', end_date: '2023/03/17', hourly_frequency: 3, day_frequency: 2, prescription: prescription3)
