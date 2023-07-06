@@ -11,8 +11,8 @@
     <div class="bg-white rounded p-3 shadow">
       <%= simple_form_for @prescription, data: { controller: 'flatpickr' } do |f| %>
         <div>
-          <%= f.input :title, placeholder: 'Titre', value: "Titre", label: "Titre", class: "black-label"%>
-          <%= f.input :description, placeholder: 'Description'%>
+          <%= f.input :title, placeholder: 'Ordonnance Cardio - pré-operation', label: "Titre", class: "black-label"%>
+          <%= f.input :description, placeholder: "Mise en place d'un traitement avant l'opération"%>
         </div>
 
         <div>
@@ -21,7 +21,7 @@
         </div>
 
         <div>
-          <%= f.input :practician, placeholder: 'Le nom du Practicien',label: "Praticien"%>
+          <%= f.input :practician, placeholder: 'Dr.HOUSE',label: "Praticien"%>
           <%= f.submit 'Créer', class: "bouton edit-style" %>
         </div>
       <% end %>

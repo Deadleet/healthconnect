@@ -10,7 +10,7 @@
     <div class="bg-white rounded p-3 shadow">
         <%= simple_form_for [@prescription, @measure, @measurement] do |f| %>
           <div>
-            <%= f.input :value, placeholder: 'Valeur', label: 'Valeur' %>
+            <%= f.input :value, placeholder: 'ex : 1.60', label: 'Valeur' %>
         </div>
         <%= f.submit class: "bouton edit-style", value: 'Valider'%>
       <% end %>
